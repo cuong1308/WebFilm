@@ -1,0 +1,16 @@
+.wrapper {
+    width: 1440px;
+    margin:  0 auto;
+}
+
+.container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 15px ;
+    position: relative;
+}
+body {
+    background: $background-color !important;
+    font-weight: 400;
+    width: 100%;
+}

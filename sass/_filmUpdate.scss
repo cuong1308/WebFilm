@@ -1,0 +1,105 @@
+.film-main {
+    &-container {
+        display: grid;
+        grid-template-columns: 850px 280px;
+        gap: 0 10px;
+    }
+
+    .filmUpdate {
+        .film-item {
+            position: relative;
+
+            img {
+                @include box(160px, 227px);
+            }
+        }
+
+        .film-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 170px) 20%;
+            gap: 15px 0;
+        }
+
+        &-title {
+            font-size: 25px;
+            padding: 15px 6px;
+            color: #da966e;
+            margin-left: 20px;
+        }
+
+        &-name {
+            position: absolute;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            z-index: 1;
+            color: white;
+            bottom: -8px;
+            padding: 0 5px;
+            background: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            font-size: 13px;
+            width: 160px;
+            height: 40px;
+            @include flex-center;
+            font-size: 11px;
+
+        }
+
+    }
+    .filmTrend {
+        &-container {
+
+        }
+        &-item {
+            margin-bottom: 15px ;
+            display: flex; 
+            gap: 10px ; 
+            
+        }
+        &-infor{
+            display: flex; 
+            gap: 5px ; 
+            flex-direction: column ;
+        }
+        &-image {
+           img {
+            @include box(75px, 87px) ;
+            
+           }
+        }
+        &-title {
+            font-size: 25px;
+            padding: 15px 6px;
+            color: #da966e;
+            margin-left: 20px;
+        }
+        &-name {
+            color : white ;
+            font-size: 13px;
+        }
+        &-tv , &-movie {
+            color : white ;
+            font-size: 12px;
+            width: 80px;
+            padding: 4px;
+            text-align: center;
+            border-radius: 5px;
+            background: rgba($color: red, $alpha: 0.5);
+        }
+        &-tv {
+            background: rgba($color: green, $alpha: 0.5);
+        }
+        &-popularity ,&-vote {
+            color : white ;
+            font-size: 12px;
+            font-weight: 200;
+        }
+    }
+}
+
+

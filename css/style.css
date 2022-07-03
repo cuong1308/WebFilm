@@ -1,0 +1,188 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.wrapper {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+}
+
+body {
+  background: #1a1a1a !important;
+  font-weight: 400;
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+}
+.header-top {
+  background: #333;
+  height: 80px;
+}
+.header-nav {
+  background: #2d2d2d;
+  height: 55px;
+}
+
+.filmHot {
+  position: relative;
+}
+.filmHot-image img {
+  width: 180px;
+  height: 227px;
+  background-position-y: 50px;
+}
+.filmHot-name {
+  position: absolute;
+  width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  z-index: 1;
+  color: white;
+  bottom: 0;
+  padding: 0 15px;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  height: 36px;
+  line-height: 36px;
+  font-size: 12px;
+}
+.filmHot-title {
+  font-size: 25px;
+  padding: 15px 6px;
+  color: #da966e;
+  margin-left: 20px;
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  font-size: 80px;
+  color: white;
+  z-index: 1;
+  transform: translate(0px, 50%);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.slick-next {
+  top: 0;
+  right: 35px;
+}
+
+.film-main-container {
+  display: grid;
+  grid-template-columns: 850px 280px;
+  gap: 0 10px;
+}
+.film-main .filmUpdate .film-item {
+  position: relative;
+}
+.film-main .filmUpdate .film-item img {
+  width: 160px;
+  height: 227px;
+}
+.film-main .filmUpdate .film-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 170px) 20%;
+  gap: 15px 0;
+}
+.film-main .filmUpdate-title {
+  font-size: 25px;
+  padding: 15px 6px;
+  color: #da966e;
+  margin-left: 20px;
+}
+.film-main .filmUpdate-name {
+  position: absolute;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  z-index: 1;
+  color: white;
+  bottom: -8px;
+  padding: 0 5px;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  font-size: 13px;
+  width: 160px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+.film-main .filmTrend-item {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+}
+.film-main .filmTrend-infor {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+.film-main .filmTrend-image img {
+  width: 75px;
+  height: 87px;
+}
+.film-main .filmTrend-title {
+  font-size: 25px;
+  padding: 15px 6px;
+  color: #da966e;
+  margin-left: 20px;
+}
+.film-main .filmTrend-name {
+  color: white;
+  font-size: 13px;
+}
+.film-main .filmTrend-tv, .film-main .filmTrend-movie {
+  color: white;
+  font-size: 12px;
+  width: 80px;
+  padding: 4px;
+  text-align: center;
+  border-radius: 5px;
+  background: rgba(255, 0, 0, 0.5);
+}
+.film-main .filmTrend-tv {
+  background: rgba(0, 128, 0, 0.5);
+}
+.film-main .filmTrend-popularity, .film-main .filmTrend-vote {
+  color: white;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.film-main-details-container {
+  display: grid;
+  grid-template-columns: 850px 280px;
+  gap: 0 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

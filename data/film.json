@@ -1,0 +1,397 @@
+[
+        {
+          "adult": false,
+          "backdrop_path": "/wcKFYIiVDvRURrzglV9kGu7fpfY.jpg",
+          "genre_ids": [
+            14,
+            28,
+            12
+          ],
+          "id": 453395,
+          "original_language": "en",
+          "original_title": "Doctor Strange in the Multiverse of Madness",
+          "overview": "Sự kiện xảy sau phần phim Người Nhện: Không còn nhà (2021) và mùa đầu tiên của Loki (2021), Bác sĩ Stephen Strange đã sử dụng một phét thuật bị cấm và mở ra cánh cổng dẫn tới đa vũ trụ, vô tình dẫn đưa một biến thể hắc ám của Stephen Strange khác đến vũ trụ mình - mối đe dọa lớn mà Dr. Strange có thể phải đối đầu hoặc hợp sức chống lại một cái ác khác, đồng hành cùng Strange còn có Wong và Wanda Maximoff cùng với nhân vật mới American Chavez.",
+          "popularity": 10084.004,
+          "poster_path": "/ovMxUPSSuvBD7GcgdQxzbJfsR8q.jpg",
+          "release_date": "2022-05-04",
+          "title": "Phù Thủy Tối Thượng Trong Đa Vũ Trụ Hỗn Loạn",
+          "video": false,
+          "vote_average": 7.6,
+          "vote_count": 3728
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zGLHX92Gk96O1DJvLil7ObJTbaL.jpg",
+          "genre_ids": [
+            14,
+            12,
+            28
+          ],
+          "id": 338953,
+          "original_language": "en",
+          "original_title": "Fantastic Beasts: The Secrets of Dumbledore",
+          "overview": "Câu chuyện của phần phim thứ ba này xoay quanh việc Giáo sư Albus Dumbledore (Jude Law) phát hiện ra việc Phù thủy Bóng tối quyền năng Gellert Grindelwald (Mads Mikkelsen) đang âm mưu chiếm lấy quyền kiểm soát Thế giới Phù thủy. Không thể một mình ngăn chặn đoàn quân hùng mạnh của của Grindelwald, Dumbledore đặt niềm tin vào Nhà nghiên cứu sinh vật huyền bí Newt Scamander (Eddie Redmayne) cùng đồng đội thực hiện nhiệm vụ đầy hiểm nguy này. Trong tình thế ngàn cân treo sợi tóc như vậy, liệu thầy Dumbledore có thể đứng ngoài được bao lâu?",
+          "popularity": 2818.865,
+          "poster_path": "/w9rZk5N5STpFqhahEnPRRiqN9l5.jpg",
+          "release_date": "2022-04-06",
+          "title": "Sinh Vật Huyền Bí: Những Bí Mật của Dumbledore",
+          "video": false,
+          "vote_average": 6.8,
+          "vote_count": 2078
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/t0mwKhUDa62hdhdKSsN4xMfhY5Z.jpg",
+          "genre_ids": [
+            18,
+            35
+          ],
+          "id": 626735,
+          "original_language": "en",
+          "original_title": "Dog",
+          "overview": "",
+          "popularity": 2354.513,
+          "poster_path": "/rkpLvPDe0ZE62buUS32exdNr7zD.jpg",
+          "release_date": "2022-02-17",
+          "title": "Dog",
+          "video": false,
+          "vote_average": 7.4,
+          "vote_count": 516
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/egoyMDLqCxzjnSrWOz50uLlJWmD.jpg",
+          "genre_ids": [
+            28,
+            12,
+            10751,
+            35
+          ],
+          "id": 675353,
+          "original_language": "en",
+          "original_title": "Sonic the Hedgehog 2",
+          "overview": "Nhím Sonic 2 là sự tiếp nối của siêu phẩm live-action trước, khi ác nhân Robotnik đã thoát được khỏi hành tinh Nấm và mang đồng bọn nhím đỏ Knuckles tới Trái Đất \"gây chuyện\". Trong khi đó, nhím Sonic cũng có thêm một gương mặt cùng đồng hành chống lại kẻ xấu, bảo vệ hành tinh là người bạn Tails.",
+          "popularity": 2387.591,
+          "poster_path": "/jgXIYLDF1fy20hP3EJtITb3rfwE.jpg",
+          "release_date": "2022-03-30",
+          "title": "Nhím Sonic 2",
+          "video": false,
+          "vote_average": 7.7,
+          "vote_count": 2308
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/1Ds7xy7ILo8u2WWxdnkJth1jQVT.jpg",
+          "genre_ids": [
+            28,
+            12,
+            35
+          ],
+          "id": 752623,
+          "original_language": "en",
+          "original_title": "The Lost City",
+          "overview": "Thành Phố Mất Tích theo chân một tiểu thuyết gia tài năng nhưng thích sống ẩn dật. Cô không hề hào hứng với việc phải tham gia vào chuỗi sự kiện giới thiệu cuốn sách phiêu lưu mới ra mắt của mình cùng anh chàng người mẫu trang bìa rất nhiệt tình nhưng có phần hơi “lạ”. Cho đến khi một vụ bắt cóc bất ngờ xảy ra, kéo cả hai vào cuộc phiêu lưu mạo hiểm xuyên rừng rậm, khiến cô nhận ra cuộc sống thực sự khác xa những gì cô viết trong cuốn tiểu thuyết.",
+          "popularity": 1961.798,
+          "poster_path": "/9YzTevVruxnE7UUrOwSgafMyFDY.jpg",
+          "release_date": "2022-03-24",
+          "title": "Thành Phố Mất Tích",
+          "video": false,
+          "vote_average": 6.8,
+          "vote_count": 1371
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qBu6blwnOA75Hz61QHrNe8unUNw.jpg",
+          "genre_ids": [
+            53,
+            80,
+            18
+          ],
+          "id": 975714,
+          "original_language": "en",
+          "original_title": "Collision",
+          "overview": "",
+          "popularity": 2235.872,
+          "poster_path": "/4zsihgkxMZ7MrflNCjkD3ySFJtc.jpg",
+          "release_date": "2022-06-16",
+          "title": "Collision",
+          "video": false,
+          "vote_average": 6,
+          "vote_count": 46
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gG9fTyDL03fiKnOpf2tr01sncnt.jpg",
+          "genre_ids": [
+            28,
+            878,
+            14
+          ],
+          "id": 526896,
+          "original_language": "en",
+          "original_title": "Morbius",
+          "overview": "Sau khi bị mắc một căn bệnh hiếm gặp về máu, vị giáo sư Michael Morbius đã cố gắng tạo một thứ thuốc để tự điều trị cho bản thân mình nhưng cũng vì thứ thuốc đó đã khiến trở thành một dạng ma cà rồng.",
+          "popularity": 2038.496,
+          "poster_path": "/jTuTXGdugBZTiHuHFV3dHlyqRg9.jpg",
+          "release_date": "2022-03-30",
+          "title": "Morbius",
+          "video": false,
+          "vote_average": 6.5,
+          "vote_count": 1883
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/iQFcwSGbZXMkeyKrxbPnwnRo5fl.jpg",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "id": 634649,
+          "original_language": "en",
+          "original_title": "Spider-Man: No Way Home",
+          "overview": "Peter Parker đã bị lộ mặt và không còn có thể tách biệt cuộc sống bình thường của mình với những yêu cầu cao của việc trở thành một Siêu anh hùng. Khi anh ta yêu cầu sự giúp đỡ từ Doctor Strange, mọi thứ càng trở nên nguy hiểm hơn, buộc anh ta phải khám phá ra ý nghĩa thực sự của việc trở thành Người Nhện. vcl",
+          "popularity": 1927.454,
+          "poster_path": "/y4SQ2dJ1y2LBUnxTH7hCe8sr29c.jpg",
+          "release_date": "2021-12-15",
+          "title": "Người Nhện: Không Còn Nhà",
+          "video": false,
+          "vote_average": 8.1,
+          "vote_count": 13846
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/wo3l9p0S7pcvwlzlndtKgq0peRJ.jpg",
+          "genre_ids": [
+            28,
+            12,
+            878
+          ],
+          "id": 507086,
+          "original_language": "en",
+          "original_title": "Jurassic World Dominion",
+          "overview": "Bốn năm sau kết thúc Jurassic World: Fallen Kingdom, những con khủng long đã thoát khỏi nơi giam cầm và tiến vào thế giới loài người. Giờ đây, chúng xuất hiện ở khắp mọi nơi. Sinh vật to lớn ấy không còn chỉ ở trên đảo như trước nữa mà gần ngay trước mắt, thậm chí còn có thể chạm tới. Owen Grady may mắn gặp lại cô khủng long mà anh và khán giả vô cùng yêu mến - Blue. Tuy nhiên, Blue không đi một mình mà còn đem theo một chú khủng long con khác. Điều này khiến Owen càng quyết tâm bảo vệ mẹ con cô được sinh sống an toàn. Thế nhưng, hai giống loài quá khác biệt. Liệu có thể tồn tại một kỷ nguyên mà khủng long và con người sống chung một cách hòa bình?",
+          "popularity": 1920.879,
+          "poster_path": "/g9ZxpfwJQWf2ISH45ofkms2R08U.jpg",
+          "release_date": "2022-06-01",
+          "title": "Thế Giới Khủng Long: Lãnh Địa",
+          "video": false,
+          "vote_average": 6.7,
+          "vote_count": 879
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/vjnLXptqdxnpNJer5fWgj2OIGhL.jpg",
+          "genre_ids": [
+            28,
+            53,
+            80
+          ],
+          "id": 818397,
+          "original_language": "en",
+          "original_title": "Memory",
+          "overview": "Một sát thủ cho thuê phát hiện ra rằng anh ta trở thành mục tiêu sau khi anh ta từ chối hoàn thành công việc cho một tổ chức tội phạm nguy hiểm cùng với đó, một căn bệnh kỳ lạ cũng đang khiến cho hắn ta nghi ngờ mục đích của chính bản thân mình.",
+          "popularity": 1846.758,
+          "poster_path": "/4Q1n3TwieoULnuaztu9aFjqHDTI.jpg",
+          "release_date": "2022-04-28",
+          "title": "Ký Ức Của Kẻ Sát Nhân",
+          "video": false,
+          "vote_average": 7.3,
+          "vote_count": 430
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/v7hdWmLh6VLgZQgkbHDxAa17M47.jpg",
+          "genre_ids": [
+            28,
+            80,
+            53
+          ],
+          "id": 852592,
+          "original_language": "es",
+          "original_title": "Centauro",
+          "overview": "",
+          "popularity": 1727.525,
+          "poster_path": "/wOx97MJOxEoR38aoya3lopyrlYC.jpg",
+          "release_date": "2022-06-15",
+          "title": "Centauro",
+          "video": false,
+          "vote_average": 6.5,
+          "vote_count": 47
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/GLLgrghu7wSPaSjl2Rw4kjASOJ.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 756999,
+          "original_language": "en",
+          "original_title": "The Black Phone",
+          "overview": "Finney Shaw, một cậu bé 13 tuổi nhút nhát nhưng thông minh, bị một kẻ giết người tàn bạo bắt cóc và bị mắc kẹt trong một tầng hầm cách âm, nơi tiếng la hét không được sử dụng nhiều. Khi một chiếc điện thoại bị ngắt kết nối trên tường bắt đầu đổ chuông, Finney phát hiện ra rằng anh có thể nghe thấy giọng nói của những nạn nhân trước đây của kẻ giết người. Và họ đã cố gắng đảm bảo rằng những gì đã xảy ra với họ không xảy ra với Finney",
+          "popularity": 1773.238,
+          "poster_path": "/3TNU7R7ggWCVCgjBfia0Xns3vqO.jpg",
+          "release_date": "2022-06-22",
+          "title": "Điện Thoại Đen",
+          "video": false,
+          "vote_average": 7.2,
+          "vote_count": 144
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5tmjv1moohN65IuHAbYjKw3cw7I.jpg",
+          "genre_ids": [
+            878,
+            53
+          ],
+          "id": 615469,
+          "original_language": "en",
+          "original_title": "Spiderhead",
+          "overview": "",
+          "popularity": 1682.375,
+          "poster_path": "/7COPO5B9AOKIB4sEkvNu0wfve3c.jpg",
+          "release_date": "2022-06-15",
+          "title": "Spiderhead",
+          "video": false,
+          "vote_average": 5.7,
+          "vote_count": 445
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qp8qKiP7Q7zK4z3LItwWMHfV9kJ.jpg",
+          "genre_ids": [
+            53
+          ],
+          "id": 764835,
+          "original_language": "en",
+          "original_title": "The Desperate Hour",
+          "overview": "",
+          "popularity": 1504.582,
+          "poster_path": "/u6Pg9eTklhg6Aa7kXaxrfdE1Chi.jpg",
+          "release_date": "2021-09-12",
+          "title": "The Desperate Hour",
+          "video": false,
+          "vote_average": 6.1,
+          "vote_count": 150
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hGr0FrLI74vqpBWTBOPloDBwOAK.jpg",
+          "genre_ids": [
+            18,
+            35
+          ],
+          "id": 705861,
+          "original_language": "en",
+          "original_title": "Hustle",
+          "overview": "Khi phát hiện ra một siêu sao tiềm năng ở Tây Ban Nha, vị tuyển trạch viên bóng rổ xui xẻo bắt đầu chứng minh cả hai có đủ mọi yếu tố cần thiết để thành công ở NBA.",
+          "popularity": 1229.634,
+          "poster_path": "/fVf4YHHkRfo1uuljpWBViEGmaUQ.jpg",
+          "release_date": "2022-06-03",
+          "title": "Cuộc Đua NBA",
+          "video": false,
+          "vote_average": 7.9,
+          "vote_count": 872
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/fOy2Jurz9k6RnJnMUMRDAgBwru2.jpg",
+          "genre_ids": [
+            16,
+            10751,
+            35,
+            14
+          ],
+          "id": 508947,
+          "original_language": "en",
+          "original_title": "Turning Red",
+          "overview": "Mei, mười ba tuổi đang trải qua cảm giác khó xử khi là một thiếu niên với sự thay đổi - khi quá phấn khích, cô ấy đã biến thành một con gấu trúc đỏ khổng lồ.",
+          "popularity": 1482.16,
+          "poster_path": "/4XfOynj1CfToBmfIPf5P90KxYFK.jpg",
+          "release_date": "2022-03-10",
+          "title": "Gấu Đỏ Biến Hình",
+          "video": false,
+          "vote_average": 7.5,
+          "vote_count": 2602
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/jVGHRpSgtE2MQLJhC5q4lXmPNQW.jpg",
+          "genre_ids": [
+            27,
+            53,
+            28
+          ],
+          "id": 960258,
+          "original_language": "en",
+          "original_title": "Shark Bait",
+          "overview": "Một nhóm du khách nghỉ xuân đang tận hưởng chuyến đi của cuộc đời trên những bãi biển đầy cát ở Mexico. Khi mặt trời mọc sau một đêm tiệc tùng, họ đánh cắp một vài chiếc cano và đua ra biển. Nhưng sự dũng cảm và những quyết định tồi tệ đã dẫn đến một tai nạn kinh hoàng. Bị mắc kẹt cách bờ hàng dặm, nỗi kinh hoàng thực sự bắt đầu khi cả nhóm nhận ra họ đã trôi dạt vào vùng nước có nhiều cá mập. Không còn đường lui và một người bạn bị thương nặng chảy máu nhiều, cả nhóm phải nhanh chóng tìm cách sống sót trước kẻ săn mồi đang rình rập ở vùng nước bên dưới .",
+          "popularity": 1517.774,
+          "poster_path": "/mVVU9zC8snNHlcqYONY2HOsh9ob.jpg",
+          "release_date": "2022-05-13",
+          "title": "Mồi Cá Mập",
+          "video": false,
+          "vote_average": 7,
+          "vote_count": 62
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cqnVuxXe6vA7wfNWubak3x36DKJ.jpg",
+          "genre_ids": [
+            28,
+            12,
+            14
+          ],
+          "id": 639933,
+          "original_language": "en",
+          "original_title": "The Northman",
+          "overview": "Hoàng tử Amleth đang trên đường trở thành một người đàn ông thì cha của anh bị sát hại dã man bởi người chú của mình, kẻ bắt cóc mẹ của cậu bé. Hai thập kỷ sau, Amleth giờ là một người Viking đang thực hiện sứ mệnh cứu mẹ, giết chú và trả thù cho cha mình.",
+          "popularity": 1417.983,
+          "poster_path": "/zhLKlUaF1SEpO58ppHIAyENkwgw.jpg",
+          "release_date": "2022-04-07",
+          "title": "Chiến Binh Phương Bắc",
+          "video": false,
+          "vote_average": 7.3,
+          "vote_count": 1721
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/trtFAmf4IcndxSh5tIfLwxPyW67.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 628878,
+          "original_language": "en",
+          "original_title": "Panama",
+          "overview": "",
+          "popularity": 1437.908,
+          "poster_path": "/u9DzgsmssidygWuORgYzhi317vj.jpg",
+          "release_date": "2022-03-17",
+          "title": "Panama",
+          "video": false,
+          "vote_average": 5.9,
+          "vote_count": 54
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/aEGiJJP91HsKVTEPy1HhmN0wRLm.jpg",
+          "genre_ids": [
+            28,
+            12
+          ],
+          "id": 335787,
+          "original_language": "en",
+          "original_title": "Uncharted",
+          "overview": "Thợ Săn Cổ Vật xoay quanh nhân vật chính là chàng trai trẻ yêu phiêu lưu mạo hiểm Nathan Drake (Tom Holland). Với sự trợ giúp của huấn luyện viên Victor Sullivan (Mark Wahlberg), Nathan dấn thân vào cuộc hành trình khám phá những di tích cổ xưa, sử dụng vũ khí và kỹ năng leo trèo để đối phó với kẻ thù và những cạm bẫy trên hành trình. Dọc đường đi, Nathan gặp gỡ nhiều thợ săn kho báu khác, trong đó có cô nàng nóng bỏng Chloe Frazer (Sophia Taylor Ali).",
+          "popularity": 1303.326,
+          "poster_path": "/ix6JiJNOQt05IDhmaRlgWmvpB6W.jpg",
+          "release_date": "2022-02-10",
+          "title": "Thợ Săn Cổ Vật",
+          "video": false,
+          "vote_average": 7.1,
+          "vote_count": 2578
+        }
+
+    ]

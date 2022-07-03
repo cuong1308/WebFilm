@@ -1,0 +1,7 @@
+.film-main-details {
+   &-container {
+    display: grid;
+    grid-template-columns: 850px 280px;
+    gap: 0 10px;
+   }
+}

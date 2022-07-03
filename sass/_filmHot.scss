@@ -1,0 +1,58 @@
+.filmHot {
+    position: relative;
+
+    &-item {
+       
+    }
+
+    &-image {
+        img {
+            @include box(180px, 227px);
+            // object-fit: cover;
+            background-position-y:50px ;
+        }
+    }
+    &-name {
+        position: absolute;
+        width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+                line-clamp: 1; 
+        -webkit-box-orient: vertical;
+        z-index: 1;
+        color: white;
+        bottom: 0;
+        padding: 0 15px;
+        background: rgba(0, 0, 0, 0.7);
+        text-align: center;
+        height: 36px;
+        line-height: 36px;
+        font-size: 12px;
+        // left: 15px;
+  
+    }
+
+    &-title {
+        font-size: 25px;
+        padding: 15px 6px;
+        color: #da966e;
+        margin-left: 20px;
+    }
+}
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    font-size: 80px;
+    color: white;
+    z-index: 1;
+    transform: translate(0px, 50%);
+    background: rgba($color: #000000, $alpha: 0.2);
+}
+
+.slick-next {
+    top: 0;
+    right: 35px;
+}
