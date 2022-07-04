@@ -1,7 +1,79 @@
 .film-main-details {
    &-container {
-    display: grid;
-    grid-template-columns: 850px 280px;
-    gap: 0 10px;
+      display: grid;
+      grid-template-columns: 850px 280px;
+      gap: 0 10px;
+      position: relative;
+   }
+}
+
+.filmDetail {
+   &-container {
+      display: flex;
+
+      position: relative;
+      gap: 25px;
+   }
+
+   &-image {}
+
+   &-button {
+      position: absolute;
+      /* width: 500px; */
+      left: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      width: 300px;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px 0px;
+      gap: 0 15px;
+   }
+
+   &-play {
+      pointer-events: none;
+      background: #373A6D;
+      border: transparent;
+   }
+
+   .button--trailer {
+
+      &:focus,
+      &:hover {
+         background: #f87c73;
+
+      }
+   }
+
+   &-name {
+      color: #ff9658;
+      padding: 5px 0 0 0;
+      margin: 0 0 5px 0;
+      font-size: 30px;
+      font-weight: bold;
+      line-height: calc(35/30);
+      max-width: 450px;
+   }
+   &-originalName{
+      font-size: 12px;
+      color: #999;
+      display: block;
+      font-weight: 300;
+   }
+   &-infor {
+      gap : 10px;
+      display: flex;
+      flex-direction: column;
+   }
+   &-status {
+      span {
+         font-weight: 300;
+         padding: 5px 10px;
+         background: rgba($color:#ff8246 , $alpha: 0.5);
+         border-radius: 5px;
+         font-weight: bold;
+      }
    }
 }

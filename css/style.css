@@ -29,6 +29,20 @@ body {
   background: #1a1a1a !important;
   font-weight: 400;
   width: 100%;
+  color: white;
+}
+
+.button {
+  background-color: #d9534f;
+  border: 1px solid #d43f3a;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 8px 10px;
+  margin: 0 5px;
+  border-radius: 0;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .header {
@@ -183,6 +197,99 @@ body {
   display: grid;
   grid-template-columns: 850px 280px;
   gap: 0 10px;
+  position: relative;
+}
+
+.filmDetail-container {
+  display: flex;
+  position: relative;
+  gap: 25px;
+}
+.filmDetail-button {
+  position: absolute;
+  /* width: 500px; */
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px 0px;
+  gap: 0 15px;
+}
+.filmDetail-play {
+  pointer-events: none;
+  background: #373A6D;
+  border: transparent;
+}
+.filmDetail .button--trailer:focus, .filmDetail .button--trailer:hover {
+  background: #f87c73;
+}
+.filmDetail-name {
+  color: #ff9658;
+  padding: 5px 0 0 0;
+  margin: 0 0 5px 0;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.1666666667;
+  max-width: 450px;
+}
+.filmDetail-originalName {
+  font-size: 12px;
+  color: #999;
+  display: block;
+  font-weight: 300;
+}
+.filmDetail-infor {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.filmDetail-status span {
+  font-weight: 300;
+  padding: 5px 10px;
+  background: rgba(255, 130, 70, 0.5);
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.modal-trailer {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #000;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
