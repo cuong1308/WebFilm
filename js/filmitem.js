@@ -17,7 +17,7 @@ fetch(
     return response.json();
   })
 
-  .then((data) => showTrailer(data));
+  .then((data) => setTimeout(showTrailer(data), 5000));
 
 const detailsFilm = (data, id) => {
   console.log(data);
@@ -37,24 +37,29 @@ const detailsFilm = (data, id) => {
             data.video === false ? "Sắp ra mắt" : "Đang diễn ra"
           }</span></h4>
           <h4 class="filmDetail-genres">
-            Thế loại: 
-            ${data.genres.map((item) => item.name)}
+            Thể loại: 
+              <span >
+              ${data.genres.map((item) => " " + item.name.slice(5) + " ")}
+              </span>
           </h4>
           <h4 class="filmDetail-productioncountry">
             Nước sản xuất: 
-            ${data.production_countries[0].name}
+           <span> ${data.production_countries[0].name}</span>
           </h4>
-          <h4 class="filmDetail-originalName">
+          <h4 class="filmDetail-date">
             Năm sản xuất:
-            ${data.release_date.slice(0, 4)}
+            <span>${data.release_date.slice(0, 4)}</span>
           </h4>
           <h4 class="filmDetail-vote">
           Điểm:
-            ${data.vote_average}/10
+           <span> ${data.vote_average}/10</span>
           </h4>
           <h4 class="filmDetail-votecount">
           Số lượt đánh giá:
-            ${data.vote_count} 
+            <span>  ${data.vote_count} </span>
+          </h4>
+          <h4 class="filmDetail-review"> Nội dung phim: 
+            <span>${data.overview}</span>
           </h4>
       </div>
       <div class="filmDetail-button">    
@@ -79,8 +84,8 @@ const detailsFilm = (data, id) => {
     var iframe = document.querySelector("iframe");
     var video = document.querySelector("video");
     if (iframe) {
-      var iframeSrc = iframe.src;
-      iframe.src = iframeSrc;
+      // var iframeSrc = iframe.src;
+      // iframe.src = iframeSrc;
     }
     if (video) {
       video.pause();

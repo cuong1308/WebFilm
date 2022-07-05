@@ -253,6 +253,12 @@ body {
   background: rgba(255, 130, 70, 0.5);
   border-radius: 5px;
   font-weight: bold;
+  margin-left: 5px;
+}
+.filmDetail-genres span, .filmDetail-productioncountry span, .filmDetail-date span, .filmDetail-vote span, .filmDetail-votecount span, .filmDetail-review span {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.7857142857;
 }
 
 .modal-trailer {

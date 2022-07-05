@@ -29,10 +29,13 @@ const display = (data)=> {
     li.setAttribute("class", "filmHot-item") ; 
     filmHotList.appendChild(li)
    li.innerHTML =`
-    <div class="filmHot-image"> 
+   <a href="film/${data[i].id}">
+      <div class="filmHot-image"> 
       <img src="https://image.tmdb.org/t/p/w300/${data[i].poster_path}"></img>  
-    </div>
-    <div class="filmHot-name">${data[i].title}</div>
+      </div>
+      <div class="filmHot-name">${data[i].title}</div>
+   </a>
+   
    `
   }
     // film Hot list 

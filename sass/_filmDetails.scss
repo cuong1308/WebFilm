@@ -74,6 +74,14 @@
          background: rgba($color:#ff8246 , $alpha: 0.5);
          border-radius: 5px;
          font-weight: bold;
+         margin-left: 5px;
+      }
+   }
+   &-genres ,&-productioncountry , &-date, &-vote , &-votecount, &-review{
+      span {
+         font-weight: 300;
+         font-size: 14px;
+         line-height: calc(25/14);
       }
    }
 }
