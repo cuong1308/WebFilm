@@ -13,6 +13,10 @@ a {
   color: white !important;
 }
 
+strong {
+  font-weight: bold !important;
+}
+
 .wrapper {
   width: 1440px;
   margin: 0 auto;
@@ -47,6 +51,7 @@ body {
 
 .header {
   width: 100%;
+  color: white;
 }
 .header-top {
   background: #333;
@@ -55,6 +60,82 @@ body {
 .header-nav {
   background: #2d2d2d;
   height: 55px;
+}
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.header-top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-auth {
+  display: flex;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0 10px;
+}
+.header-auth-work {
+  display: flex !important;
+  flex-direction: row;
+  gap: 0 35px;
+}
+.header-right {
+  display: flex;
+  gap: 0 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .form__group {
+  padding: 16px 0;
+  width: 50%;
+}
+.header .search-input {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 15px;
+  color: white;
+  padding: 7px 10px;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.header .search-input::placeholder {
+  color: transparent;
+  font-size: 16px;
+}
+.header .search-input:placeholder-shown ~ .form__label {
+  font-size: 16px;
+  cursor: text;
+  top: 20px;
+}
+.header .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 12px;
+  color: #9b9b9b;
+  padding-left: 15px;
+}
+.header-name {
+  position: relative;
+}
+.header .dropdown-menu {
+  position: absolute;
+  width: 148px;
+  height: 90px;
+  background: white;
+  color: black;
+}
+.header-name:hover .dropdown-menu {
+  display: block;
 }
 
 .filmHot {
@@ -202,8 +283,14 @@ body {
 
 .filmDetail-container {
   display: flex;
+  height: 450px;
   position: relative;
   gap: 25px;
+}
+.filmDetail-image img {
+  height: 450px;
+  width: 300px;
+  object-fit: contain;
 }
 .filmDetail-button {
   position: absolute;
@@ -296,6 +383,80 @@ body {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.auth {
+  height: 100vh;
+  margin-right: 0px !important;
+  margin-right: 0px !important;
+}
+.auth a {
+  color: black !important;
+}
+.auth .row {
+  padding: 0 !important;
+}
+.auth .sidenav {
+  position: relative;
+}
+.auth .main {
+  background: white;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.auth .btn-auth {
+  display: flex;
+  gap: 0 15px;
+  margin: 15px 0px;
+}
+.auth .btnLogin, .auth .btnSigup {
+  padding: 10px 0;
+}
+.auth .btnLogin {
+  border-bottom: 1px solid black;
+}
+.auth .marverl {
+  max-width: 468px;
+  position: absolute;
+  left: 0;
+}
+.auth .logo {
+  position: absolute;
+  transform: translate(-54px, 38px);
+  right: 0;
+}
+.auth .register-form {
+  display: none;
+}
+.auth .animation-spiderman {
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+.auth .animation-spiderman img {
+  width: 100px;
+}
+.auth .login-form .login-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+.auth .login-form .login-content {
+  font-size: 11px;
+  font-weight: 300;
 }
 
 /*# sourceMappingURL=style.css.map */

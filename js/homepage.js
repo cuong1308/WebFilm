@@ -1,4 +1,3 @@
-
 const apiFilm = "./data/film.json";
 const img = (poster_path) => `https://image.tmdb.org/t/p/w500/${poster_path}`;
 var filmItem = document.querySelector(".film-list");
@@ -54,6 +53,41 @@ const displayFilmHot = () => {
   });
 };
 
+const displayAccount = () => {
+  var auth = document.querySelector(".header-auth");
+  var authWork = document.querySelector(".header-auth-work");
+  var account = document.querySelector(".header-account");
+  var login = JSON.parse(localStorage.getItem("login"));
+  console.log(account);
+  if (login) {
+    auth.style.display = "none";
+    authWork.style.display = "block";
+
+    const name = document.createElement("div");
+    const dropdown = document.createElement("div");
+    name.setAttribute("class", "header-name");
+    dropdown.setAttribute("class", "header-dropdown");
+    name.innerHTML = `
+    <i class="fa-solid fa-user-tie"></i>
+      ${login.fullname}
+      <ul className="dropdown-menu">
+      <li className="dropdown-item">
+        Đăng xuất
+      </li>
+  </ul>
+    `;
+    // dropdown.innerHTML = `
+    //   <ul className="dropdown-menu">
+    //       <li className="dropdown-item">
+    //         Đăng xuất
+    //       </li>
+    //   </ul>
+    // `;
+    account.appendChild(name);
+    account.appendChild(dropdown);
+    console.log(account);
+  }
+};
 const slickSlide = () => {
   $(".filmHot-list").slick({
     infinite: true,
@@ -92,5 +126,17 @@ const slickSlide = () => {
     ],
   });
 };
+
+const logout = () => {
+  const btnLogout = document.querySelector(".header-logout");
+  btnLogout.addEventListener("click", () => {
+    localStorage.removeItem("login");
+    window.location.reload();
+  });
+};
+
 displayFilmHot();
 displayFilm();
+displayAccount();
+logout();
+// backgroundLogin() ;

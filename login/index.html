@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous">
+    </head>
+    <body>
+        <section class="auth row">
+            <div class="sidenav col-md-6">
+                <div class="login-main-image">
+                    <img srcset="../assets/motchill.png 2x" alt="" class="logo">
+                    <img class="marverl" src="../assets/marvel.png" alt="">
+                </div>
+                <div class="login-main-text">
+
+                </div>
+            </div>
+            <div class="main col-md-6">
+                <div class="animation-spiderman">
+                    <img srcset="../assets/spiderman.png 2x" alt="">
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="login-form">
+
+                        <form onsubmit="login();return false;">
+                            <h3 class="login-title">
+                                Đăng nhập
+                            </h3>
+                            <h5 class="login-content">
+                                <strong>Motchill</strong> trải nghiệm những bộ
+                                phim chất
+                                lượng nhât !
+                            </h5>
+                            <div class="form-group">
+                                <label>Tên đăng nhập: </label>
+                                <input type="text" class="form-control"
+                                    placeholder="Nhập tài khoản" id="username" value="">
+                            </div>
+                            <div class="form-group">
+                                <label>Mật khẩu</label>
+                                <input type="password" class="form-control"
+                                    placeholder="Mật khẩu" id="password">
+                            </div>
+                            <div class="forgot-password">
+                                Quên mật khẩu
+                            </div>
+                            <button id="btnLogin" type="submit" class="btn
+                                btn-black">Đăng nhập</button>
+                            <div class="register-page">
+                                Bạn chưa có tài khoản ?<a
+                                    href="../sigup/index.html">Đăng ký ngay</a>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
+<script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="../js/login.js" type="text/javascript">
+</script>

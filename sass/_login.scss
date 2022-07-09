@@ -1,0 +1,76 @@
+.auth {
+    a{
+        color: black !important;
+    }
+    height: 100vh;
+    margin-right: -0px !important;
+    margin-right: 0px !important;
+
+    .row {
+        padding: 0 !important;
+
+    }
+
+    .sidenav {
+        position: relative;
+    }
+
+    .main {
+        background: white;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .btn-auth {
+        display: flex;
+        gap: 0 15px;
+        margin: 15px 0px;
+
+    }
+    .btnLogin , .btnSigup {
+        // border-bottom: 1px solid black;
+        padding: 10px 0;
+    }
+    .btnLogin {
+        border-bottom: 1px solid black;
+    }
+
+    .marverl {
+        max-width: 468px;
+        position: absolute;
+        left: 0;
+    }
+
+    .logo {
+        position: absolute;
+        transform: translate(-54px, 38px);
+        right: 0;
+    }
+    .register-form {
+        display: none;
+    }
+    .animation-spiderman {
+        position: absolute;
+        top: 0;
+        right: 15px;
+
+        img {
+
+            width: 100px;
+
+        }
+    }
+    .login-form {
+        .login-title {
+            font-size: 30px; 
+            font-weight: bold;
+        }
+        .login-content{
+            font-size: 11px;
+            font-weight: 300;
+        }
+    }
+
+}

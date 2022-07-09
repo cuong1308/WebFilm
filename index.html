@@ -13,7 +13,10 @@
             href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
           />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-
+        <link rel="stylesheet"
+            href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css" />
+            <link rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     </head>
     <body>
         <header>
@@ -21,7 +24,50 @@
                
                     <div class="header-container">
                         <div class="header-top">
-                            <div class="container"></div>
+                            <div class="container">
+                                <div class="header-top-container">
+                                  <div class="header-logo">
+                                    <img srcset="./assets/motchill.png 2x" alt="">
+                                  </div>
+                                  <div class="form__group field">
+                                    <input type="input" class="search-input" placeholder="Tìm kiếm" name="search" id='name' required />
+                                    <label for="name" class="form__label">Nhập tên phim cần tìm</label>
+                                  </div>
+                                  <!-- <input type="text" placeholder="Search" class="search-input"> -->
+                                      <div class="header-right">
+                                         
+                                          <div class="header-auth">
+                                            <div class="header-login">
+                                               <a href="login/index.html" class="login">
+                                                 Đăng nhập
+                                               </a>
+                                            </div>
+                                            <div class="header-register">
+                                                <a href="sigup/index.html" class="register">
+                                                  Đăng ký 
+                                                </a>
+                                          </div>
+                                          
+                                          
+                                        </div>
+                                        <div class="header-auth-work" style="display:none !important">
+                                          <div class="header-bookmark">
+                                            <i class="fa-solid fa-bookmark"></i>
+                                            Bookmark
+                                          </div>
+                                          <div class="header-account">
+                                              
+                                          </div>
+                                          
+                                        
+                                         <!-- <div class="header-logout">
+                                           Đăng xuất
+                                         </div> -->
+                                        </div>
+                                      </div>
+                                  </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="header-nav">
                             <div class="container">
@@ -34,7 +80,7 @@
         </header>
         <main>
 
-            <section class="filmHot reveal" >
+            <section class="filmHot " >
 
                 <div class="container">
                     <div class="filmHot-container">
@@ -94,9 +140,19 @@
   <script src="./js/FilmTrend.js" type="module"></script>
   <script src="./js/loading.js" type="module"></script>
   <script defer >
-
+  
   
    
     </script>
+<script> 
+  $(".search-input").on("keyup", function () {
+  var value = $(this).val().toLowerCase();
+  $(".film-item").filter(function () {
+    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    console.log($(this));
+  });
+});
+</script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
 <script src="./js/homepage.js" type="module"></script>

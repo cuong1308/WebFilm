@@ -10,12 +10,18 @@
 .filmDetail {
    &-container {
       display: flex;
-
+      height: 450px;
       position: relative;
       gap: 25px;
    }
 
-   &-image {}
+   &-image {
+      img {
+         height: 450px;
+         width: 300px;
+         object-fit: contain;
+      }
+   }
 
    &-button {
       position: absolute;
