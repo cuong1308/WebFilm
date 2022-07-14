@@ -38,12 +38,12 @@
                                          
                                           <div class="header-auth">
                                             <div class="header-login">
-                                               <a href="login/index.html" class="login">
+                                               <a href="login/index.html" class="login" class="btnLogin">
                                                  Đăng nhập
                                                </a>
-                                            </div>
+                                            </div>        
                                             <div class="header-register">
-                                                <a href="sigup/index.html" class="register">
+                                                <a href="sigup/index.html" class="register" class="btnRegister">
                                                   Đăng ký 
                                                 </a>
                                           </div>
@@ -56,13 +56,37 @@
                                             Bookmark
                                           </div>
                                           <div class="header-account">
-                                              
+                                            <div class="header-account-name">
+                                              <img srcset='../assets/avt.png 2x'style="width:50px ; height:50px"></img>
+                                              </div>
                                           </div>
                                           
-                                        
-                                         <!-- <div class="header-logout">
-                                           Đăng xuất
-                                         </div> -->
+                                          <div class="dropdown">
+                                           
+                                              <i class="fa-solid fa-angle-down dropbtn"></i>
+                                  
+                                            <div id="myDropdown" class="dropdown-content">
+                                              <div class="account-name">
+
+                                              </div>
+                                              <div> Tài khoản</div>
+                                              <div> Cài đặt</div>
+                                              <div> Trợ giúp</div>
+                                              <div class="header-logout">
+                                                Đăng xuất
+                                                
+                                               </div>
+                                               
+                                            </div>
+                                          </div>
+                                          <!-- <div class="dropdown">
+                                            <button class="dropbtn">Dropdown</button>
+                                            <div id="myDropdown" class="dropdown-content">
+                                              <a href="#home">Home</a>
+                                              <a href="#about">About</a>
+                                              <a href="#contact">Contact</a>
+                                            </div>
+                                          </div> -->
                                         </div>
                                       </div>
                                   </div>
@@ -80,17 +104,17 @@
         </header>
         <main>
 
-            <section class="filmHot " >
+            <section class="filmBanner " >
 
-                <div class="container">
-                    <div class="filmHot-container">
-                        <div class="filmHot-title">
+                
+              <div class="filmBanner-container">
+                        <!-- <div class="filmHot-title">
                             PHIM HOT
-                        </div>
-                        <ul class="filmHot-list">
-                        </ul>
-                    </div>
-                </div>
+                        </div> -->
+                <ul class="filmBanner-list">
+                </ul>
+              </div>
+
             </section>
             <section class="film-main reveal ">
                 <div class="container">
@@ -118,9 +142,21 @@
                     </div>
                 </div>
             </section>
+            <section class="tv">
+              <div class="container">
+                <div class="tv-container">
+                  <div class="tv-title">
+                     CHƯƠNG TRÌNH TRUYỀN HÌNH PHỔ BIẾN
+                  </div>
+                  <ul class="tv-list">
+
+                  </ul>
+                </div>
+              </div>
+            </section>
         </main>
         <footer>
-   
+          
         </footer>
     </body>
 </html>
@@ -139,20 +175,20 @@
   ></script>
   <script src="./js/FilmTrend.js" type="module"></script>
   <script src="./js/loading.js" type="module"></script>
-  <script defer >
-  
-  
-   
-    </script>
+  <script src="./js/dropdown.js" type="module"></script>
 <script> 
-  $(".search-input").on("keyup", function () {
-  var value = $(this).val().toLowerCase();
-  $(".film-item").filter(function () {
+  $(".search-input").on("keypress", function () {
+    if(event.key === "Enter") {
+      var value = $(this).val().toLowerCase();
+    $(".film-item").filter(function () {
     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     console.log($(this));
   });
+    }
+  
 });
 </script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script src="./js/popularfilm.js" type="module"></script>
 
 <script src="./js/homepage.js" type="module"></script>

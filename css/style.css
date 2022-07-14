@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Enriqueta&family=Inter:wght@300;400;500;700;800&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -34,6 +35,7 @@ body {
   font-weight: 400;
   width: 100%;
   color: white;
+  font-family: "Inter", sans-serif;
 }
 
 .button {
@@ -47,6 +49,21 @@ body {
   width: 100px;
   text-align: center;
   cursor: pointer;
+}
+
+.error {
+  display: block;
+  font-size: 11px;
+  margin: 3px 15px;
+  color: #ff9658;
+}
+
+.form-group {
+  margin-bottom: 5px !important;
+}
+
+label {
+  font-weight: 500;
 }
 
 .header {
@@ -82,13 +99,25 @@ body {
 .header-auth-work {
   display: flex !important;
   flex-direction: row;
-  gap: 0 35px;
 }
 .header-right {
   display: flex;
   gap: 0 30px;
   justify-content: space-between;
   align-items: center;
+}
+.header-account {
+  margin: 0 0 0 30px;
+}
+.header-account-name img {
+  border: 2px solid #da966e;
+  border-radius: 50px;
+  margin-right: 5px;
+  background: white;
+  padding: 3px;
+}
+.header-bookmark {
+  margin: auto;
 }
 .header .form__group {
   padding: 16px 0;
@@ -126,71 +155,93 @@ body {
 }
 .header-name {
   position: relative;
+  display: flex;
+  gap: 15px;
 }
-.header .dropdown-menu {
+.header-name .dropdown-menu {
   position: absolute;
   width: 148px;
   height: 90px;
   background: white;
   color: black;
+  top: 0;
+}
+.header-name .dropdown-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .header-name:hover .dropdown-menu {
   display: block;
 }
 
-.filmHot {
-  position: relative;
+.filmBanner-list {
+  margin-left: -32px;
+  margin-top: 40px;
 }
-.filmHot-image img {
-  width: 180px;
-  height: 227px;
-  background-position-y: 50px;
-}
-.filmHot-name {
-  position: absolute;
-  width: 180px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
-  -webkit-box-orient: vertical;
-  z-index: 1;
-  color: white;
-  bottom: 0;
-  padding: 0 15px;
-  background: rgba(0, 0, 0, 0.7);
-  text-align: center;
-  height: 36px;
-  line-height: 36px;
-  font-size: 12px;
-}
-.filmHot-title {
-  font-size: 25px;
-  padding: 15px 6px;
+.filmBanner-name {
+  margin: 5px 0;
   color: #da966e;
-  margin-left: 20px;
 }
 
 .slick-prev,
 .slick-next {
-  position: absolute;
-  font-size: 80px;
-  color: white;
-  z-index: 1;
-  transform: translate(0px, 50%);
-  background: rgba(0, 0, 0, 0.2);
+  display: none !important;
 }
 
-.slick-next {
-  top: 0;
-  right: 35px;
+.slick-active button {
+  background: #da966e;
+}
+
+.slick-dots {
+  display: flex;
+  display: flex;
+  gap: 0 20px;
+  justify-content: center;
+  margin-top: 35px;
+}
+.slick-dots li > button {
+  color: transparent;
+  width: 5px;
+  height: 5px;
+  border: 0;
+  border-radius: 50px;
+}
+
+.slider {
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+.slick-track {
+  padding-top: 53px;
+  padding-bottom: 53px;
+}
+
+.slick-slide {
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  color: transparent;
+}
+
+.slick-slide:not(.slick-current) {
+  filter: brightness(0.5);
+}
+
+.slick-slide.slick-current {
+  transform: scale(1.35);
+  position: relative;
+  z-index: 1;
+}
+
+.slick-slide img {
+  width: 100%;
 }
 
 .film-main-container {
   display: grid;
   grid-template-columns: 850px 280px;
-  gap: 0 10px;
 }
 .film-main .filmUpdate .film-item {
   position: relative;
@@ -202,7 +253,8 @@ body {
 .film-main .filmUpdate .film-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, 170px) 20%;
-  gap: 15px 0;
+  gap: 25px;
+  padding: 0 40px;
 }
 .film-main .filmUpdate-title {
   font-size: 25px;
@@ -239,7 +291,7 @@ body {
 }
 .film-main .filmTrend-infor {
   display: flex;
-  gap: 5px;
+  gap: 2px;
   flex-direction: column;
 }
 .film-main .filmTrend-image img {
@@ -281,6 +333,9 @@ body {
   position: relative;
 }
 
+.filmDetail {
+  margin: 40px 10px;
+}
 .filmDetail-container {
   display: flex;
   height: 450px;
@@ -423,7 +478,8 @@ body {
   gap: 0 15px;
   margin: 15px 0px;
 }
-.auth .btnLogin, .auth .btnSigup {
+.auth .btnLogin,
+.auth .btnSigup {
   padding: 10px 0;
 }
 .auth .btnLogin {
@@ -439,9 +495,6 @@ body {
   transform: translate(-54px, 38px);
   right: 0;
 }
-.auth .register-form {
-  display: none;
-}
 .auth .animation-spiderman {
   position: absolute;
   top: 0;
@@ -450,13 +503,127 @@ body {
 .auth .animation-spiderman img {
   width: 100px;
 }
-.auth .login-form .login-title {
+.auth .login-form form,
+.auth .register-form form {
+  padding: 20px 10px;
+}
+.auth .login-form .login-title,
+.auth .register-form .login-title {
   font-size: 30px;
   font-weight: bold;
 }
-.auth .login-form .login-content {
+.auth .login-form .login-content,
+.auth .register-form .login-content {
   font-size: 11px;
   font-weight: 300;
+  margin-bottom: 20px;
+}
+.auth .login-form .register-page,
+.auth .register-form .register-page {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+.auth .login-form .register-page a,
+.auth .register-form .register-page a {
+  font-weight: bold;
+}
+
+.error-username,
+.error-password,
+.error-email,
+.error-fullname,
+.error-phone,
+.error-confirmPassword {
+  display: block;
+}
+
+.forgot-password {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+  font-weight: 300;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#btnLogin,
+#btnRegister {
+  margin-top: 10px;
+  width: 100%;
+  background: #ff9658 !important;
+  color: white;
+  font-weight: bold;
+}
+
+.dropbtn {
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin: auto;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 200px;
+  right: 0;
+  background: #2d2d2d;
+  padding: 20px;
+}
+.dropdown-content > div:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+.tv-title {
+  font-size: 25px;
+  padding: 15px 6px;
+  color: #da966e;
+  margin-left: 20px;
+  font-weight: bold;
+}
+.tv-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  gap: 20px;
+}
+.tv-item img {
+  width: 250px;
+  object-fit: cover;
+}
+.tv-item-name {
+  color: white;
+  text-align: center;
+}
+.tv-item-none {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

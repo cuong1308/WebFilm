@@ -32,32 +32,51 @@ const displayFilm = () => {
   });
 };
 
-const displayFilmHot = () => {
-  const filmHotList = document.querySelector(".filmHot-list");
+// const displayFilmHot = () => {
+//   const filmHotList = document.querySelector(".filmHot-list");
+//   getFilm((data) => {
+//     for (var i = 0; i < data.length; i++) {
+//       var li = document.createElement("li");
+//       li.setAttribute("class", "filmHot-item");
+//       filmHotList.appendChild(li);
+//       li.innerHTML = `
+//        <a href="film/${data[i].id}">
+//           <div class="filmHot-image">
+//           <img src=${img(data[i].poster_path)}></img>
+//           </div>
+//           <div class="filmHot-name">${data[i].title}</div>
+//        </a>
+
+//        `;
+//     }
+//     slickSlide();
+//   });
+// };
+function displayPosterShow() {
+  const filmHotList = document.querySelector(".filmBanner-list");
   getFilm((data) => {
-    for (var i = 0; i < data.length; i++) {
+    for (var i = 3; i <10; i++) {
       var li = document.createElement("li");
-      li.setAttribute("class", "filmHot-item");
+      li.setAttribute("class", "filmBanner-item");
       filmHotList.appendChild(li);
       li.innerHTML = `
-       <a href="film/${data[i].id}">
-          <div class="filmHot-image">
-          <img src=${img(data[i].poster_path)}></img>
-          </div>
-          <div class="filmHot-name">${data[i].title}</div>
-       </a>
-    
-       `;
+        <a href="film/${data[i].id}">
+            <div class="filmBanner-image">
+            <img src=${img(data[i].backdrop_path)}></img>
+            <h5 class="filmBanner-name">${data[i].original_title}</h5>
+           </div>
+        </a>
+        `;
     }
-    slickSlide();
+    slickSlideBanner()
   });
-};
-
+}
 const displayAccount = () => {
   var auth = document.querySelector(".header-auth");
   var authWork = document.querySelector(".header-auth-work");
   var account = document.querySelector(".header-account");
   var login = JSON.parse(localStorage.getItem("login"));
+  var accountName = document.querySelector(".account-name");
   console.log(account);
   if (login) {
     auth.style.display = "none";
@@ -67,27 +86,57 @@ const displayAccount = () => {
     const dropdown = document.createElement("div");
     name.setAttribute("class", "header-name");
     dropdown.setAttribute("class", "header-dropdown");
-    name.innerHTML = `
-    <i class="fa-solid fa-user-tie"></i>
-      ${login.fullname}
-      <ul className="dropdown-menu">
-      <li className="dropdown-item">
-        Đăng xuất
-      </li>
-  </ul>
+    accountName.innerHTML = `
+    ${login.fullname ? login.fullname : "Vô danh"}
     `;
-    // dropdown.innerHTML = `
-    //   <ul className="dropdown-menu">
-    //       <li className="dropdown-item">
-    //         Đăng xuất
-    //       </li>
-    //   </ul>
-    // `;
-    account.appendChild(name);
-    account.appendChild(dropdown);
-    console.log(account);
+
+    const logout = () => {
+      const btnLogout = document.querySelector(".header-logout");
+      btnLogout.addEventListener("click", () => {
+        localStorage.removeItem("login");
+        window.location.reload();
+      });
+    };
+    logout();
   }
 };
+const slickSlideBanner = () =>{
+  $('.filmBanner-list').slick({
+    centerMode: true,
+    centerPadding: "0px",
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: true,
+    focusOnSelect: true ,
+    autoplaySpeed: 2000,
+    autoplay: true,
+    prevArrow:
+      '<div class="slick-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>',
+    nextArrow:
+      '<div class="slick-next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 1,
+          
+        }
+      }
+    ]
+  });
+}
 const slickSlide = () => {
   $(".filmHot-list").slick({
     infinite: true,
@@ -95,6 +144,7 @@ const slickSlide = () => {
     slidesToShow: 5,
     slidesToScroll: 4,
     autoplaySpeed: 1000,
+    autoplay: true,
     prevArrow:
       '<div class="slick-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>',
     nextArrow:
@@ -106,7 +156,6 @@ const slickSlide = () => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -127,16 +176,9 @@ const slickSlide = () => {
   });
 };
 
-const logout = () => {
-  const btnLogout = document.querySelector(".header-logout");
-  btnLogout.addEventListener("click", () => {
-    localStorage.removeItem("login");
-    window.location.reload();
-  });
-};
-
-displayFilmHot();
+// displayFilmHot();
 displayFilm();
 displayAccount();
-logout();
+// logout();
+displayPosterShow();
 // backgroundLogin() ;

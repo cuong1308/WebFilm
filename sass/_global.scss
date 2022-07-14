@@ -1,24 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Enriqueta&family=Inter:wght@300;400;500;700;800&display=swap');
+
 .wrapper {
     width: 1440px;
-    margin:  0 auto;
+    margin: 0 auto;
 }
 
 .container {
     max-width: 1160px;
     margin: 0 auto;
-    padding: 0 15px ;
+    padding: 0 15px;
     position: relative;
 }
+
 body {
     background: $background-color !important;
     font-weight: 400;
     width: 100%;
-    color :white ;
+    color: white;
+    font-family: 'Inter', sans-serif;
 }
+
 .button {
     // padding: 15px; 
     background-color: #d9534f;
-    border:1px solid #d43f3a;
+    border: 1px solid #d43f3a;
     font-size: 16px;
     color: #ffffff;
     padding: 8px 10px;
@@ -27,4 +32,19 @@ body {
     width: 100px;
     text-align: center;
     cursor: pointer;
+}
+
+.error {
+    display: block;
+    font-size: 11px;
+    margin: 3px 15px;
+    color: #ff9658;
+}
+
+.form-group {
+    margin-bottom: 5px !important;
+}
+
+label {
+    font-weight: 500;
 }

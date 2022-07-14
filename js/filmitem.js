@@ -4,7 +4,7 @@ const key_api = "d8f8edbbdc27ab9a16942772f29aa16c";
 const apiDetailFilm = `https://api.themoviedb.org/3/movie/${id}}?api_key=${key_api}&language=vi`;
 const apiTrendFilm = `https://api.themoviedb.org/3/trending/all/day?api_key=${key_api}&language=vi`;
 const apiTrailerFilm = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${key_api}&language=en`;
-const img = (poster_path) => `https://image.tmdb.org/t/p/w500/${poster_path}`;
+const img = (poster_path) => `https://image.tmdb.org/t/p/original/${poster_path}`;
 const getTrendFilm = (callback) => {
   fetch(apiTrendFilm)
     .then((response) => {
@@ -91,6 +91,7 @@ const detailsFilm = () => {
       <div id="myModal" class="modal-trailer">
          <!-- Modal content -->
           <div class="modal-content">
+          <img class="modal-bg" src=${img(data.backdrop_path)} style="width:100%"></img>
             <span class="close">&times;</span>
          </div>
       </div>

@@ -1,7 +1,8 @@
 .auth {
-    a{
+    a {
         color: black !important;
     }
+
     height: 100vh;
     margin-right: -0px !important;
     margin-right: 0px !important;
@@ -29,10 +30,13 @@
         margin: 15px 0px;
 
     }
-    .btnLogin , .btnSigup {
+
+    .btnLogin,
+    .btnSigup {
         // border-bottom: 1px solid black;
         padding: 10px 0;
     }
+
     .btnLogin {
         border-bottom: 1px solid black;
     }
@@ -48,9 +52,11 @@
         transform: translate(-54px, 38px);
         right: 0;
     }
+
     .register-form {
-        display: none;
+        // display: none;
     }
+
     .animation-spiderman {
         position: absolute;
         top: 0;
@@ -62,15 +68,64 @@
 
         }
     }
-    .login-form {
+
+    .login-form,
+    .register-form {
+        form {
+            padding: 20px 10px;
+
+        }
+
         .login-title {
-            font-size: 30px; 
+            font-size: 30px;
             font-weight: bold;
         }
-        .login-content{
+
+        .login-content {
             font-size: 11px;
             font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .register-page {
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+
+            a {
+                font-weight: bold;
+            }
         }
     }
 
 }
+
+.error-username,
+.error-password,
+.error-email,
+.error-fullname,
+.error-phone,
+.error-confirmPassword {
+    display: block;
+}
+
+.forgot-password {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15px;
+    font-weight: 300;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+// btn 
+#btnLogin,
+#btnRegister {
+    margin-top: 10px;
+    width: 100%;
+    background: #ff9658 !important;
+    color: white;
+    font-weight: bold;
+}
+
+// register
