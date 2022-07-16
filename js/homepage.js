@@ -26,7 +26,6 @@ const displayFilm = () => {
                           <a href="film/${data[i].id}">
                               <h2 class="filmUpdate-name">${data[i].title}</h2>
                           </a>
-
                       </div>`;
     }
   });

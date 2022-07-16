@@ -1,0 +1,58 @@
+.footer {
+    background: rgb(45, 45, 45);
+    padding: 30px 0 60px;
+    color: white;
+    margin-top: 50px;
+
+    &-container {
+        display: flex;
+        gap: 50px;
+    }
+
+    &-logo {
+        margin: auto;
+    }
+
+    &-content {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .phim-moi,
+    .phim-hay,
+    .phim-hot,
+    .help,
+    .infor {
+        text-align: center;
+
+        &-list {
+            padding: 0;
+        }
+
+        &-item {
+            margin-top: 10px;
+            text-align: start;
+
+            a {
+                color: rgba(132, 132, 132, 0.8) !important;
+                font-weight: 400;
+            }
+
+        }
+
+        &-title {
+            font-weight: bold;
+        }
+     
+    }
+    &-logo {
+        color: rgba(132, 132, 132, 0.8) !important;
+        font-weight: 400;
+        font-size: 13px;
+        .author {
+            margin-top: 10px;
+        }
+    }
+
+}

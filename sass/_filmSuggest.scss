@@ -1,0 +1,28 @@
+.filmSuggest-list {
+    width: 850px;
+    height: 225px;
+}
+
+.filmSuggest-item {
+    width: 170px !important;
+
+    img {
+        width: 160px;
+
+    }
+
+    .slick-slider .slick-list {
+        height: auto;
+        padding: 0 !important;
+    } 
+
+    .slick-track {
+        display: flex !important;
+        gap: 26px;
+    }
+
+    .slick-prev,
+    .slick-next {
+        position: absolute !important;
+    }
+}

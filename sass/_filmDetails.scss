@@ -10,7 +10,8 @@
 .filmDetail {
 
    margin: 40px 10px;
-
+   display: grid; 
+   grid-template-rows: 555px;
    &-container {
       display: flex;
       height: 450px;
@@ -27,6 +28,7 @@
    }
 
    &-button {
+     
       position: absolute;
       /* width: 500px; */
       left: 0;
@@ -39,16 +41,20 @@
       background: rgba(0, 0, 0, 0.8);
       padding: 20px 0px;
       gap: 0 15px;
+     
    }
 
    &-play {
       pointer-events: none;
       background: #373A6D;
       border: transparent;
+      border-radius: 5px;
+      font-weight: bold;
    }
 
    .button--trailer {
-
+      border-radius: 5px;
+      font-weight: bold;
       &:focus,
       &:hover {
          background: #f87c73;
@@ -80,6 +86,8 @@
    }
 
    &-status {
+      font-size: 18px;
+      font-weight: bold;
       span {
          font-weight: 300;
          padding: 5px 10px;
@@ -96,10 +104,12 @@
    &-vote,
    &-votecount,
    &-review {
+      font-size: 18px;
+      font-weight: bold;
       span {
          font-weight: 300;
          font-size: 14px;
-         line-height: calc(25/14);
+         line-height: calc(18/14);
       }
    }
 }

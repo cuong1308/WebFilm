@@ -49,73 +49,76 @@
 //     right: 35px;
 // }
 .filmBanner {
-    &-container {
-      
-    }
+    &-container {}
+
     &-list {
         margin-left: -32px;
         margin-top: 40px;
 
     }
+
     &-name {
         margin: 5px 0;
-        color :#da966e ;
+        color: #da966e;
     }
-    
-}
-.slick-prev,
-.slick-next {
-    display: none !important;
-}
-.slick-active {
-    button {
-        background: #da966e;
-    }
-}
-.slick-dots {
-    display: flex;
-    display: flex;
-    gap: 0 20px;
-    justify-content: center;
-    margin-top: 35px;
 
-    li>button {
+    .slick-prev,
+    .slick-next {
+        display: none !important;
+    }
+
+    .slick-active {
+        button {
+            background: #da966e;
+        }
+    }
+
+    .slick-dots {
+        display: flex;
+        display: flex;
+        gap: 0 20px;
+        justify-content: center;
+        margin-top: 35px;
+
+        li>button {
+            color: transparent;
+            width: 5px;
+            height: 5px;
+            border: 0;
+            border-radius: 50px;
+
+        }
+    }
+
+    .slider {
+        max-width: 1110px;
+        margin: 0 auto;
+    }
+
+    .slick-track {
+        padding-top: 53px;
+        padding-bottom: 53px;
+    }
+
+    .slick-slide {
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
         color: transparent;
-        width: 5px;
-        height: 5px;
-        border: 0;
-        border-radius: 50px;
 
     }
-}
 
-.slider {
-    max-width: 1110px;
-    margin: 0 auto;
-}
+    .slick-slide:not(.slick-current) {
+        filter: brightness(0.5);
+    }
 
-.slick-track {
-    padding-top: 53px;
-    padding-bottom: 53px;
-}
+    .slick-slide.slick-current {
+        transform: scale(1.35);
+        position: relative;
+        z-index: 1;
+    }
 
-.slick-slide {
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-    color: transparent;
+    .slick-slide img {
+        width: 100%;
+    }
 
-}
-
-.slick-slide:not(.slick-current) {
-    filter: brightness(0.5);
-}
-
-.slick-slide.slick-current {
-    transform: scale(1.35);
-    position: relative;
-    z-index: 1;
-}
-
-.slick-slide img {
-    width: 100%;
 }

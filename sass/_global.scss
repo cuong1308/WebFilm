@@ -48,3 +48,26 @@ body {
 label {
     font-weight: 500;
 }
+
+.position {
+    position: absolute;
+    z-index: 15;
+    top: 50%;
+    bottom: 50%;
+}
+
+.fs-25 {
+    font-size: 25px;
+}
+
+.left-15 {
+    left: 15px;
+}
+
+.right-20 {
+    right: 20px;
+}
+
+.padding-0 {
+    padding: 0;
+}

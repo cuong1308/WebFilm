@@ -10,7 +10,9 @@ const getFilm = (callback) => {
 };
 
 const showFilmTrend = () => {
+  
   getFilm((data) => {
+    console.log(data)
     let trendData = data.results;
     for (var i = 0; i < 10; i++) {
       console.log(trendData[i].poster_path);

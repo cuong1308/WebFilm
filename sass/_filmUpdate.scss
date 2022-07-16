@@ -7,12 +7,22 @@
 
     .filmUpdate {
         .film-item {
+            cursor: pointer;
+            overflow: hidden;
             position: relative;
+            width: 160px;
 
             img {
                 @include box(160px, 227px);
             }
+            &:hover {
+                img {
+                   
+                    transform: scale(1.1);
+                }
+            }
         }
+        
 
         .film-list {
             display: grid;

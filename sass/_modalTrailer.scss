@@ -2,7 +2,7 @@
     display: none;
     position: fixed;
     z-index: 1;
-    padding-top: 100px;
+    padding-top: 50px;
     left: 0;
     top: 0;
     width: 100%;
@@ -16,16 +16,19 @@
 .modal-content {
     background-color: #fefefe;
     margin: auto;
-    padding: 20px;
+    padding: 5px 20px 20px;
+
     border: 1px solid #888;
-    width: 80%;
+    width: 900px;
+    height: 550px;
+    text-align: center;
 }
 
 .close {
     color: #aaaaaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
+    text-align: end;
 }
 
 .close:hover,
