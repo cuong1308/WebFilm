@@ -706,7 +706,7 @@ label {
 }
 
 @media screen and (max-width: 991px) {
-  .tv-item {
+  .tv-list {
     justify-content: center;
   }
   .tv-item:nth-child(1) {

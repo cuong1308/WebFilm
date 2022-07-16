@@ -61,8 +61,11 @@
 @media screen and (max-width: 991px) {
 
     .tv {
-        &-item {
+        &-list {
             justify-content: center;
+        }
+        &-item {
+           
 
             &:nth-child(1) {
                 display: none;
