@@ -1,7 +1,7 @@
 .film-main {
     &-container {
         display: grid;
-        grid-template-columns: 850px 280px;
+        grid-template-columns: minmax(20px, auto) 280px ;
         // gap: 0 10px;
     }
 
@@ -114,3 +114,24 @@
     }
 }
 
+
+@media screen and (max-width: 991px) {
+    .film-main {
+        &-container {
+            text-align: center;
+            display: grid;
+            grid-template-columns: minmax(20px, auto)  ;
+            .filmUpdate{
+                .film-list {
+                    padding: 0;
+                    gap:10px;
+                }
+            }
+            .filmTrend-container {
+                display: none;
+            }
+        }
+    }
+    
+   
+}

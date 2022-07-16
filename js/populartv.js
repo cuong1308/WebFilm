@@ -2,7 +2,7 @@ const key_api = "d8f8edbbdc27ab9a16942772f29aa16c";
 const popularurl = ``;
 var page;
 const apiTvpopular = `https://api.themoviedb.org/3/tv/popular?api_key=${key_api}&language=vi&page=1`;
-const img = (poster_path) => `https://image.tmdb.org/t/p/w500${poster_path}`;
+const img = (poster_path) => `https://image.tmdb.org/t/p/original${poster_path}`;
 
 const getFilm = (callback) => {
   fetch(apiTvpopular)

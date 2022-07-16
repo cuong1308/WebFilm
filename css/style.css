@@ -199,6 +199,11 @@ label {
   display: block;
 }
 
+@media screen and (max-width: 374.98px) {
+  .header-logo img {
+    width: 50px;
+  }
+}
 .filmBanner-list {
   margin-left: -32px;
   margin-top: 40px;
@@ -255,7 +260,7 @@ label {
 
 .film-main-container {
   display: grid;
-  grid-template-columns: 850px 280px;
+  grid-template-columns: minmax(20px, auto) 280px;
 }
 .film-main .filmUpdate .film-item {
   cursor: pointer;
@@ -346,6 +351,20 @@ label {
   font-weight: 200;
 }
 
+@media screen and (max-width: 991px) {
+  .film-main-container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: minmax(20px, auto);
+  }
+  .film-main-container .filmUpdate .film-list {
+    padding: 0;
+    gap: 10px;
+  }
+  .film-main-container .filmTrend-container {
+    display: none;
+  }
+}
 .film-main-details-container {
   display: grid;
   grid-template-columns: 850px 280px;
@@ -661,16 +680,16 @@ label {
   position: relative;
 }
 .tv-item:nth-child(1) {
-  width: 500px;
+  max-width: 500px;
   grid-column: 1/3;
   grid-row: 1/3;
   margin: auto;
 }
 .tv-item:nth-child(1) img {
-  width: 500px;
+  max-width: 500px;
 }
 .tv-item img {
-  width: 240px;
+  max-width: 240px;
   object-fit: cover;
 }
 .tv-item-name {
@@ -686,6 +705,14 @@ label {
   display: none;
 }
 
+@media screen and (max-width: 991px) {
+  .tv-item {
+    justify-content: center;
+  }
+  .tv-item:nth-child(1) {
+    display: none;
+  }
+}
 .footer {
   background: #2d2d2d;
   padding: 30px 0 60px;
@@ -693,7 +720,7 @@ label {
   margin-top: 50px;
 }
 .footer-container {
-  display: flex;
+  display: grid;
   gap: 50px;
 }
 .footer-logo {
