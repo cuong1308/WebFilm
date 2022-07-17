@@ -73,3 +73,17 @@
         }
     }
 }
+@media screen and (max-width: 375px) {
+    .tv {
+        &-list {
+            grid-template-columns: repeat(auto-fill, 150px);
+            justify-content:flex-start;
+        }
+        &-item {
+            width: 150px;
+           img {
+            width: 150px;
+           }
+        }
+    }
+}
