@@ -25,7 +25,7 @@ function displayUpcoming() {
       }
       tvList.appendChild(li);
       li.innerHTML = `
-        <a href="film/${data[i].id}">
+        <a href="film.html?id=${data[i].id}">
           <div class="upcoming-image">
             <img src=${img(data[i].backdrop_path)} ></img>
           </div>

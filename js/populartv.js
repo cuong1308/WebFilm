@@ -28,7 +28,7 @@ function displayPopulartv() {
       }
       tvList.appendChild(li);
       li.innerHTML = `
-        <a href="tv/${data[i].id}">
+        <a href="chi-tiet-tivi-shows.html?id=${data[i].id}">
           <div class="tv-image">
             <img src=${img(data[i].backdrop_path)} ></img>
           </div>

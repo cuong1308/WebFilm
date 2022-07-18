@@ -64,7 +64,7 @@ const detailsFilm = () => {
     console.log(data);
     details.innerHTML = `
         <div class="filmDetail-image">
-          <img src="https://image.tmdb.org/t/p/w300/${data.poster_path}"></img>
+          <img src="https://image.tmdb.org/t/p/w300/${data.poster_path?data.poster_path:data.backdrop_path}"></img>
         </div>
         <div class="filmDetail-infor">
             <h2 class="filmDetail-name">
@@ -84,7 +84,7 @@ const detailsFilm = () => {
             </h4>
             <h4 class="filmDetail-productioncountry">
               Nước sản xuất:
-            <span> ${data.production_countries[0].name}</span>
+            <span> ${data.production_countries[0]?data.production_countries[0].name:""}</span>
             </h4>
             <h4 class="filmDetail-date">
               Năm sản xuất:

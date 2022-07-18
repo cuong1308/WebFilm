@@ -321,10 +321,7 @@
   $(".search-input").on("keypress", function () {
     if(event.key === "Enter") {
       var value = $(this).val().toLowerCase();
-    $(".film-item").filter(function () {
-    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-    console.log($(this));
-  });
+      window.location.href = `/kho-phim.html?search=${value}`
     }
   
 });
