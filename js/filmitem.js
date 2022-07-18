@@ -1,6 +1,7 @@
 const details = document.querySelector(".filmDetail-container");
 const suggest = document.querySelector(".filmSuggest-container");
-var id = document.getElementById("temp").getAttribute("data-name");
+console.log(new URL(window.location.href).searchParams.get("id"))
+var id = new URL(window.location.href).searchParams.get("id")
 var genres = "";
 const key_api = "d8f8edbbdc27ab9a16942772f29aa16c";
 const apiDetailFilm = `https://api.themoviedb.org/3/movie/${id}}?api_key=${key_api}&language=vi`;
@@ -167,13 +168,14 @@ function suggesttionFilm() {
       var li = document.createElement("li");
       li.setAttribute("class", "filmSuggest-item");
       li.setAttribute("id", `${data[i].id}`);
-      li.innerHTML = `<img src=${img300(data[i].poster_path)}></img>
-        <div class="info">
-            <a href="../../film/${data[i].id}">
-                <h2 class="filmUpdate-name">${data[i].title}</h2>
-            </a>
-
-        </div>`;
+      li.innerHTML = `
+      <a href="film.html?id=${data[i].id}">
+        <img src=${img300(data[i].poster_path)}></img>
+        <div class="info"> 
+            <h2 class="filmUpdate-name">${data[i].title}</h2>
+        </div>
+      </a>
+        `;
 
       suggestList.appendChild(li);
     }

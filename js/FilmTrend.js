@@ -21,10 +21,13 @@ const showFilmTrend = () => {
       li.setAttribute("class", "filmTrend-item");
       filmTrendList.appendChild(li);
       li.innerHTML = `
+      
       <div class="filmTrend-image"> 
+      <a href="film.html?id=${trendData[i].id}">
         <img src="https://image.tmdb.org/t/p/w300${
           trendData[i].poster_path
-        }"></img>   
+        }"></img> 
+      </a>  
       </div>
       <div class="filmTrend-infor">
         <h4 class="filmTrend-name">${

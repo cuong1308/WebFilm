@@ -21,12 +21,13 @@ const displayFilm = () => {
 
       filmItem.appendChild(div);
       console.log(`film?id=${data[i].id}`);
-      div.innerHTML = `<img src=${img(data[i].poster_path)}></img>
-                      <div class="info">
-                          <a href="film/${data[i].id}">
-                              <h2 class="filmUpdate-name">${data[i].title}</h2>
-                          </a>
-                      </div>`;
+      div.innerHTML = `
+      <a href="film.html?id=${data[i].id}">
+        <img src=${img(data[i].poster_path)}></img>
+            <div class="info">        
+              <h2 class="filmUpdate-name">${data[i].title}</h2>           
+           </div>
+       </a>`;
     }
   });
 };
@@ -54,22 +55,34 @@ const displayFilm = () => {
 function displayPosterShow() {
   const filmHotList = document.querySelector(".filmBanner-list");
   getFilm((data) => {
-    for (var i = 3; i <10; i++) {
+    for (var i = 3; i < 10; i++) {
       var li = document.createElement("li");
       li.setAttribute("class", "filmBanner-item");
       filmHotList.appendChild(li);
       li.innerHTML = `
-        <a href="film/${data[i].id}">
+        <a href="film.html?id=${data[i].id}">
             <div class="filmBanner-image">
             <img src=${img(data[i].backdrop_path)}></img>
             <h5 class="filmBanner-name">${data[i].original_title}</h5>
            </div>
         </a>
         `;
+      // li.innerHTML = `
+      // <form action="/film/index.html" method="get" id ="form-film" name="id">
+      //       <div  value=${data[i].id} class="filmBanner-image" name="id" onClick="document.forms['form-film'].submit();">
+      //         <img src=${img(data[i].backdrop_path)} " /></img>
+      //          <h5 class="filmBanner-name">${data[i].original_title}</h5>
+      //      </div>
+
+      // </form>
+      //   `;
+      submitFilm();
     }
-    slickSlideBanner()
+
+    slickSlideBanner();
   });
 }
+
 const displayAccount = () => {
   var auth = document.querySelector(".header-auth");
   var authWork = document.querySelector(".header-auth-work");
@@ -99,14 +112,26 @@ const displayAccount = () => {
     logout();
   }
 };
-const slickSlideBanner = () =>{
-  $('.filmBanner-list').slick({
+function submitFilm() {
+  // var btnSubmit = document.querySelector(".filmBanner-image");
+  // var formFilm = document.getElementById("form-film");
+  // console.log(formFilm.action + "?id=" + btnSubmit.getAttribute("data-id"));
+  // formFilm.action =
+  //   "/film/index.html" + "?id=" + btnSubmit.getAttribute("data-id");
+  // console.log(formFilm.action);
+  // btnSubmit.addEventListener("click", function (e) {
+  //   console.log(formFilm.action);
+  //   formFilm.submit();
+  // });
+}
+const slickSlideBanner = () => {
+  $(".filmBanner-list").slick({
     centerMode: true,
     centerPadding: "0px",
     slidesToShow: 3,
     slidesToScroll: 1,
     dots: true,
-    focusOnSelect: true ,
+    focusOnSelect: true,
     autoplaySpeed: 2000,
     autoplay: true,
     prevArrow:
@@ -119,23 +144,22 @@ const slickSlideBanner = () =>{
         settings: {
           arrows: false,
           centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 3
-        }
+          centerPadding: "40px",
+          slidesToShow: 3,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           arrows: false,
           centerMode: true,
-          centerPadding: '40px',
+          centerPadding: "40px",
           slidesToShow: 1,
-          
-        }
-      }
-    ]
+        },
+      },
+    ],
   });
-}
+};
 const slickSlide = () => {
   $(".filmHot-list").slick({
     infinite: true,

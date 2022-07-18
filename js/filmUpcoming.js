@@ -14,7 +14,7 @@ function displayUpcoming() {
   getFilm((data) => {
     data = data.results;
 
-    for (var i = 0; i <13; i++) {
+    for (var i = 0; i <12; i++) {
       console.log(data[i]);
       const li = document.createElement("li");
       li.setAttribute("class", "upcoming-item");
