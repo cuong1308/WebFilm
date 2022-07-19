@@ -403,7 +403,6 @@ label {
   gap: 0 15px;
 }
 .filmDetail-play {
-  pointer-events: none;
   background: #373A6D;
   border: transparent;
   border-radius: 5px;

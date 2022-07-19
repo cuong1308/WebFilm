@@ -1,7 +1,7 @@
 const details = document.querySelector(".filmDetail-container");
 const suggest = document.querySelector(".filmSuggest-container");
-console.log(new URL(window.location.href).searchParams.get("id"))
-var id = new URL(window.location.href).searchParams.get("id")
+console.log(new URL(window.location.href).searchParams.get("id"));
+var id = new URL(window.location.href).searchParams.get("id");
 var genres = "";
 const key_api = "d8f8edbbdc27ab9a16942772f29aa16c";
 const apiDetailFilm = `https://api.themoviedb.org/3/movie/${id}}?api_key=${key_api}&language=vi`;
@@ -64,7 +64,9 @@ const detailsFilm = () => {
     console.log(data);
     details.innerHTML = `
         <div class="filmDetail-image">
-          <img src="https://image.tmdb.org/t/p/w300/${data.poster_path?data.poster_path:data.backdrop_path}"></img>
+          <img src="https://image.tmdb.org/t/p/w300/${
+            data.poster_path ? data.poster_path : data.backdrop_path
+          }"></img>
         </div>
         <div class="filmDetail-infor">
             <h2 class="filmDetail-name">
@@ -84,7 +86,11 @@ const detailsFilm = () => {
             </h4>
             <h4 class="filmDetail-productioncountry">
               Nước sản xuất:
-            <span> ${data.production_countries[0]?data.production_countries[0].name:""}</span>
+            <span> ${
+              data.production_countries[0]
+                ? data.production_countries[0].name
+                : ""
+            }</span>
             </h4>
             <h4 class="filmDetail-date">
               Năm sản xuất:
@@ -114,8 +120,9 @@ const detailsFilm = () => {
           </div>
         </div>
         </div>
-        <div class="filmDetail-play button ${!data.video ? "disabled" : ""}">
-          Xem phim
+        <div class="filmDetail-play button">
+        <a href="https://2embed.org/embed/movie?tmdb=${data.id}">Xem phim</a>
+        
         </div>
         </div>
         `;
