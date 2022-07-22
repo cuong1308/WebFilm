@@ -1,0 +1,71 @@
+.film-full {
+    &-container {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        margin-top: 20px;
+    }
+
+    .filmStore {
+        &-container {
+
+        }
+
+        &-list {
+
+        }
+
+        &-item {
+            a {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+
+            }
+
+            border: 1px solid rgb(218, 150, 110);
+            margin-bottom: 25px;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgb(218 150 110 / 80%);
+         
+        }
+
+        &-info {
+            padding: 20px;
+
+        }
+
+        &-name {
+            font-size: 21px;
+            margin-bottom: 3px;
+            font-weight: bold;
+        }
+
+        &-image {
+            img {
+                width: 150px;
+                height: 225px;
+                object-fit: cover;
+            }
+        }
+
+        &-release {
+            font-size: 16px;
+            font-weight: 300;
+            color: #999;
+        }
+
+        &-review {
+            font-size: 16px;
+            font-weight: 400;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            /* number of lines to show */
+            line-clamp: 5;
+            -webkit-box-orient: vertical;
+            margin-top: 25px;
+        }
+    }
+}

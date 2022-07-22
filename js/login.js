@@ -1,5 +1,3 @@
-// var username = document.querySelector("#username").value;
-// var password = document.querySelector("#password").value;
 var accounts = JSON.parse(localStorage.getItem("accounts"));
 var btnLogin = document.querySelector("#btnLogin");
 var username = document.forms["form"]["username"];

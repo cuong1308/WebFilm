@@ -7,6 +7,7 @@ const key_api = "d8f8edbbdc27ab9a16942772f29aa16c";
 const apiDetailFilm = `https://api.themoviedb.org/3/movie/${id}}?api_key=${key_api}&language=vi`;
 const apiTrendFilm = `https://api.themoviedb.org/3/trending/all/day?api_key=${key_api}&language=vi`;
 const apiTrailerFilm = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${key_api}&language=en`;
+const apiCastFilm = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${key_api}&language=vi`;
 const apiGenrerFilm = (genres) =>
   `https://api.themoviedb.org/3/discover/movie?api_key=${key_api}&with_genres=${genres}&language=vi`;
 
@@ -21,7 +22,13 @@ const getTrendFilm = (callback) => {
     })
     .then(callback);
 };
-
+const getCastFilm = (callback) => {
+  fetch(apiCastFilm)
+    .then((response) => {
+      return response.json();
+    })
+    .then(callback);
+};
 const getFilmDetail = (callback) => {
   fetch(apiDetailFilm)
     .then((response) => {
@@ -75,9 +82,11 @@ const detailsFilm = () => {
             <h4 class="filmDetail-originalName">
             ${data.original_title} (${data.release_date.slice(0, 4)})
             </h4>
-            <h4 class="filmDetail-status">Trạng thái: <span>${
-              data.video === false ? "Sắp ra mắt" : "Đang diễn ra"
-            }</span></h4>
+            <h4 class="filmDetail-status" >Trạng thái: <span class="${
+              data.status === "Released" ? "bg-green" : "bg-brown"
+            }">${
+      data.status === "Released" ? "Đã phát hành" : "Sắp phát hành"
+    }</span></h4>
             <h4 class="filmDetail-genres">
               Thể loại:
                 <span >
@@ -129,6 +138,7 @@ const detailsFilm = () => {
     trailerFilm();
     modal();
     suggesttionFilm();
+    displayCast();
   });
 };
 const modal = () => {
@@ -189,7 +199,35 @@ function suggesttionFilm() {
     slickSlide();
   });
 }
+const displayCast = () => {
+  const suggestList = document.querySelector(".filmCast-list");
+  getCastFilm((data) => {
+    console.log(data);
 
+    console.log(data);
+    data = data.cast;
+
+    for (var i = 0; i < 5; i++) {
+      console.log(data[i]);
+      var li = document.createElement("li");
+      li.setAttribute("class", "filmCast-item");
+      li.setAttribute("id", `${data[i].id}`);
+      li.innerHTML = `
+      <a href="dien-vien.html?id=${data[i].id}">
+          <div className="filmCast-image">
+          <img src=${img300(data[i].profile_path)}></img>
+          </div>
+        <div class="infor"> 
+            <h2 class="filmCast-originalName">${data[i].original_name}</h2>
+            <h2 class="filmCast-character">${data[i].character}</h2>
+        </div>
+      </a>
+        `;
+
+      suggestList.appendChild(li);
+    }
+  });
+};
 const slickSlide = () => {
   $(".filmSuggest-list").slick({
     infinite: true,

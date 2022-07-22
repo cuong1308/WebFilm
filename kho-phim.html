@@ -10,7 +10,7 @@
         <title>Document</title>
         <link rel="stylesheet" href="./css/style.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+        <link rel="shortcut icon" href="./assets/motchill.png">
     </head>
     <body>
 
@@ -91,18 +91,35 @@
                 </div>
             </section>
         </header>
-        <section class="filmStore">
-            <div class="container">
-                <div class="filmStore-container">
-                    <h3 class="filmStore-title">
-                        
-                    </h3>
-                    <div class="filmStore-list">
-
+        <main>
+            <section class="film-full">
+                <div class="container">
+                  <div class="film-full-container">
+                    <div class="container">
+                      <div class="filmSort">
+                        <div class="filmSort-container">
+                            <div class="filmSort-title">
+                              Tìm kiếm
+                            </div>
+                        </div>
                     </div>
+                    </div>
+                    <div class="filmStore">
+                      <div class="container">
+                          <div class="filmStore-container">
+                              <h3 class="filmStore-title">
+                                  
+                              </h3>
+                              <div class="filmStore-list">
+          
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
     </body>
 </html>
 
@@ -111,16 +128,14 @@
 <script> 
     $(".search-input").on("keypress", function () {
         if(event.key === "Enter") { 
-            var queryParams = new URLSearchParams(window.location.search);
+        var queryParams = new URLSearchParams(window.location.search);
         queryParams.set("search",$(this).val());
         history.replaceState(null, null, "?"+queryParams.toString());
         console.log(queryParams)
-    //   if(event.key === "Enter") {
+
         var value = $(this).val().toLowerCase();
         window.location.search = `/kho-phim.html?search=${value}`
-        
-    //   }
-      window.location.reload();
+        window.location.reload();
         }
      
     

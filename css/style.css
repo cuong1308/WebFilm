@@ -24,9 +24,8 @@ strong {
 }
 
 .container {
-  max-width: 1160px;
+  max-width: 1240px !important;
   margin: 0 auto;
-  padding: 0 15px;
   position: relative;
 }
 
@@ -87,6 +86,14 @@ label {
 
 .padding-0 {
   padding: 0;
+}
+
+.bg-green {
+  background: rgba(75, 214, 98, 0.8);
+}
+
+.bg-brown {
+  background: rgba(255, 130, 70, 0.5);
 }
 
 .header {
@@ -278,7 +285,7 @@ label {
 .film-main .filmUpdate .film-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, 170px) 20%;
-  gap: 25px;
+  gap: 20px 0;
   padding: 0 40px;
 }
 .film-main .filmUpdate-title {
@@ -316,7 +323,6 @@ label {
 }
 .film-main .filmTrend-infor {
   display: flex;
-  gap: 2px;
   flex-direction: column;
 }
 .film-main .filmTrend-image img {
@@ -442,7 +448,6 @@ label {
 .filmDetail-status span {
   font-weight: 300;
   padding: 5px 10px;
-  background: rgba(255, 130, 70, 0.5);
   border-radius: 5px;
   font-weight: bold;
   margin-left: 5px;
@@ -856,6 +861,68 @@ label {
 }
 .upcoming-item-none {
   display: none;
+}
+
+.film-full-container {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  margin-top: 20px;
+}
+.film-full .filmStore-item {
+  border: 1px solid #da966e;
+  margin-bottom: 25px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(218, 150, 110, 0.8);
+}
+.film-full .filmStore-item a {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.film-full .filmStore-info {
+  padding: 20px;
+}
+.film-full .filmStore-name {
+  font-size: 21px;
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+.film-full .filmStore-image img {
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+}
+.film-full .filmStore-release {
+  font-size: 16px;
+  font-weight: 300;
+  color: #999;
+}
+.film-full .filmStore-review {
+  font-size: 16px;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  /* number of lines to show */
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  margin-top: 25px;
+}
+
+.filmCast-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+}
+.filmCast-image {
+  width: 150px;
+}
+.filmCast-image img {
+  width: 150px !important;
+}
+.filmCast .filmCast-image img {
+  width: 150px !important;
 }
 
 /*# sourceMappingURL=style.css.map */

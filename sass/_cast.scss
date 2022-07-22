@@ -1,0 +1,23 @@
+.filmCast {
+    &-container {
+
+    }
+    &-list {
+        display: grid ; 
+        grid-template-columns: repeat(auto-fill, 150px);
+    }
+    &-item {
+
+    }
+    &-image {
+        width: 150px ;
+        img {
+            width: 150px!important ;
+        }
+    }
+    .filmCast-image {
+        img {
+            width: 150px!important ;
+        }
+    }
+}

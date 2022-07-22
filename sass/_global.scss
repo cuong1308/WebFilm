@@ -6,9 +6,9 @@
 }
 
 .container {
-    max-width: 1160px;
+    max-width: 1240px !important;
     margin: 0 auto;
-    padding: 0 15px;
+    // padding: 0 15px;
     position: relative;
 }
 
@@ -70,4 +70,10 @@ label {
 
 .padding-0 {
     padding: 0;
+}
+.bg-green {
+    background: rgba($color: #4bd662, $alpha: 0.8);
+}
+.bg-brown {
+    background: rgba(255, 130, 70, 0.5)
 }
