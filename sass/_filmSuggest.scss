@@ -1,6 +1,13 @@
-.filmSuggest-list {
-    width: 850px;
-    height: 225px;
+.filmSuggest {
+
+    grid-column: 1/4;
+
+    &-list {
+        width: 1190px;
+        height: 225px;
+
+    }
+
 }
 
 .filmSuggest-item {
@@ -14,7 +21,7 @@
     .slick-slider .slick-list {
         height: auto;
         padding: 0 !important;
-    } 
+    }
 
     .slick-track {
         display: flex !important;

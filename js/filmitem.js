@@ -135,11 +135,33 @@ const detailsFilm = () => {
         </div>
         </div>
         `;
+        colectionFilm(data.belongs_to_collection)
     trailerFilm();
     modal();
     suggesttionFilm();
     displayCast();
   });
+};
+const colectionFilm = (data) => {
+  var imgColection = document.querySelector(".filmColection-image");
+  var nameColection = document.querySelector(".filmColection-name");
+  var buttonColection = document.querySelector(".filmColection-button");
+  var posterColection = document.querySelector(".filmColection-poster");
+  imgColection.innerHTML = `
+  <img src=${img(data.backdrop_path)}></img>
+ 
+  `;
+  nameColection.innerHTML= `
+   <span> ${data.name}</span>
+  `
+  buttonColection.innerHTML =`
+      <a href="colection.html?id=${data.id}">
+        Xem ngay
+      </a>
+  `
+  posterColection.innerHTML = `
+    <img src=${img300(data.poster_path)}></img>
+  `
 };
 const modal = () => {
   var modal = document.getElementById("myModal");
@@ -180,7 +202,7 @@ function suggesttionFilm() {
     console.log(data);
     data = data.results;
 
-    for (var i = 2; i < data.length; i++) {
+    for (var i = 0; i < data.length; i++) {
       console.log(data[i]);
       var li = document.createElement("li");
       li.setAttribute("class", "filmSuggest-item");
@@ -207,15 +229,23 @@ const displayCast = () => {
     console.log(data);
     data = data.cast;
 
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 4; i++) {
       console.log(data[i]);
       var li = document.createElement("li");
       li.setAttribute("class", "filmCast-item");
       li.setAttribute("id", `${data[i].id}`);
       li.innerHTML = `
-      <a href="dien-vien.html?id=${data[i].id}">
-          <div className="filmCast-image">
-          <img src=${img300(data[i].profile_path)}></img>
+      <a href="dien-vien.html?id=${data[i].id}" >
+          <div className="filmCast-image" style="max-width:100%;margin: auto;">
+            <img src=${img300(
+              data[i].profile_path
+            )} alt="cast" style="width:100%;
+                                width: 100%;
+                                height: 230px;
+                                object-fit: cover;
+                                object-position: top;
+                                border-radius: 10px 10px 0 0;
+                                "/>
           </div>
         <div class="infor"> 
             <h2 class="filmCast-originalName">${data[i].original_name}</h2>
