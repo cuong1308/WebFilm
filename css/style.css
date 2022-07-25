@@ -33,7 +33,7 @@ body {
   background: #1a1a1a !important;
   font-weight: 400;
   width: 100%;
-  color: white;
+  color: white !important;
   font-family: "Inter", sans-serif;
 }
 
@@ -1022,6 +1022,75 @@ label {
   border-radius: 10px;
   filter: drop-shadow(8px 8px 10px gray);
   margin: 43px 50px;
+}
+
+.tvSeason-header {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+.tvSeason-bg {
+  position: relative;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 97px;
+  height: 680px;
+}
+.tvSeason-bg::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, #0f0f0f, rgba(0, 0, 0, 0));
+}
+.tvSeason-child {
+  display: flex;
+  gap: 60px;
+  margin: 0 50px;
+  position: absolute;
+}
+.tvSeason-infor {
+  max-width: 800px;
+}
+.tvSeason-image {
+  filter: brightness(0.5);
+  position: relative;
+  width: 100%;
+  height: 693px;
+  object-fit: cover;
+  object-position: center;
+}
+.tvSeason-name {
+  font-size: 40px;
+  font-weight: bold;
+  padding: 15px 0;
+}
+.tvSeason-overview {
+  font-size: 18px;
+  line-height: 1.3888888889;
+}
+.tvSeason-poster img {
+  border-radius: 10px;
+  box-shadow: rgba(255, 203, 203, 0.22) 3px -5px 16px 17px;
+  width: 220px;
+}
+.tvSeason-button a {
+  cursor: pointer;
+  width: 160px;
+  text-align: center;
+  background: rgba(255, 150, 88, 0.8);
+  padding: 10px;
+  box-shadow: 6px 3px 8px rgba(239, 234, 234, 0.22);
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 20px;
+  position: absolute;
+}
+.tvSeason-button a:hover {
+  background: #ff9658;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -135,11 +135,12 @@ const detailsFilm = () => {
         </div>
         </div>
         `;
-        colectionFilm(data.belongs_to_collection)
+   
     trailerFilm();
     modal();
     suggesttionFilm();
     displayCast();
+    data.belongs_to_collection ? colectionFilm(data.belongs_to_collection) : "";
   });
 };
 const colectionFilm = (data) => {
@@ -151,17 +152,17 @@ const colectionFilm = (data) => {
   <img src=${img(data.backdrop_path)}></img>
  
   `;
-  nameColection.innerHTML= `
+  nameColection.innerHTML = `
    <span> ${data.name}</span>
-  `
-  buttonColection.innerHTML =`
+  `;
+  buttonColection.innerHTML = `
       <a href="colection.html?id=${data.id}">
         Xem ngay
       </a>
-  `
+  `;
   posterColection.innerHTML = `
     <img src=${img300(data.poster_path)}></img>
-  `
+  `;
 };
 const modal = () => {
   var modal = document.getElementById("myModal");
