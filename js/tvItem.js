@@ -5,9 +5,11 @@ const urlTV = (sessionNumber) =>
   `https://api.themoviedb.org/3/tv/${id}/season/${sessionNumber}?api_key=${api_key}&language=vi`;
 const img300 = (poster_path) =>
   `https://image.tmdb.org/t/p/w300/${poster_path}`;
+const img500 = (poster_path) =>
+  `https://image.tmdb.org/t/p/w500/${poster_path}`;
 const img = (poster_path) =>
   `https://image.tmdb.org/t/p/original/${poster_path}`;
-const image = ``;
+const linkFilm = (id,season,episodes) => `https://2embed.org/embed/series?tmdb=${id}&sea=${season}&epi=${episodes}`;
 
 var sessionNumber = "";
 async function getSeasons() {
@@ -15,14 +17,12 @@ async function getSeasons() {
   const data = await respon.json();
   console.log(data);
   const seasonsNew = data.seasons[data.seasons.length - 1];
-  const seasonNumber = data.seasons.length ;
+  const seasonNumber = data.seasons[data.seasons.length - 1].season_number;
   var tvHeader = document.querySelector(".tvSeason-header");
 
   tvHeader.innerHTML = `
-        <div class="tvSeason-bg" style="background-image: url(${img(
-          data.backdrop_path
-        )})"> 
-
+        <div > 
+            <img src="${img(data.backdrop_path)}" class="tvSeason-bg"/>
             <div class="tvSeason-child" >
                  <div class="tvSeason-poster">
                         <img src=${img300(
@@ -52,16 +52,46 @@ async function getSeasons() {
         </div>
 
     `;
-    async function getSeasons() {
-      console.log(seasonNumber)
-      var tvMain = document.querySelector(".tvSeason-main");
-      const respon = await fetch(
-        `https://api.themoviedb.org/3/tv/${id}/season/${seasonNumber}?api_key=${api_key}&language=vi`
-      );
-      const data = await respon.json();
-      console.log(data);
-    }
-    getSeasons()
+  async function getSeasons() {
+    console.log(seasonNumber);
+
+    const respon = await fetch(
+      `https://api.themoviedb.org/3/tv/${id}/season/${seasonNumber}?api_key=${api_key}&language=vi`
+    );
+    const data = await respon.json();
+    var tvMain = document.querySelector(".tvSeason-main");
+    console.log(data);
+    const episodes = data.episodes;
+
+    episodes.map((item) => {
+      const div = document.createElement("div");
+      div.setAttribute("class", "tvSeason-episode");
+      div.setAttribute("id", `${item.id}`);
+      tvMain.appendChild(div);
+      div.innerHTML = `
+          <a href=${linkFilm(id,seasonNumber,item.episode_number)}>
+          
+          <div class="tvSeason-episode--image">
+              <img src="${img500(item.still_path)}"/>
+          </div>
+          <div class="tvSeason-episode--infor">
+              <div class="tvSeason-episode--title">
+              ${item.name}
+              
+              </div>
+            
+              <div class="tvSeason-episode--overview">
+                 ${item.overview}
+                
+              </div>
+            
+          </div>
+          </a>
+     
+    `;
+    });
+  }
+  getSeasons();
 }
 
 getSeasons();

@@ -1,39 +1,41 @@
 .tvSeason {
+    height: 100vh;
+
     &-header {
         position: relative;
-        height: 100vh;
+        // height: 100vh;
         width: 100%;
-    
+
     }
 
     &-bg {
         position: relative;
-        background-size: 100% 100%;
+        background-size: 100%;
         background-repeat: no-repeat;
-        background-position: center;
-        padding: 97px;
+        // background-position: center;
         height: 680px;
+        width: 100%;
+        filter: brightness(0.2);
 
-        &::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(to top, #0f0f0f, rgba(black, 0));
-        }
+
     }
 
     &-child {
-       display: flex;
-       gap: 60px;
-       margin: 0 50px;
-       position: absolute;
+        display: flex;
+        gap: 60px;
+        margin: 0 50px;
+        position: absolute;
+
+        top: 18%;
+
+
+
     }
+
     &-infor {
-       max-width: 800px;
+        max-width: 800px;
     }
+
     &-image {
         filter: brightness(0.5);
         position: relative;
@@ -44,15 +46,18 @@
 
 
     }
+
     &-name {
         font-size: 40px;
         font-weight: bold;
         padding: 15px 0;
     }
+
     &-overview {
         font-size: 18px;
-        line-height: calc(25/18) ;
+        line-height: calc(25/18);
     }
+
     &-poster {
         img {
             border-radius: 10px;
@@ -60,22 +65,121 @@
             width: 220px;
         }
     }
+
     &-button {
         a {
             cursor: pointer;
             width: 160px;
             text-align: center;
-            background: rgba(255, 150, 88,0.8);
+            background: rgba(255, 150, 88, 0.8);
             padding: 10px;
             box-shadow: 6px 3px 8px rgb(239 234 234 / 22%);
             font-weight: bold;
             border-radius: 5px;
             margin-top: 20px;
             position: absolute;
-            
+
             &:hover {
-                background: rgba(255, 150, 88,1);
+                background: rgba(255, 150, 88, 1);
             }
+        }
+    }
+
+    //main 
+
+    &-main {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 280px);
+        gap: 10px;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    &-episode {
+        position: relative;
+
+        &:nth-child(1) {
+           a {
+            display: flex;
+            gap: 25px;
+           }
+            grid-column: 1/5;
+            margin-bottom: 30px;
+
+            .tvSeason-episode--infor {
+                width: 500px;
+
+
+            }
+
+            .tvSeason-episode--image {
+                width: 500px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .tvSeason-episode--title {
+                font-size: 30px;
+                font-weight: bold;
+                margin: 10px;
+            }
+
+            .tvSeason-episode--overview {
+                background: transparent;
+                position: relative;
+                opacity: 1;
+                padding: 0;
+            }
+
+            .tvSeason-episode--title {
+                text-align: start;
+            }
+
+        }
+
+        &--title {
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+            margin: 5px;
+        }
+
+        &--overview {
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+
+            padding: 10px 20px;
+
+            height: 160px;
+            background: rgba(0, 0, 0, 0.7);
+
+            transition: ease-in 0.4s;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            /* number of lines to show */
+            line-clamp: 6;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.8;
+        }
+
+        &--image {
+            width: 280px;
+
+            img {
+                width: 100%;
+            }
+
+        }
+
+        &:hover &--overview:not(:nth-child(1)) {
+            opacity: 1;
         }
     }
 
