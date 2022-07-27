@@ -5,6 +5,7 @@
         position: relative;
         // height: 100vh;
         width: 100%;
+        box-shadow: 3px 6px 1px rgb(0 0 0 / 20%);
 
     }
 
@@ -23,7 +24,7 @@
     &-child {
         display: flex;
         gap: 60px;
-        margin: 0 50px;
+        margin: 0 150px;
         position: absolute;
 
         top: 18%;
@@ -62,27 +63,28 @@
         img {
             border-radius: 10px;
             box-shadow: rgb(255 203 203 / 22%) 3px -5px 16px 17px;
-            width: 220px;
+            width: 300px;
         }
     }
 
     &-button {
-        a {
-            cursor: pointer;
-            width: 160px;
-            text-align: center;
-            background: rgba(255, 150, 88, 0.8);
-            padding: 10px;
-            box-shadow: 6px 3px 8px rgb(239 234 234 / 22%);
-            font-weight: bold;
-            border-radius: 5px;
-            margin-top: 20px;
-            position: absolute;
 
-            &:hover {
-                background: rgba(255, 150, 88, 1);
-            }
+        cursor: pointer;
+        width: 160px;
+        text-align: center;
+        background: rgba(57, 157, 111,0.5);
+        padding: 10px;
+        box-shadow: 6px 3px 8px rgb(239 234 234 / 22%);
+        font-weight: bold;
+        border-radius: 5px;
+        margin-top: 20px;
+        position: absolute;
+        // margin: 10px 50px;
+        // font-size: 30px;
+        &:hover {
+            background: rgba(57, 157, 111, 1);
         }
+
     }
 
     //main 
@@ -90,7 +92,9 @@
     &-main {
         display: grid;
         grid-template-columns: repeat(auto-fit, 280px);
-        gap: 10px;
+
+        gap: 10px 20px;
+
         justify-content: center;
         margin-top: 50px;
     }
@@ -99,10 +103,12 @@
         position: relative;
 
         &:nth-child(1) {
-           a {
-            display: flex;
-            gap: 25px;
-           }
+            a {
+                display: flex;
+                gap: 25px;
+            }
+
+            margin: auto;
             grid-column: 1/5;
             margin-bottom: 30px;
 
@@ -141,7 +147,7 @@
 
         &--title {
             font-weight: bold;
-            font-size: 20px;
+            font-size: 16px;
             text-align: center;
             margin: 5px;
         }
@@ -152,7 +158,7 @@
             position: absolute;
             top: 0;
             width: 100%;
-
+            border-radius: 8px;
             padding: 10px 20px;
 
             height: 160px;
@@ -170,10 +176,12 @@
         }
 
         &--image {
+            box-shadow: rgb(181 171 171 / 20%) 4px 5px 6px 1px;
             width: 280px;
-
+            border-radius: 8px;
             img {
                 width: 100%;
+                border-radius: 8px;
             }
 
         }
@@ -183,4 +191,66 @@
         }
     }
 
+    &-other {
+        display: none;
+      
+        &--arrow {
+            display: none-;
+            font-size: 30px;
+            text-align: center;
+            animation: slide1 1s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        &--list {
+            display: block;
+            display: flex;
+            gap: 45px;
+        }
+
+        &--image {
+            max-width: 200px;
+            border-radius: 8px;
+            cursor: pointer;
+            img {
+                border-radius: 8px;
+                max-width: 100%;
+            }
+        }
+        &--previous {
+            font-size: 25px;
+            padding: 15px 6px;
+            color: #da966e;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+        &--infor {
+            text-align: center;
+        }
+
+    }
+
+}
+
+#main {
+    display: none;
+}
+
+
+// effect
+.arrow1 {
+    animation: slide1 1s ease-in-out infinite;
+    margin-left: 9px;
+}
+
+@keyframes slide1 {
+
+    0%,
+    100% {
+        transform: translate(0, -5px);
+    }
+
+    50% {
+        transform: translate(0, 0px);
+    }
 }

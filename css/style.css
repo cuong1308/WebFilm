@@ -733,7 +733,6 @@ label {
   background: #2d2d2d;
   padding: 30px 0 60px;
   color: white;
-  margin-top: 50px;
 }
 .footer-container {
   display: grid;
@@ -1030,6 +1029,7 @@ label {
 .tvSeason-header {
   position: relative;
   width: 100%;
+  box-shadow: 3px 6px 1px rgba(0, 0, 0, 0.2);
 }
 .tvSeason-bg {
   position: relative;
@@ -1042,7 +1042,7 @@ label {
 .tvSeason-child {
   display: flex;
   gap: 60px;
-  margin: 0 50px;
+  margin: 0 150px;
   position: absolute;
   top: 18%;
 }
@@ -1069,13 +1069,13 @@ label {
 .tvSeason-poster img {
   border-radius: 10px;
   box-shadow: rgba(255, 203, 203, 0.22) 3px -5px 16px 17px;
-  width: 220px;
+  width: 300px;
 }
-.tvSeason-button a {
+.tvSeason-button {
   cursor: pointer;
   width: 160px;
   text-align: center;
-  background: rgba(255, 150, 88, 0.8);
+  background: rgba(57, 157, 111, 0.5);
   padding: 10px;
   box-shadow: 6px 3px 8px rgba(239, 234, 234, 0.22);
   font-weight: bold;
@@ -1083,13 +1083,13 @@ label {
   margin-top: 20px;
   position: absolute;
 }
-.tvSeason-button a:hover {
-  background: #ff9658;
+.tvSeason-button:hover {
+  background: #399d6f;
 }
 .tvSeason-main {
   display: grid;
   grid-template-columns: repeat(auto-fit, 280px);
-  gap: 10px;
+  gap: 10px 20px;
   justify-content: center;
   margin-top: 50px;
 }
@@ -1097,6 +1097,7 @@ label {
   position: relative;
 }
 .tvSeason-episode:nth-child(1) {
+  margin: auto;
   grid-column: 1/5;
   margin-bottom: 30px;
 }
@@ -1129,7 +1130,7 @@ label {
 }
 .tvSeason-episode--title {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
   margin: 5px;
 }
@@ -1139,6 +1140,7 @@ label {
   position: absolute;
   top: 0;
   width: 100%;
+  border-radius: 8px;
   padding: 10px 20px;
   height: 160px;
   background: rgba(0, 0, 0, 0.7);
@@ -1153,13 +1155,68 @@ label {
   line-height: 1.8;
 }
 .tvSeason-episode--image {
+  box-shadow: rgba(181, 171, 171, 0.2) 4px 5px 6px 1px;
   width: 280px;
+  border-radius: 8px;
 }
 .tvSeason-episode--image img {
   width: 100%;
+  border-radius: 8px;
 }
 .tvSeason-episode:hover .tvSeason-episode--overview:not(:nth-child(1)) {
   opacity: 1;
+}
+.tvSeason-other {
+  display: none;
+}
+.tvSeason-other--arrow {
+  display: none-;
+  font-size: 30px;
+  text-align: center;
+  animation: slide1 1s ease-in-out infinite;
+  cursor: pointer;
+}
+.tvSeason-other--list {
+  display: block;
+  display: flex;
+  gap: 45px;
+}
+.tvSeason-other--image {
+  max-width: 200px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.tvSeason-other--image img {
+  border-radius: 8px;
+  max-width: 100%;
+}
+.tvSeason-other--previous {
+  font-size: 25px;
+  padding: 15px 6px;
+  color: #da966e;
+  margin-left: 20px;
+  font-weight: bold;
+}
+.tvSeason-other--infor {
+  text-align: center;
+}
+
+#main {
+  display: none;
+}
+
+.arrow1 {
+  animation: slide1 1s ease-in-out infinite;
+  margin-left: 9px;
+}
+
+@keyframes slide1 {
+  0%, 100% {
+    transform: translate(0, -5px);
+  }
+  50% {
+    transform: translate(0, 0px);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

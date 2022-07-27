@@ -1,75 +1,76 @@
-const details = document.querySelector(".filmDetail-container");
-const suggest = document.querySelector(".filmSuggest-container");
-console.log(new URL(window.location.href).searchParams.get("id"));
-var id = new URL(window.location.href).searchParams.get("id");
-var genres = "";
-const key_api = "d8f8edbbdc27ab9a16942772f29aa16c";
-const apiDetailFilm = `https://api.themoviedb.org/3/movie/${id}}?api_key=${key_api}&language=vi`;
-const apiTrendFilm = `https://api.themoviedb.org/3/trending/all/day?api_key=${key_api}&language=vi`;
-const apiTrailerFilm = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${key_api}&language=en`;
-const apiCastFilm = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${key_api}&language=vi`;
-const apiGenrerFilm = (genres) =>
-  `https://api.themoviedb.org/3/discover/movie?api_key=${key_api}&with_genres=${genres}&language=vi`;
+const initApp = () => {
+  const details = document.querySelector(".filmDetail-container");
+  const suggest = document.querySelector(".filmSuggest-container");
+  console.log(new URL(window.location.href).searchParams.get("id"));
+  var id = new URL(window.location.href).searchParams.get("id");
+  var genres = "";
+  const key_api = "d8f8edbbdc27ab9a16942772f29aa16c";
+  const apiDetailFilm = `https://api.themoviedb.org/3/movie/${id}}?api_key=${key_api}&language=vi`;
+  const apiTrendFilm = `https://api.themoviedb.org/3/trending/all/day?api_key=${key_api}&language=vi`;
+  const apiTrailerFilm = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${key_api}&language=en`;
+  const apiCastFilm = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${key_api}&language=vi`;
+  const apiGenrerFilm = (genres) =>
+    `https://api.themoviedb.org/3/discover/movie?api_key=${key_api}&with_genres=${genres}&language=vi`;
 
-const img = (poster_path) =>
-  `https://image.tmdb.org/t/p/original/${poster_path}`;
-const img300 = (poster_path) =>
-  `https://image.tmdb.org/t/p/w300/${poster_path}`;
-const getTrendFilm = (callback) => {
-  fetch(apiTrendFilm(genres))
-    .then((response) => {
-      return response.json();
-    })
-    .then(callback);
-};
-const getCastFilm = (callback) => {
-  fetch(apiCastFilm)
-    .then((response) => {
-      return response.json();
-    })
-    .then(callback);
-};
-const getFilmDetail = (callback) => {
-  fetch(apiDetailFilm)
-    .then((response) => {
-      return response.json();
-    })
-    .then(callback);
-};
+  const img = (poster_path) =>
+    `https://image.tmdb.org/t/p/original/${poster_path}`;
+  const img300 = (poster_path) =>
+    `https://image.tmdb.org/t/p/w300/${poster_path}`;
+  const getTrendFilm = (callback) => {
+    fetch(apiTrendFilm(genres))
+      .then((response) => {
+        return response.json();
+      })
+      .then(callback);
+  };
+  const getCastFilm = (callback) => {
+    fetch(apiCastFilm)
+      .then((response) => {
+        return response.json();
+      })
+      .then(callback);
+  };
+  const getFilmDetail = (callback) => {
+    fetch(apiDetailFilm)
+      .then((response) => {
+        return response.json();
+      })
+      .then(callback);
+  };
 
-const getTrailer = (callback) => {
-  fetch(apiTrailerFilm)
-    .then((response) => {
-      return response.json();
-    })
-    .then(callback);
-};
-const getSuggest = (callback) => {
-  console.log("genner", apiGenrerFilm(genres));
-  fetch(apiGenrerFilm(genres))
-    .then((response) => {
-      return response.json();
-    })
-    .then(callback);
-};
-var stopVideo = (e) => {
-  var iframe = document.querySelector("iframe");
-  var video = document.querySelector("video");
-  if (iframe) {
-    var iframeSrc = iframe.src;
-    iframe.src = iframeSrc;
-  }
-  if (video) {
-    video.pause();
-  }
-};
+  const getTrailer = (callback) => {
+    fetch(apiTrailerFilm)
+      .then((response) => {
+        return response.json();
+      })
+      .then(callback);
+  };
+  const getSuggest = (callback) => {
+    console.log("genner", apiGenrerFilm(genres));
+    fetch(apiGenrerFilm(genres))
+      .then((response) => {
+        return response.json();
+      })
+      .then(callback);
+  };
+  var stopVideo = (e) => {
+    var iframe = document.querySelector("iframe");
+    var video = document.querySelector("video");
+    if (iframe) {
+      var iframeSrc = iframe.src;
+      iframe.src = iframeSrc;
+    }
+    if (video) {
+      video.pause();
+    }
+  };
 
-const detailsFilm = () => {
-  getFilmDetail((data) => {
-    genres = data.genres[0].id;
+  const detailsFilm = () => {
+    getFilmDetail((data) => {
+      genres = data.genres[0].id;
 
-    console.log(data);
-    details.innerHTML = `
+      console.log(data);
+      details.innerHTML = `
         <div class="filmDetail-image">
           <img src="https://image.tmdb.org/t/p/w300/${
             data.poster_path ? data.poster_path : data.backdrop_path
@@ -85,8 +86,8 @@ const detailsFilm = () => {
             <h4 class="filmDetail-status" >Trạng thái: <span class="${
               data.status === "Released" ? "bg-green" : "bg-brown"
             }">${
-      data.status === "Released" ? "Đã phát hành" : "Sắp phát hành"
-    }</span></h4>
+        data.status === "Released" ? "Đã phát hành" : "Sắp phát hành"
+      }</span></h4>
             <h4 class="filmDetail-genres">
               Thể loại:
                 <span >
@@ -135,80 +136,82 @@ const detailsFilm = () => {
         </div>
         </div>
         `;
-   
-    trailerFilm();
-    modal();
-    suggesttionFilm();
-    displayCast();
-    data.belongs_to_collection ? colectionFilm(data.belongs_to_collection) : "";
-  });
-};
-const colectionFilm = (data) => {
-  var imgColection = document.querySelector(".filmColection-image");
-  var nameColection = document.querySelector(".filmColection-name");
-  var buttonColection = document.querySelector(".filmColection-button");
-  var posterColection = document.querySelector(".filmColection-poster");
-  imgColection.innerHTML = `
+
+      trailerFilm();
+      modal();
+      suggesttionFilm();
+      displayCast();
+      data.belongs_to_collection
+        ? colectionFilm(data.belongs_to_collection)
+        : "";
+    });
+  };
+  const colectionFilm = (data) => {
+    var imgColection = document.querySelector(".filmColection-image");
+    var nameColection = document.querySelector(".filmColection-name");
+    var buttonColection = document.querySelector(".filmColection-button");
+    var posterColection = document.querySelector(".filmColection-poster");
+    imgColection.innerHTML = `
   <img src=${img(data.backdrop_path)}></img>
  
   `;
-  nameColection.innerHTML = `
+    nameColection.innerHTML = `
    <span> ${data.name}</span>
   `;
-  buttonColection.innerHTML = `
+    buttonColection.innerHTML = `
       <a href="colection.html?id=${data.id}">
         Xem ngay
       </a>
   `;
-  posterColection.innerHTML = `
+    posterColection.innerHTML = `
     <img src=${img300(data.poster_path)}></img>
   `;
-};
-const modal = () => {
-  var modal = document.getElementById("myModal");
-  var btnTrailer = document.querySelector(".button--trailer");
-  var btnClose = document.querySelector(".close");
-  btnTrailer.addEventListener("click", function (e) {
-    modal.style.display = "block";
-  });
-  btnClose.addEventListener("click", function (e) {
-    modal.style.display = "none";
-
-    stopVideo();
-  });
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-      stopVideo();
-    }
   };
-};
-const trailerFilm = () => {
-  getTrailer((data) => {
-    console.log(data);
-    const modalTrailer = document.querySelector(".modal-content");
-    const div = document.createElement("div");
-    div.setAttribute("class", "filmDetail-showTrailer");
-    div.innerHTML = `
+  const modal = () => {
+    var modal = document.getElementById("myModal");
+    var btnTrailer = document.querySelector(".button--trailer");
+    var btnClose = document.querySelector(".close");
+    btnTrailer.addEventListener("click", function (e) {
+      modal.style.display = "block";
+    });
+    btnClose.addEventListener("click", function (e) {
+      modal.style.display = "none";
+
+      stopVideo();
+    });
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        stopVideo();
+      }
+    };
+  };
+  const trailerFilm = () => {
+    getTrailer((data) => {
+      console.log(data);
+      const modalTrailer = document.querySelector(".modal-content");
+      const div = document.createElement("div");
+      div.setAttribute("class", "filmDetail-showTrailer");
+      div.innerHTML = `
       <iframe width="854px" height="480px" src="https://www.youtube-nocookie.com/embed/${data.results[0].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       `;
-    modalTrailer.appendChild(div);
-  });
-};
-function suggesttionFilm() {
-  const suggestList = document.querySelector(".filmSuggest-list");
-  getSuggest((data) => {
-    console.log(genres);
+      modalTrailer.appendChild(div);
+    });
+  };
+  function suggesttionFilm() {
+    const suggestList = document.querySelector(".filmSuggest-list");
+    getSuggest((data) => {
+      console.log(genres);
 
-    console.log(data);
-    data = data.results;
+      console.log(data);
+      data = data.results;
 
-    for (var i = 0; i < data.length; i++) {
-      console.log(data[i]);
-      var li = document.createElement("li");
-      li.setAttribute("class", "filmSuggest-item");
-      li.setAttribute("id", `${data[i].id}`);
-      li.innerHTML = `
+      for (var i = 0; i < data.length; i++) {
+        console.log(data[i]);
+        var li = document.createElement("li");
+        li.setAttribute("class", "filmSuggest-item");
+        li.setAttribute("id", `${data[i].id}`);
+        li.innerHTML = `
       <a href="film.html?id=${data[i].id}">
         <img src=${img300(data[i].poster_path)}></img>
         <div class="info"> 
@@ -217,25 +220,25 @@ function suggesttionFilm() {
       </a>
         `;
 
-      suggestList.appendChild(li);
-    }
-    slickSlide();
-  });
-}
-const displayCast = () => {
-  const suggestList = document.querySelector(".filmCast-list");
-  getCastFilm((data) => {
-    console.log(data);
+        suggestList.appendChild(li);
+      }
+      slickSlide();
+    });
+  }
+  const displayCast = () => {
+    const suggestList = document.querySelector(".filmCast-list");
+    getCastFilm((data) => {
+      console.log(data);
 
-    console.log(data);
-    data = data.cast;
+      console.log(data);
+      data = data.cast;
 
-    for (var i = 0; i < 4; i++) {
-      console.log(data[i]);
-      var li = document.createElement("li");
-      li.setAttribute("class", "filmCast-item");
-      li.setAttribute("id", `${data[i].id}`);
-      li.innerHTML = `
+      for (var i = 0; i < 4; i++) {
+        console.log(data[i]);
+        var li = document.createElement("li");
+        li.setAttribute("class", "filmCast-item");
+        li.setAttribute("id", `${data[i].id}`);
+        li.innerHTML = `
       <a href="dien-vien.html?id=${data[i].id}" >
           <div className="filmCast-image" style="max-width:100%;margin: auto;">
             <img src=${img300(
@@ -255,49 +258,52 @@ const displayCast = () => {
       </a>
         `;
 
-      suggestList.appendChild(li);
-    }
-  });
-};
-const slickSlide = () => {
-  $(".filmSuggest-list").slick({
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 5,
-    slidesToScroll: 4,
-    variableWidth: true,
-    variableHeight: true,
-    // autoplaySpeed: 1000,
-    // autoplay: true,
-    prevArrow:
-      '<div class="slick-prev position left-15 " ><i class="fa fa-angle-left fs-25" aria-hidden="true"></i></div>',
-    nextArrow:
-      '<div class="slick-next position right-20" ><i class="fa fa-angle-right fs-25" aria-hidden="true"></i></div>',
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
+        suggestList.appendChild(li);
+      }
+    });
+  };
+  const slickSlide = () => {
+    $(".filmSuggest-list").slick({
+      infinite: true,
+      speed: 1000,
+      slidesToShow: 5,
+      slidesToScroll: 4,
+      variableWidth: true,
+      variableHeight: true,
+      // autoplaySpeed: 1000,
+      // autoplay: true,
+      prevArrow:
+        '<div class="slick-prev position left-15 " ><i class="fa fa-angle-left fs-25" aria-hidden="true"></i></div>',
+      nextArrow:
+        '<div class="slick-next position right-20" ><i class="fa fa-angle-right fs-25" aria-hidden="true"></i></div>',
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+          },
         },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          },
         },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
         },
-      },
-    ],
-  });
+      ],
+    });
+  };
+
+  detailsFilm();
 };
 
-detailsFilm();
+document.addEventListener("DOMContentLoaded", initApp);
