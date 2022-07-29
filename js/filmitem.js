@@ -67,9 +67,9 @@ const detailApp = () => {
 
   const detailsFilm = () => {
     getFilmDetail((data) => {
-      if(!data) {
-        alert("Đang fetch")
-      } 
+      if (!data) {
+        alert("Đang fetch");
+      }
       genres = data.genres ? data.genres[0].id : "";
 
       console.log(data);
@@ -84,7 +84,9 @@ const detailApp = () => {
               ${data.title}
             </h2>
             <h4 class="filmDetail-originalName">
-            ${data.original_title} (${data.release_date?data.release_date.slice(0, 4):""})
+            ${data.original_title} (${
+        data.release_date ? data.release_date.slice(0, 4) : ""
+      })
             </h4>
             <h4 class="filmDetail-status" >Trạng thái: <span class="${
               data.status === "Released" ? "bg-green" : "bg-brown"
@@ -94,7 +96,11 @@ const detailApp = () => {
             <h4 class="filmDetail-genres">
               Thể loại:
                 <span >
-                ${data.genres?data.genres.map((item) => " " + item.name.slice(5) + " "):""}
+                ${
+                  data.genres
+                    ? data.genres.map((item) => " " + item.name.slice(5) + " ")
+                    : ""
+                }
                 </span>
             </h4>
             <h4 class="filmDetail-productioncountry">

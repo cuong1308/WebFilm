@@ -1,7 +1,4 @@
 const navbar = () => {
-  const apiFilmCountry = (iso) =>
-    `https://api.themoviedb.org/3/discover/movie?api_key=d8f8edbbdc27ab9a16942772f29aa16c&language=vi&sort_by=popularity.desc&page=1&with_original_language=${iso}`;
-
   const isoCountry = [
     {
       name: "Việt Nam",
@@ -64,7 +61,9 @@ const navbar = () => {
       let item = document.createElement("li");
       item.setAttribute("class", `header-nav-genres--${category}_item`);
       item.innerHTML = `
-        <a href="#">
+        <a href="kho-phim.html?category=${category}&genres=${genres.name}-${
+        genres.id
+      }">
             ${
               genres.name.slice(0, 12) == "Chương Trình"
                 ? "CT " + genres.name.slice(13)
