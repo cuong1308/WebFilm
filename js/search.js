@@ -50,6 +50,7 @@ const apiFilter = () => {
   } else if (key_search) {
     return urlSearch;
   }
+  return urlFilm;
 };
 
 console.log(apiFilter());
@@ -69,17 +70,17 @@ const getFilm = (callback) => {
     .then(callback);
 };
 function displayShowSearch() {
-  if (key_search || iso) {
-    getSearch((data) => {
-      data = data.results;
-      viewFilm(data);
-    });
-  } else {
-    getFilm((data) => {
-      console.log(data);
-      viewFilm(data.results);
-    });
-  }
+  // if (key_search) {
+  getSearch((data) => {
+    data = data.results;
+    viewFilm(data);
+  });
+  // } else {
+  getFilm((data) => {
+    console.log(data);
+    viewFilm(data.results);
+  });
+  // }
 }
 const formatDate = (date) => {
   const month = date.slice(5, 7);
@@ -102,9 +103,9 @@ const viewFilm = (data) => {
     div.innerHTML = `
     
         <a href="${
-          key_category == "movie"
-            ? `film.html?id=${data[i].id}`
-            : `chi-tiet-tivi-shows.html?id=${data[i].id}`
+          key_category == "tv"
+            ? `chi-tiet-tivi-shows.html?id=${data[i].id}`
+            : `film.html?id=${data[i].id}`
         }">
             <div class="filmStore-image">
               <img src=${img(data[i].poster_path)}></img>
