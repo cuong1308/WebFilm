@@ -209,7 +209,7 @@ label {
   display: flex;
   align-items: center;
 }
-.header-nav-genres {
+.header-nav-genres, .header-nav-country {
   display: none;
   background: black;
   position: absolute;
@@ -222,21 +222,27 @@ label {
   background: #2e2c2c;
   padding: 20px;
 }
-.header-nav-genres--movie_list, .header-nav-genres--tv_list {
+.header-nav-genres--movie_list, .header-nav-genres--tv_list, .header-nav-country--movie_list, .header-nav-country--tv_list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
-.header-nav-genres--movie_list span, .header-nav-genres--tv_list span {
+.header-nav-genres--movie_list span, .header-nav-genres--tv_list span, .header-nav-country--movie_list span, .header-nav-country--tv_list span {
   grid-column: 1/6;
 }
-.header-nav-genres--movie_item, .header-nav-genres--tv_item {
+.header-nav-genres--movie_item, .header-nav-genres--tv_item, .header-nav-country--movie_item, .header-nav-country--tv_item {
   font-size: 15px;
 }
-.header-nav-item:hover .header-nav-genres {
+.header-nav-item--genres:hover .header-nav-genres {
   display: block;
   color: #da966e;
 }
-.header-nav-item:hover .header-nav-genres a {
+.header-nav-item--genres:hover .header-nav-genres a {
+  width: 100%;
+}
+.header-nav-item--country:hover .header-nav-country {
+  display: block;
+}
+.header-nav-item--country:hover .header-nav-country a {
   width: 100%;
 }
 .header-nav-container {

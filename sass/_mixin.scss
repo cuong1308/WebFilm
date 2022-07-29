@@ -31,8 +31,9 @@
     display: flex;
     justify-content: center;
 }
+
 @mixin flex-spacebetween {
-    display: flex; 
+    display: flex;
     justify-content: space-between;
 }
 

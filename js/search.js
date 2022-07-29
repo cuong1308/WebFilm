@@ -2,16 +2,22 @@ const key_api = "d8f8edbbdc27ab9a16942772f29aa16c";
 const page = ["1", "2", "3"];
 var filmId = "";
 const key_search = new URL(window.location.href).searchParams.get("search");
+const key_country = new URL(window.location.href).searchParams.get("country");
+const iso = key_country
+  ? key_country.slice(key_country.length - 2, key_country.length)
+  : null;
+console.log(iso);
 const urlFilm = (page) =>
   `https://api.themoviedb.org/3/discover/movie?api_key=${key_api}&language=vi&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_watch_monetization_types=flatrate`;
 const img = (poster_path) => `https://image.tmdb.org/t/p/w300${poster_path}`;
 const urlSearch = encodeURI(
   `https://api.themoviedb.org/3/search/movie?api_key=${key_api}&language=vi&query=${key_search}&page=1&include_adult=false`
 );
+const countrySearch = `https://api.themoviedb.org/3/discover/movie?api_key=d8f8edbbdc27ab9a16942772f29aa16c&language=vi&sort_by=release_date.desc&page=1&with_original_language=${iso}`;
 const apiDetailFilm = (id) =>
   `https://api.themoviedb.org/3/movie/${id}}?api_key=${key_api}&language=vi`;
 const getSearch = (callback) => {
-  fetch(urlSearch)
+  fetch(iso && key_search ? urlSearch : iso ? countrySearch : urlSearch)
     .then((response) => {
       return response.json();
     })
@@ -28,7 +34,7 @@ const getFilm = (callback) => {
   });
 };
 function displayShowSearch() {
-  if (key_search) {
+  if (key_search || iso) {
     getSearch((data) => {
       data = data.results;
       viewFilm(data);

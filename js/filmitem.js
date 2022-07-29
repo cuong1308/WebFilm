@@ -1,4 +1,4 @@
-const initApp = () => {
+const detailApp = () => {
   const details = document.querySelector(".filmDetail-container");
   const suggest = document.querySelector(".filmSuggest-container");
   console.log(new URL(window.location.href).searchParams.get("id"));
@@ -67,7 +67,10 @@ const initApp = () => {
 
   const detailsFilm = () => {
     getFilmDetail((data) => {
-      genres = data.genres[0].id;
+      if(!data) {
+        alert("Đang fetch")
+      } 
+      genres = data.genres ? data.genres[0].id : "";
 
       console.log(data);
       details.innerHTML = `
@@ -81,7 +84,7 @@ const initApp = () => {
               ${data.title}
             </h2>
             <h4 class="filmDetail-originalName">
-            ${data.original_title} (${data.release_date.slice(0, 4)})
+            ${data.original_title} (${data.release_date?data.release_date.slice(0, 4):""})
             </h4>
             <h4 class="filmDetail-status" >Trạng thái: <span class="${
               data.status === "Released" ? "bg-green" : "bg-brown"
@@ -91,7 +94,7 @@ const initApp = () => {
             <h4 class="filmDetail-genres">
               Thể loại:
                 <span >
-                ${data.genres.map((item) => " " + item.name.slice(5) + " ")}
+                ${data.genres?data.genres.map((item) => " " + item.name.slice(5) + " "):""}
                 </span>
             </h4>
             <h4 class="filmDetail-productioncountry">
@@ -193,7 +196,19 @@ const initApp = () => {
       const div = document.createElement("div");
       div.setAttribute("class", "filmDetail-showTrailer");
       div.innerHTML = `
-      <iframe width="854px" height="480px" src="https://www.youtube-nocookie.com/embed/${data.results[0].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      ${
+        data.results[0]
+          ? `<iframe
+            width="854px"
+            height="480px"
+            src="https://www.youtube-nocookie.com/embed/${data.results[0].key}"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>`
+          : "Hiện tại chưa có trailer"
+      } 
       `;
       modalTrailer.appendChild(div);
     });
@@ -210,7 +225,7 @@ const initApp = () => {
         console.log(data[i]);
         var li = document.createElement("li");
         li.setAttribute("class", "filmSuggest-item");
-        li.setAttribute("id", `${data[i].id}`);
+        li.setAttribute("id", `${data[i] ? data[i].id : ""}`);
         li.innerHTML = `
       <a href="film.html?id=${data[i].id}">
         <img src=${img300(data[i].poster_path)}></img>
@@ -237,25 +252,31 @@ const initApp = () => {
         console.log(data[i]);
         var li = document.createElement("li");
         li.setAttribute("class", "filmCast-item");
-        li.setAttribute("id", `${data[i].id}`);
+        li.setAttribute("id", `${data[i] ? data[i].id : ""}`);
         li.innerHTML = `
-      <a href="dien-vien.html?id=${data[i].id}" >
-          <div className="filmCast-image" style="max-width:100%;margin: auto;">
-            <img src=${img300(
-              data[i].profile_path
-            )} alt="cast" style="width:100%;
-                                width: 100%;
-                                height: 230px;
-                                object-fit: cover;
-                                object-position: top;
-                                border-radius: 10px 10px 0 0;
-                                "/>
-          </div>
-        <div class="infor"> 
-            <h2 class="filmCast-originalName">${data[i].original_name}</h2>
-            <h2 class="filmCast-character">${data[i].character}</h2>
-        </div>
-      </a>
+        ${
+          data[i]
+            ? ` 
+            <a href="dien-vien.html?id=${data[i].id}" >
+               <div className="filmCast-image" style="max-width:100%;margin: auto;">
+                  <img src=${img300(
+                    data[i].profile_path
+                  )} alt="cast" style="width:100%;
+                              width: 100%;
+                              height: 230px;
+                              object-fit: cover;
+                              object-position: top;
+                              border-radius: 10px 10px 0 0;
+                              "/>
+                </div>
+              <div class="infor"> 
+                <h2 class="filmCast-originalName">${data[i].original_name}</h2>
+                <h2 class="filmCast-character">${data[i].character}</h2>
+              </div>
+          </a>`
+            : ""
+        }
+    
         `;
 
         suggestList.appendChild(li);
@@ -306,4 +327,4 @@ const initApp = () => {
   detailsFilm();
 };
 
-document.addEventListener("DOMContentLoaded", initApp);
+document.addEventListener("DOMContentLoaded", detailApp);

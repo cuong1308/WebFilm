@@ -136,6 +136,7 @@ $(document).ready(function() {
         if(event.key === "Enter") { 
         var queryParams = new URLSearchParams(window.location.search);
         queryParams.set("search",$(this).val());
+        queryParams.has("country")? queryParams.delete("country"):""
         history.replaceState(null, null, "?"+queryParams.toString());
         console.log(queryParams)
 

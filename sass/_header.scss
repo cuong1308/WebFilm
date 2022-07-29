@@ -143,7 +143,9 @@
     }
 
     &-nav {
-        &-genres {
+
+        &-genres,
+        &-country {
             display: none;
             background: black;
             position: absolute;
@@ -162,22 +164,36 @@
             &--tv_list {
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
+
                 span {
                     grid-column: 1/6;
                 }
             }
-            &--movie_item , &--tv_item {
+
+            &--movie_item,
+            &--tv_item {
                 font-size: 15px;
             }
         }
-        &-item:hover &-genres {
+
+        &-item--genres:hover &-genres {
             display: block;
-            color :#da966e ;
-            a{
+            color: #da966e;
+
+            a {
                 width: 100%;
             }
         }
-        
+
+        &-item--country:hover &-country {
+            display: block;
+
+
+            a {
+                width: 100%;
+            }
+        }
+
 
         display: flex;
         align-items: center;

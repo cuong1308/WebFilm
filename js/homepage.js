@@ -20,7 +20,6 @@ const initApp = () => {
         div.setAttribute("class", "film-item");
         div.setAttribute("id", `${data[i].id}`);
 
-        filmItem.appendChild(div);
         console.log(`film?id=${data[i].id}`);
         div.innerHTML = `
       <a href="film.html?id=${data[i].id}">
@@ -29,6 +28,7 @@ const initApp = () => {
               <h2 class="filmUpdate-name">${data[i].title}</h2>           
            </div>
        </a>`;
+        filmItem.appendChild(div);
       }
     });
   };
@@ -207,4 +207,4 @@ const initApp = () => {
   displayPosterShow();
   // backgroundLogin() ;
 };
-document.addEventListener('DOMContentLoaded',initApp) ;
+document.addEventListener("DOMContentLoaded", initApp);
