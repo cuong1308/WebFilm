@@ -205,7 +205,53 @@ label {
 .header-name:hover .dropdown-menu {
   display: block;
 }
-
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+.header-nav-genres {
+  display: none;
+  background: black;
+  position: absolute;
+  flex-direction: column;
+  z-index: 10000;
+  gap: 30px;
+  overflow: auto;
+  box-shadow: rgba(0, 0, 0, 0.2) -16px -20px 16px 0px;
+  z-index: 1000;
+  background: #2e2c2c;
+  padding: 20px;
+}
+.header-nav-genres--movie_list, .header-nav-genres--tv_list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.header-nav-genres--movie_list span, .header-nav-genres--tv_list span {
+  grid-column: 1/6;
+}
+.header-nav-genres--movie_item, .header-nav-genres--tv_item {
+  font-size: 15px;
+}
+.header-nav-item:hover .header-nav-genres {
+  display: block;
+  color: #da966e;
+}
+.header-nav-item:hover .header-nav-genres a {
+  width: 100%;
+}
+.header-nav-container {
+  margin: 15px;
+  font-size: 18px;
+}
+.header-nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.header-nav-title {
+  font-weight: bold;
+}
 @media screen and (max-width: 374.98px) {
   .header-logo img {
     display: none;

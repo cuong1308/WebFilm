@@ -142,12 +142,73 @@
 
     }
 
+    &-nav {
+        &-genres {
+            display: none;
+            background: black;
+            position: absolute;
+            // display: flex;
+            flex-direction: column;
+            z-index: 10000;
+            gap: 30px;
+            overflow: auto;
+            box-shadow: rgb(0 0 0 / 20%) -16px -20px 16px 0px;
+            z-index: 1000;
+
+            background: rgb(46, 44, 44);
+            padding: 20px;
+
+            &--movie_list,
+            &--tv_list {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                span {
+                    grid-column: 1/6;
+                }
+            }
+            &--movie_item , &--tv_item {
+                font-size: 15px;
+            }
+        }
+        &-item:hover &-genres {
+            display: block;
+            color :#da966e ;
+            a{
+                width: 100%;
+            }
+        }
+        
+
+        display: flex;
+        align-items: center;
+
+        &-container {
+            margin: 15px;
+            font-size: 18px;
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        &-title {
+            font-weight: bold;
+
+        }
+
+        &-item {}
+    }
+
 
 }
+
 @media screen and (max-width: 374.98px) {
     .header-logo {
-        img{
-           display: none;
+        img {
+            display: none;
         }
     }
 }
