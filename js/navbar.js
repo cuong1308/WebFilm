@@ -1,4 +1,6 @@
 const navbar = () => {
+  const date = new Date();
+
   const isoCountry = [
     {
       name: "Việt Nam",
@@ -92,10 +94,23 @@ const navbar = () => {
       navCountry.appendChild(countryItem);
     });
   };
-
+  const getDate = (date) => {
+    const navDate = document.querySelector(".header-nav-date");
+    for (var i = 0; i < 40; i++) {
+      const dateItem = document.createElement("li");
+      dateItem.setAttribute("class", "header-nav-date--item");
+      dateItem.innerHTML = `
+        <a href="kho-phim.html?release=${date - i}">
+           ${date - i}
+        </a>
+      `;
+      navDate.appendChild(dateItem);
+    }
+  };
   getGenres("movie");
   getGenres("tv");
   getCountry();
+  getDate(date.getFullYear());
 };
 
 document.addEventListener("DOMContentLoaded", navbar);

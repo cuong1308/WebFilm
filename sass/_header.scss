@@ -143,9 +143,36 @@
     }
 
     &-nav {
+        cursor: pointer;
+
+        &-tv,
+        &-movie,
+        &-homepage {
+            font-weight: bold;
+            &:hover {
+                color: #da966e;
+            }
+        }
+
+        &-item {
+            cursor: pointer;
+
+            &--genres,
+            &--country,
+            &--date {
+                &:hover {
+                    color: #da966e;
+                }
+            }
+
+
+
+
+        }
 
         &-genres,
-        &-country {
+        &-country,
+        &-date {
             display: none;
             background: black;
             position: absolute;
@@ -173,6 +200,18 @@
             &--movie_item,
             &--tv_item {
                 font-size: 15px;
+            }
+        }
+
+        &-item--date:hover &-date {
+            display: grid;
+            grid-template-columns: repeat(10,1fr);
+            right: 50px;
+            gap: 20px;
+          
+
+            a {
+                width: 100%;
             }
         }
 

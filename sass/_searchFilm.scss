@@ -5,14 +5,63 @@
         margin-top: 20px;
     }
 
+    .filmSort {
+        position: sticky;
+        top: 5px;
+        background: rgba(26, 26, 26, 0.5);
+        padding: 30px;
+        box-shadow: 1px -1px 7px 0px rgb(218 150 110);
+        border-radius: 10px;
+
+        &-control {
+            &-group {
+                // padding: 10px 10px;
+            }
+
+            &-label {
+                font-size: 20px;
+                font-weight: bold;
+                color: rgb(218 150 110);
+            }
+
+            &-search {
+                margin-top: 20px;
+                width: 100%;
+                border-radius: 5px;
+                height: 45px;
+                padding: 0 10px;
+            }
+        }
+
+        &-genres {
+
+            margin-top: 30px;
+
+            &-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px 10px;
+            }
+
+            &--tv,
+            &--movie {
+                &--item {
+                    box-shadow: 1px -1px 7px 0px #797978;
+                    padding: 8px;
+                    border: 1px solid white;
+                    border-radius: 10px;
+                    font-size: 12px;
+                    word-spacing: -4px;
+                    text-transform: lowercase;
+                }
+            }
+        }
+    }
+
     .filmStore {
-        &-container {
+        &-container {}
 
-        }
-
-        &-list {
-
-        }
+        &-list {}
 
         &-item {
             a {
@@ -27,7 +76,7 @@
             overflow: hidden;
             border-radius: 16px;
             box-shadow: 0 2px 8px rgb(218 150 110 / 80%);
-         
+
         }
 
         &-info {
@@ -69,3 +118,26 @@
         }
     }
 }
+
+// boostrap 
+.btn-submit {
+    margin-top: 15px !important;
+    border-radius: 8px;
+    width: 100%;
+    margin: auto;
+    font-weight: bold;
+    background: #da966e;
+
+}
+
+.form-control:focus {
+    border-color: rgb(218 150 110 / 80%) !important;
+}
+
+
+
+
+select:focus>option:checked {
+    background: rgb(218 150 110 / 80%) !important;
+}
+

@@ -206,10 +206,23 @@ label {
   display: block;
 }
 .header-nav {
+  cursor: pointer;
   display: flex;
   align-items: center;
 }
-.header-nav-genres, .header-nav-country {
+.header-nav-tv, .header-nav-movie, .header-nav-homepage {
+  font-weight: bold;
+}
+.header-nav-tv:hover, .header-nav-movie:hover, .header-nav-homepage:hover {
+  color: #da966e;
+}
+.header-nav-item {
+  cursor: pointer;
+}
+.header-nav-item--genres:hover, .header-nav-item--country:hover, .header-nav-item--date:hover {
+  color: #da966e;
+}
+.header-nav-genres, .header-nav-country, .header-nav-date {
   display: none;
   background: black;
   position: absolute;
@@ -222,15 +235,24 @@ label {
   background: #2e2c2c;
   padding: 20px;
 }
-.header-nav-genres--movie_list, .header-nav-genres--tv_list, .header-nav-country--movie_list, .header-nav-country--tv_list {
+.header-nav-genres--movie_list, .header-nav-genres--tv_list, .header-nav-country--movie_list, .header-nav-country--tv_list, .header-nav-date--movie_list, .header-nav-date--tv_list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
-.header-nav-genres--movie_list span, .header-nav-genres--tv_list span, .header-nav-country--movie_list span, .header-nav-country--tv_list span {
+.header-nav-genres--movie_list span, .header-nav-genres--tv_list span, .header-nav-country--movie_list span, .header-nav-country--tv_list span, .header-nav-date--movie_list span, .header-nav-date--tv_list span {
   grid-column: 1/6;
 }
-.header-nav-genres--movie_item, .header-nav-genres--tv_item, .header-nav-country--movie_item, .header-nav-country--tv_item {
+.header-nav-genres--movie_item, .header-nav-genres--tv_item, .header-nav-country--movie_item, .header-nav-country--tv_item, .header-nav-date--movie_item, .header-nav-date--tv_item {
   font-size: 15px;
+}
+.header-nav-item--date:hover .header-nav-date {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  right: 50px;
+  gap: 20px;
+}
+.header-nav-item--date:hover .header-nav-date a {
+  width: 100%;
 }
 .header-nav-item--genres:hover .header-nav-genres {
   display: block;
@@ -957,6 +979,43 @@ label {
   grid-template-columns: 0.5fr 1fr;
   margin-top: 20px;
 }
+.film-full .filmSort {
+  position: sticky;
+  top: 5px;
+  background: rgba(26, 26, 26, 0.5);
+  padding: 30px;
+  box-shadow: 1px -1px 7px 0px #da966e;
+  border-radius: 10px;
+}
+.film-full .filmSort-control-label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #da966e;
+}
+.film-full .filmSort-control-search {
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 5px;
+  height: 45px;
+  padding: 0 10px;
+}
+.film-full .filmSort-genres {
+  margin-top: 30px;
+}
+.film-full .filmSort-genres-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 10px;
+}
+.film-full .filmSort-genres--tv--item, .film-full .filmSort-genres--movie--item {
+  box-shadow: 1px -1px 7px 0px #797978;
+  padding: 8px;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-size: 12px;
+  word-spacing: -4px;
+  text-transform: lowercase;
+}
 .film-full .filmStore-item {
   border: 1px solid #da966e;
   margin-bottom: 25px;
@@ -998,6 +1057,23 @@ label {
   line-clamp: 5;
   -webkit-box-orient: vertical;
   margin-top: 25px;
+}
+
+.btn-submit {
+  margin-top: 15px !important;
+  border-radius: 8px;
+  width: 100%;
+  margin: auto;
+  font-weight: bold;
+  background: #da966e;
+}
+
+.form-control:focus {
+  border-color: rgba(218, 150, 110, 0.8) !important;
+}
+
+select:focus > option:checked {
+  background: rgba(218, 150, 110, 0.8) !important;
 }
 
 .filmColection {

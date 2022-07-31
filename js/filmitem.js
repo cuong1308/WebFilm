@@ -70,7 +70,7 @@ const detailApp = () => {
       if (!data) {
         alert("Đang fetch");
       }
-      genres = data.genres ? data.genres[0].id : "";
+      genres = data.genres[0] ? data.genres[0].id : "";
 
       console.log(data);
       details.innerHTML = `

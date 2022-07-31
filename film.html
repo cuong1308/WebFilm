@@ -28,7 +28,7 @@
                         <div class="container">
                             <div class="header-top-container">
                               <div class="header-logo">
-                                <img srcset="../../assets/motchill.png 2x" alt="">
+                                <img srcset="./assets/motchill.png 2x" alt="">
                               </div>
                               <div class="form__group field">
                                 <input type="input" class="search-input" placeholder="Tìm kiếm" name="search" id='name' required />
@@ -39,12 +39,12 @@
                                      
                                       <div class="header-auth">
                                         <div class="header-login">
-                                           <a href="./login/index.html" class="login">
+                                           <a href="login/index.html" class="login" class="btnLogin">
                                              Đăng nhập
                                            </a>
-                                        </div>
+                                        </div>        
                                         <div class="header-register">
-                                            <a href="./sigup/index.html" class="register">
+                                            <a href="sigup/index.html" class="register" class="btnRegister">
                                               Đăng ký 
                                             </a>
                                       </div>
@@ -58,7 +58,7 @@
                                       </div>
                                       <div class="header-account">
                                         <div class="header-account-name">
-                                          <img srcset='./assets/avt.png 2x'style="width:50px ; height:50px"></img>
+                                          <img srcset='../assets/avt.png 2x'style="width:50px ; height:50px"></img>
                                           </div>
                                       </div>
                                       
@@ -80,16 +80,76 @@
                                            
                                         </div>
                                       </div>
-                                   
+                                     
                                     </div>
                                   </div>
                               </div>
                             </div>
                         </div>
                     </div>
+                    <script src="./js/navbar.js"></script>
                     <div class="header-nav">
                         <div class="container">
-                            
+                            <div class="header-nav-container">
+                                <ul class="header-nav-list">
+                                    <li class="header-nav-item">
+                                      <a href="/">
+                                        <span class="header-nav-homepage" > TRANG CHỦ</span>
+                                      </a>
+                                    </li>
+                                    <li class="header-nav-item--genres">
+                                        <div class="header-nav-title">
+                                            THỂ LOẠI
+                                        </div> 
+                                        <ul class="header-nav-genres">
+                                            <li class="header-nav-genres--phimle">
+                                                <ul class="header-nav-genres--movie_list">
+                                                  <span> Phim lẻ</span>
+                                                </ul>
+                                            </li>
+                                            <li class="header-nav-genres--phimbo">
+                                              <ul class="header-nav-genres--tv_list">
+                                               <span>Phim bộ</span>
+                                            </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="header-nav-item--country">
+                                      <div class="header-nav-title">
+                                            QUỐC GIA
+                                      </div> 
+                                      <ul class="header-nav-country">
+                                          
+                                      </ul>
+                                  </li>
+                                   <li class="header-nav-item--movie">
+                                    <div class="header-nav-title">
+                                      <a href="kho-phim.html?category=tv">
+                                        <span class="header-nav-tv" > PHIM BỘ</span>
+                                      </a>
+                                    </div> 
+                                    
+                                  </li>
+                                  <li class="header-nav-item--tv">
+                                    <div class="header-nav-title">
+                                      <a href="kho-phim.html?category=movie">
+                                        <span class="header-nav-movie" > PHIM LẺ</span>
+                                      </a>
+                                    </div> 
+                                    <ul class="header-nav-tv-show">
+                                        
+                                    </ul>
+                                  </li>
+                                  <li class="header-nav-item--date">
+                                    <div class="header-nav-title">
+                                         NĂM SẢN XUẤT
+                                    </div> 
+                                    <ul class="header-nav-date">
+                                        
+                                    </ul>
+                                  </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
