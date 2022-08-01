@@ -65,7 +65,7 @@ const navbar = () => {
       item.innerHTML = `
         <a href="kho-phim.html?category=${category}&genres=${genres.name}-${
         genres.id
-      }">
+      }&page=1">
             ${
               genres.name.slice(0, 12) == "Chương Trình"
                 ? "CT " + genres.name.slice(13)
@@ -100,7 +100,7 @@ const navbar = () => {
       const dateItem = document.createElement("li");
       dateItem.setAttribute("class", "header-nav-date--item");
       dateItem.innerHTML = `
-        <a href="kho-phim.html?release=${date - i}">
+        <a href="kho-phim.html?release=${date - i}&page=1">
            ${date - i}
         </a>
       `;

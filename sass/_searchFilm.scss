@@ -7,7 +7,7 @@
 
     .filmSort {
         position: sticky;
-        top: 5px;
+        top: 22px;
         background: rgba(26, 26, 26, 0.5);
         padding: 30px;
         box-shadow: 1px -1px 7px 0px rgb(218 150 110);
@@ -141,3 +141,10 @@ select:focus>option:checked {
     background: rgb(218 150 110 / 80%) !important;
 }
 
+.paginate{
+    &-list {
+        display: flex;
+        justify-content: center;
+        gap: 30px ;
+    }
+}

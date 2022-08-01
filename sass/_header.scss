@@ -2,6 +2,12 @@
     width: 100%;
     color: white;
 
+    &-logo {
+        margin: auto;
+    }
+    &-acount {
+        display: none;
+    }
     &-top {
         background: #333;
 
@@ -17,8 +23,12 @@
         @include flex-center-column;
 
         &-container {
-            @include flex-spacebetween;
-            align-items: center;
+            // @include flex-spacebetween;
+            // align-items: center;
+            display: grid;
+            grid-template-columns: 3fr 6fr 3fr;
+
+            gap: 25px;
         }
     }
 
@@ -27,6 +37,7 @@
         width: 100%;
         @include flex-center-vert;
         gap: 0 10px;
+        justify-content: flex-end;
 
         &-work {
             display: flex !important;
@@ -40,12 +51,15 @@
     &-right {
         display: flex;
         gap: 0 30px;
-        justify-content: space-between;
+
+
+        justify-content: flex-end;
+
         align-items: center;
     }
 
     &-account {
-        margin: 0 0 0 30px;
+        margin: 0 0 0 20px;
 
         &-name {
 
@@ -75,7 +89,7 @@
 
         padding: 16px 0;
         // margin-top: 10px;
-        width: 50%;
+        width: 100%;
     }
 
     .search-input {
@@ -144,11 +158,12 @@
 
     &-nav {
         cursor: pointer;
-
+        flex-wrap: wrap;
         &-tv,
         &-movie,
         &-homepage {
             font-weight: bold;
+
             &:hover {
                 color: #da966e;
             }
@@ -205,10 +220,10 @@
 
         &-item--date:hover &-date {
             display: grid;
-            grid-template-columns: repeat(10,1fr);
+            grid-template-columns: repeat(10, 1fr);
             right: 50px;
             gap: 20px;
-          
+
 
             a {
                 width: 100%;
@@ -260,10 +275,68 @@
 
 }
 
+@media screen and (max-width: 768px) {
+    .header {
+        &-top {
+            &-container {
+                gap: 10px 25px;
+            }
+        }
+        &-acount {
+            display: block;
+            font-size: 30px;
+            position: absolute;
+        }
+        &-right {
+            padding: 0;
+            display: none;
+            order: 2;
+        }
+        &-logo {
+            grid-column: 1/4; 
+            order: 1;
+            img {
+                max-width: 223px;
+            }
+        }
+
+        &-top {
+            height: 160px;
+            &-container {
+
+                
+
+            }
+        }.form__group {
+            order: 3;
+            grid-column: 1/4;
+        }
+        .search-input {
+            &:placeholder-shown~.form__label{
+                top: 90px ;
+            }
+           
+        }
+        .form__label {
+            top: 70px ;
+        }
+        &-nav {
+            height: 120px;
+            &-list {
+                flex-wrap: wrap;
+                gap: 30px;
+                justify-content: center;
+            }
+        }
+       
+    }
+    
+}
+
 @media screen and (max-width: 374.98px) {
     .header-logo {
         img {
-            display: none;
+            // display: none;
         }
     }
 }

@@ -143,7 +143,7 @@ function routeSeason(numberSeason) {
   console.log(window.location.search);
   window.location.reload();
   window.scroll(0, 0);
-}
+} 
 const seeMore = () => {
   let seeMore = document.querySelector(".tvSeason-button");
   let seasonOther = document.querySelector(".tvSeason-other");

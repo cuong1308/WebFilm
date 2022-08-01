@@ -1,5 +1,5 @@
 const key_api = "d8f8edbbdc27ab9a16942772f29aa16c";
-const page = ["1", "2", "3"];
+
 var filmId = "";
 const url_search = new URL(window.location.href).searchParams.get("search");
 const url_country = new URL(window.location.href).searchParams.get("country");
@@ -7,11 +7,13 @@ const url_category = new URL(window.location.href).searchParams.get("category");
 const key_genres = new URL(window.location.href).searchParams.get("genres");
 const key_release = new URL(window.location.href).searchParams.get("release");
 const url_sort = new URL(window.location.href).searchParams.get("sort");
+const url_page = new URL(window.location.href).searchParams.get("page");
 const key_sort = url_sort ? url_sort.toLowerCase() : "popularity.desc";
 const key_search = url_search ? url_search : "";
 const key_category = url_category ? url_category : "movie";
 const key_country = url_country ? url_country : "en";
 const apiTvGener = `https://api.themoviedb.org/3/genre/${key_category}/list?api_key=${key_api}&language=en`;
+const page = url_page ? url_page : "1";
 const idGenres = key_genres
   ? key_genres.slice(key_genres.length - 2, key_genres.length)
   : null;
@@ -23,10 +25,9 @@ const func = new URL(window.location.href).searchParams.get("search")
   : "discover";
 const img = (poster_path) => `https://image.tmdb.org/t/p/w300${poster_path}`;
 
-const urlFilms = `https://api.themoviedb.org/3/${func}/${key_category}?api_key=${key_api}&with_genres=${idGenres}&language=vi&sort_by=${key_sort}&page=1&primary_release_year=${key_release}&with_original_language=${iso}&query=${key_search}&include_adult=false`;
+const urlFilms = `https://api.themoviedb.org/3/${func}/${key_category}?api_key=${key_api}&with_genres=${idGenres}&language=vi&sort_by=${key_sort}&page=${page}&primary_release_year=${key_release}&with_original_language=${iso}&query=${key_search}&include_adult=false`;
 
 const getFilm = (callback) => {
-  console.l
   fetch(urlFilms)
     .then((response) => {
       return response.json();
@@ -35,10 +36,12 @@ const getFilm = (callback) => {
 };
 
 const displayShowSearch = async () => {
-  console.log(urlFilms)
+  console.log(urlFilms);
   const respon = await fetch(urlFilms);
   const data = await respon.json();
-  viewFilm(data.results);
+  viewFilm(data);
+
+  console.log(data);
 };
 const formatDate = (date) => {
   if (date) {
@@ -49,8 +52,29 @@ const formatDate = (date) => {
   }
   return "Chưa cập nhập";
 };
-const viewFilm = (data) => {
+const pagination = () => {
+  paginate.setAttribute("class", "pagination");
   var filmItem = document.querySelector(".filmStore-list");
+
+  for (var i = 0; i < 100; i++) {
+    var paginate = document.createElement("ul");
+    paginate.innerHTML = `
+    <li class="page-item disabled">
+      <span class="page-link">Previous</span>
+    </li>
+    <li class="page-item"><a class="page-link" href="?page=${i}">${i}</a></li>
+    <li class="page-item">
+       <a class="page-link" href="#">Next</a>
+    </li>
+    `;
+  }
+  filmItem.appendChild(paginate);
+};
+const viewFilm = (data) => {
+  getPaginate(data);
+  data = data.results;
+  var filmItem = document.querySelector(".filmStore-list");
+
   for (var i = 0; i < data.length; i++) {
     filmId = `${data[i].id}`;
     var div = document.createElement("div");
@@ -60,7 +84,6 @@ const viewFilm = (data) => {
     filmItem.appendChild(div);
 
     div.innerHTML = `
-    
         <a href="${
           key_category == "tv"
             ? `chi-tiet-tivi-shows.html?id=${data[i].id}`
@@ -85,6 +108,52 @@ const viewFilm = (data) => {
          </a>`;
   }
 };
+const getPaginate = (data) => {
+  console.log(data);
+  const paginate = document.querySelector(".paginate-list");
+  const prev = document.createElement("li");
+  prev.setAttribute("class", "paginate-prev");
+  prev.innerHTML = `  
+  <div class="paginate-prev-item ${
+    page === "1" ? "disabled" : ""
+  }" onclick="pageChange(${page - 1})">
+    Prev
+  </div>`;
+  paginate.appendChild(prev);
+  const mod_totalPage = Math.ceil(500 / 10);
+  console.log(data);
+
+  for (let i = 0; i <= mod_totalPage; i++) {
+    if (page <= 10 * (i + 1) && page >= 10 * i) {
+      var tempCount = i;
+    }
+  }
+  for (
+    let i = 1, j = parseInt(10 * tempCount) + 1;
+    i <= 10 && j <= 500;
+    i++ && j++
+  ) {
+    const paginateItem = document.createElement("li");
+    paginateItem.setAttribute("class", "paginate-item");
+    paginateItem.innerHTML = `
+      <div class="tvSeason-other--image" data-id= ${j} onclick="pageChange(${j})">
+          ${j}
+      </div>
+    `;
+
+    paginate.appendChild(paginateItem);
+  }
+  const next = document.createElement("li");
+  next.setAttribute("class", "paginate-next");
+  next.innerHTML = `  
+  <div class="paginate-prev-item ${
+    page == 500 ? "disabled" : ""
+  }" onclick="pageChange(${parseInt(page) + 1})">
+    Next
+  </div>`;
+  paginate.appendChild(next);
+};
+
 const getGenres = async () => {
   const respon = await fetch(apiTvGener);
   const data = await respon.json();
@@ -95,7 +164,7 @@ const getGenres = async () => {
     item.innerHTML = `
     <a href="kho-phim.html?category=${key_category}&genres=${genres.name}-${
       genres.id
-    }">
+    }&page=${page}">
         #${
           genres.name.slice(0, 12) == "Chương Trình"
             ? "CT " + genres.name.slice(13)
@@ -109,5 +178,15 @@ const getGenres = async () => {
     tabGenres.appendChild(item);
   });
 };
+
 displayShowSearch();
 getGenres();
+
+function pageChange(i) {
+  var queryParams = new URLSearchParams(window.location.search);
+  queryParams.set("page", i);
+  history.replaceState(null, null, "?" + queryParams.toString());
+  console.log(window.location.search);
+  window.location.reload();
+  window.scroll(0, 0);
+}
