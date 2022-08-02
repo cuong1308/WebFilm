@@ -11,7 +11,7 @@
             overflow: hidden;
             position: relative;
             max-width: 160px;
-
+            margin: auto;
 
             img {
                 @include box(160px, 227px);
@@ -70,6 +70,7 @@
         &-container {}
 
         &-item {
+          
             margin-bottom: 15px;
             display: flex;
             gap: 10px;
@@ -90,6 +91,7 @@
         }
 
         &-title {
+            text-align: center;
             font-size: 25px;
             padding: 15px 6px;
             color: #da966e;
@@ -156,5 +158,8 @@
     .filmUpdate {
         order: 2;
         grid-column: 1/4;
+        &-title {
+            text-align: center;
+        }
     }
 }

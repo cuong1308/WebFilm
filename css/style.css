@@ -113,17 +113,16 @@ label {
 }
 .header-top {
   background: #333;
-  height: 80px;
 }
 .header-nav {
   background: #2d2d2d;
-  height: 55px;
 }
 .header-top {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 10px;
 }
 .header-top-container {
   display: grid;
@@ -296,6 +295,7 @@ label {
 @media screen and (max-width: 768px) {
   .header-top-container {
     gap: 10px 25px;
+    padding: 20px 10px;
   }
   .header-acount {
     display: block;
@@ -314,9 +314,6 @@ label {
   .header-logo img {
     max-width: 223px;
   }
-  .header-top {
-    height: 160px;
-  }
   .header .form__group {
     order: 3;
     grid-column: 1/4;
@@ -326,9 +323,6 @@ label {
   }
   .header .form__label {
     top: 70px;
-  }
-  .header-nav {
-    height: 120px;
   }
   .header-nav-list {
     flex-wrap: wrap;
@@ -357,6 +351,7 @@ label {
   gap: 0 20px;
   justify-content: center;
   margin-top: 35px;
+  padding: 0;
 }
 .filmBanner .slick-dots li > button {
   color: transparent;
@@ -399,6 +394,7 @@ label {
   overflow: hidden;
   position: relative;
   max-width: 160px;
+  margin: auto;
 }
 .film-main .filmUpdate .film-item img {
   width: 160px;
@@ -455,6 +451,7 @@ label {
   height: 87px;
 }
 .film-main .filmTrend-title {
+  text-align: center;
   font-size: 25px;
   padding: 15px 6px;
   color: #da966e;
@@ -500,6 +497,9 @@ label {
   .filmUpdate {
     order: 2;
     grid-column: 1/4;
+  }
+  .filmUpdate-title {
+    text-align: center;
   }
 }
 .film-main-details-container {
@@ -807,11 +807,10 @@ label {
 .tv-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, 240px);
-  grid-template-rows: repeat(3, 1fr);
   gap: 20px;
 }
 .tv-item {
-  width: 240px;
+  max-width: 240px;
   position: relative;
 }
 .tv-item:nth-child(1) {
@@ -824,7 +823,7 @@ label {
   max-width: 500px;
 }
 .tv-item img {
-  max-width: 240px;
+  max-width: 100%;
   object-fit: cover;
 }
 .tv-item-name {
@@ -840,24 +839,42 @@ label {
   display: none;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1052px) {
   .tv-list {
+    grid-template-columns: repeat(auto-fill, 230px);
+    padding: 0;
     justify-content: center;
   }
+
+  .tv-item {
+    max-width: 230px;
+  }
   .tv-item:nth-child(1) {
-    display: none;
+    max-width: 460px;
+  }
+  .tv-item:nth-child(1) img {
+    max-width: 100%;
   }
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 500px) {
   .tv-list {
-    grid-template-columns: repeat(auto-fill, 150px);
-    justify-content: flex-start;
+    grid-template-columns: repeat(auto-fill, 340px);
   }
+
   .tv-item {
-    width: 150px;
+    max-width: 100%;
+    margin: auto;
   }
-  .tv-item img {
-    width: 150px;
+  .tv-item:nth-child(1) {
+    max-width: 300px;
+    grid-column: 1;
+  }
+  .tv-item:nth-child(1) img {
+    max-width: 100%;
+  }
+
+  .tv-image {
+    max-width: 300px;
   }
 }
 .footer {
@@ -1002,6 +1019,8 @@ label {
   grid-template-columns: repeat(auto-fill, 300px);
   grid-template-rows: repeat(3, 1fr);
   gap: 25px;
+  padding: 0;
+  justify-content: center;
 }
 .upcoming-item {
   position: relative;

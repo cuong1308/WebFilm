@@ -15,13 +15,11 @@
         display: grid;
         // grid-template-columns: ;
         grid-template-columns: repeat(auto-fill, 240px);
-
-        grid-template-rows: repeat(3, 1fr);
         gap: 20px;
     }
 
     &-item {
-        width: 240px;
+        max-width: 240px;
         position: relative;
 
         &:nth-child(1) {
@@ -36,7 +34,7 @@
         }
 
         img {
-            max-width: 240px;
+            max-width: 100%;
             object-fit: cover;
         }
 
@@ -58,32 +56,64 @@
     }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1052px) {
+    .tv-list {
+        grid-template-columns: repeat(auto-fill, 230px);
+        padding: 0;
+        justify-content: center;
+    }
 
-    .tv {
-        &-list {
-            justify-content: center;
-        }
-        &-item {
-           
+    .tv-item {
+        &:nth-child(1) {
+            max-width: 460px;
 
-            &:nth-child(1) {
-                display: none;
+            img {
+                max-width: 100%;
             }
         }
+
+        max-width: 230px;
     }
 }
-@media screen and (max-width: 375px) {
-    .tv {
-        &-list {
-            grid-template-columns: repeat(auto-fill, 150px);
-            justify-content:flex-start;
+
+@media screen and (max-width: 500px) {
+    .tv-list {
+        grid-template-columns: repeat(auto-fill, 340px);
+    }
+
+    .tv-item {
+        &:nth-child(1) {
+            max-width: 300px;
+            grid-column: 1;
+
+            img {
+                max-width: 100%;
+            }
         }
-        &-item {
-            width: 150px;
-           img {
-            width: 150px;
-           }
-        }
+
+        max-width: 100%;
+        margin: auto;
+    }
+
+    .tv-image {
+        max-width: 300px;
     }
 }
+
+
+
+
+// @media screen and (max-width: 375px) {
+//     .tv {
+//         &-list {
+//             grid-template-columns: repeat(auto-fill, 150px);
+//             justify-content:flex-start;
+//         }
+//         &-item {
+//             width: 150px;
+//            img {
+//             width: 150px;
+//            }
+//         }
+//     }
+// }

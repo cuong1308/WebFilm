@@ -145,12 +145,12 @@ const initApp = () => {
           settings: {
             arrows: false,
             centerMode: true,
-            centerPadding: "40px",
+            centerPadding: "40",
             slidesToShow: 3,
           },
         },
         {
-          breakpoint: 480,
+          breakpoint: 500,
           settings: {
             arrows: false,
             centerMode: true,
