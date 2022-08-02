@@ -504,7 +504,7 @@ label {
 }
 .film-main-details-container {
   display: grid;
-  grid-template-columns: 850px 280px;
+  grid-template-columns: 9fr 3fr;
   gap: 0 10px;
   position: relative;
 }
@@ -593,6 +593,11 @@ label {
   line-height: 1.2857142857;
 }
 
+@media screen and (max-width: 768px) {
+  .filmDetail {
+    grid-column: 1/4;
+  }
+}
 .modal-trailer {
   display: none;
   position: fixed;
@@ -946,7 +951,7 @@ label {
   grid-column: 1/4;
 }
 .filmSuggest-list {
-  width: 1190px;
+  max-width: 1190px;
   height: 225px;
 }
 
@@ -969,6 +974,9 @@ label {
   position: absolute !important;
 }
 
+.filmCast {
+  margin-top: 5px;
+}
 .filmCast-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, 185px);

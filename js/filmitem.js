@@ -78,6 +78,15 @@ const detailApp = () => {
           <img src="https://image.tmdb.org/t/p/w300/${
             data.poster_path ? data.poster_path : data.backdrop_path
           }"></img>
+        
+      <div id="myModal" class="modal-trailer">
+        <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+        </div>
+      </div>
+      </div>
+      
         </div>
         <div class="filmDetail-infor">
             <h2 class="filmDetail-name">
@@ -129,20 +138,16 @@ const detailApp = () => {
         </div>
         <div class="filmDetail-button">
         <div class="filmDetail-trailer">
-        <div class="button button--trailer">
-            Trailer
-            </div>
-        <div id="myModal" class="modal-trailer">
-          <!-- Modal content -->
-            <div class="modal-content">
-              <span class="close">&times;</span>
-          </div>
+       
         </div>
+        <div class="button button--trailer">
+        Trailer
         </div>
         <div class="filmDetail-play button">
-        <a href="https://2embed.org/embed/movie?tmdb=${data.id}">Xem phim</a>
-        
-        </div>
+      <a href="https://2embed.org/embed/movie?tmdb=${data.id}">Xem phim</a>
+      
+      </div>
+      
         </div>
         `;
 

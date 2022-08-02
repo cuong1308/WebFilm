@@ -1,7 +1,7 @@
 .film-main-details {
    &-container {
       display: grid;
-      grid-template-columns: 850px 280px;
+      grid-template-columns: 9fr 3fr;
       gap: 0 10px;
       position: relative;
    }
@@ -110,5 +110,11 @@
          font-size: 14px;
          line-height: calc(18/14);
       }
+   }
+}
+@media screen and (max-width: 768px) {
+   
+   .filmDetail {
+      grid-column: 1/4;
    }
 }
