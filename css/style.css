@@ -1062,7 +1062,7 @@ label {
 
 .film-full-container {
   display: grid;
-  grid-template-columns: 0.5fr 1fr;
+  grid-template-columns: 4fr 8fr;
   margin-top: 20px;
 }
 .film-full .filmSort {
@@ -1168,6 +1168,59 @@ select:focus > option:checked {
   gap: 30px;
 }
 
+@media screen and (max-width: 768px) {
+  .filmSort-header,
+.filmStore {
+    grid-column: 1/4;
+  }
+
+  .filmStore-item {
+    max-height: 200px;
+  }
+  .filmStore-image {
+    max-height: 200px;
+  }
+  .filmStore-image img {
+    max-height: 100%;
+    object-position: top;
+  }
+  .filmStore-review {
+    margin-top: 0 !important;
+  }
+  .filmStore-info {
+    padding: 0px !important;
+  }
+
+  .paginate-list {
+    gap: 15px;
+  }
+}
+@media screen and (max-width: 374.98px) {
+  .film-full .filmStore-info {
+    padding: 5px 2px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .film-full .filmStore-name {
+    font-size: 15px !important;
+  }
+  .film-full .filmStore-review {
+    font-size: 12px !important;
+    -webkit-line-clamp: 7 !important;
+  }
+  .film-full .filmStore-release {
+    font-size: 11px;
+  }
+  .film-full .filmStore-image img {
+    width: 120px;
+  }
+
+  .paginate-list {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+}
 .filmColection {
   grid-column: 1/4;
   max-width: 100%;

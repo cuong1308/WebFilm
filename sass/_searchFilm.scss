@@ -1,7 +1,7 @@
 .film-full {
     &-container {
         display: grid;
-        grid-template-columns: 0.5fr 1fr;
+        grid-template-columns: 4fr 8fr;
         margin-top: 20px;
     }
 
@@ -13,6 +13,7 @@
         box-shadow: 1px -1px 7px 0px rgb(218 150 110);
         border-radius: 10px;
 
+        // max-height: 225px;
         &-control {
             &-group {
                 // padding: 10px 10px;
@@ -141,10 +142,88 @@ select:focus>option:checked {
     background: rgb(218 150 110 / 80%) !important;
 }
 
-.paginate{
+.paginate {
     &-list {
         display: flex;
         justify-content: center;
-        gap: 30px ;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .filmSort-header,
+    .filmStore {
+        grid-column: 1/4;
+    }
+
+    .filmStore {
+        &-item {
+            max-height: 200px;
+        }
+
+        &-image {
+            max-height: 200px;
+
+            img {
+                max-height: 100%;
+                object-position: top;
+            }
+        }
+
+        &-review {
+            margin-top: 0 !important;
+        }
+
+        &-info {
+            padding:  0px !important;
+        }
+    }
+
+    .paginate {
+        &-list {
+
+            gap: 15px;
+
+        }
+    }
+}
+
+@media screen and (max-width: 374.98px) {
+    .film-full {
+        .filmStore {
+            &-info {
+                padding: 5px 2px !important;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            &-name {
+                font-size: 15px !important;
+            }
+
+            &-review {
+                font-size: 12px !important;
+                -webkit-line-clamp: 7 !important;
+            }
+
+            &-release {
+                font-size: 11px;
+            }
+
+            &-image {
+                img {
+                    width: 120px;
+                }
+            }
+        }
+    }
+    .paginate {
+        &-list {
+
+            gap: 15px;
+            flex-wrap: wrap;
+        }
     }
 }
