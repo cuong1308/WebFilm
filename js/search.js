@@ -135,6 +135,9 @@ const getPaginate = (data) => {
   ) {
     const paginateItem = document.createElement("li");
     paginateItem.setAttribute("class", "paginate-item");
+    if (page == j) {
+      paginateItem.setAttribute("class", "paginate-item slected");
+    }
     paginateItem.innerHTML = `
       <div class="tvSeason-other--image" data-id= ${j} onclick="pageChange(${j})">
           ${j}
