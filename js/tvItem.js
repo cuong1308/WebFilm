@@ -1,6 +1,6 @@
 var id = new URL(window.location.href).searchParams.get("id");
 const api_key = "d8f8edbbdc27ab9a16942772f29aa16c";
-const detailTv = `https://api.themoviedb.org/3/tv/${id}?api_key=d8f8edbbdc27ab9a16942772f29aa16c&language=vi`;
+const detailTv = `https://api.themoviedb.org/3/tv/${id}?api_key=${api_key}&language=vi`;
 const urlTV = (sessionNumber) =>
   `https://api.themoviedb.org/3/tv/${id}/season/${sessionNumber}?api_key=${api_key}&language=vi`;
 const img300 = (poster_path) =>
@@ -105,15 +105,10 @@ async function getSeasons() {
 
 const getTVSeason = (data, seasonNumber) => {
   const tvOther = document.querySelector(".tvSeason-other--list");
-
-  console.log(data);
   var seasons = data.seasons;
-  // let seeMore = document.querySelector(".tvSeason-other--arrow");
   seasons.map((item, index) => {
     const li = document.createElement("li");
     li.setAttribute("class", "tvSeason-other--item");
-    // seeMore.style.display = seasons.length - 1 > 0 ? "block" : "none";
-    // li.onclick = routeSeason;
     index < seasons.length
       ? (li.innerHTML = `
 
@@ -125,7 +120,7 @@ const getTVSeason = (data, seasonNumber) => {
                 } alt="avt" />
             </div>
             <div class="tvSeason-other--infor">
-                  <div className="tvSeason-other--name">
+                  <div class="tvSeason-other--name">
                       ${data.name} - ${item.name}
                   </div>
             </div>

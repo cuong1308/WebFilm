@@ -78,7 +78,16 @@ const detailApp = () => {
           <img src="https://image.tmdb.org/t/p/w300/${
             data.poster_path ? data.poster_path : data.backdrop_path
           }"></img>
-        
+          <div class="filmDetail-button">
+          <div class="button button--trailer">
+            Trailer
+          </div>
+           <div class="filmDetail-play button">
+              <a href="https://2embed.org/embed/movie?tmdb=${data.id}">Xem phim</a>
+      
+            </div>
+      
+        </div>
       <div id="myModal" class="modal-trailer">
         <!-- Modal content -->
           <div class="modal-content">
@@ -136,19 +145,7 @@ const detailApp = () => {
               <span>${data.overview}</span>
             </h4>
         </div>
-        <div class="filmDetail-button">
-        <div class="filmDetail-trailer">
-       
-        </div>
-        <div class="button button--trailer">
-        Trailer
-        </div>
-        <div class="filmDetail-play button">
-      <a href="https://2embed.org/embed/movie?tmdb=${data.id}">Xem phim</a>
       
-      </div>
-      
-        </div>
         `;
 
       trailerFilm();
@@ -269,7 +266,7 @@ const detailApp = () => {
           data[i]
             ? ` 
             <a href="dien-vien.html?id=${data[i].id}" >
-               <div className="filmCast-image" style="max-width:100%;margin: auto;">
+               <div class="filmCast-image" style="max-width:100%;margin: auto;">
                   <img src=${img300(
                     data[i].profile_path
                   )} alt="cast" style="width:100%;

@@ -512,18 +512,24 @@ label {
 .filmDetail {
   margin: 40px 10px;
   display: grid;
-  grid-template-rows: 555px;
 }
 .filmDetail-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 4.5fr 7.5fr;
   height: 450px;
   position: relative;
-  gap: 25px;
+  gap: 10px;
+}
+.filmDetail-image {
+  width: 300px;
+  justify-content: center;
 }
 .filmDetail-image img {
-  height: 450px;
-  width: 300px;
+  display: flex;
+  margin: auto;
+  max-width: 300px;
   object-fit: contain;
+  border-radius: 10px;
 }
 .filmDetail-button {
   position: absolute;
@@ -568,6 +574,7 @@ label {
   font-weight: 300;
 }
 .filmDetail-infor {
+  overflow: scroll;
   gap: 10px;
   display: flex;
   flex-direction: column;
@@ -596,6 +603,78 @@ label {
 @media screen and (max-width: 768px) {
   .filmDetail {
     grid-column: 1/4;
+  }
+}
+@media screen and (max-width: 616px) {
+  .filmDetail-container {
+    height: 300px;
+  }
+  .filmDetail-image {
+    max-width: 200px;
+  }
+  .filmDetail-image img {
+    width: 100%;
+  }
+  .filmDetail-infor {
+    gap: 2px;
+  }
+  .filmDetail-button {
+    width: 200px;
+  }
+  .filmDetail-name {
+    font-size: 25px;
+  }
+  .filmDetail-status {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .filmDetail-status span {
+    font-size: 12px;
+    font-weight: 300;
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  .filmDetail-genres, .filmDetail-productioncountry, .filmDetail-date, .filmDetail-vote, .filmDetail-votecount, .filmDetail-review {
+    font-size: 12px;
+  }
+  .filmDetail-genres span, .filmDetail-productioncountry span, .filmDetail-date span, .filmDetail-vote span, .filmDetail-votecount span, .filmDetail-review span {
+    font-size: 12px;
+  }
+  .filmDetail-play {
+    padding: 6px;
+    font-size: 12px;
+  }
+  .filmDetail-button {
+    gap: 5px;
+  }
+  .filmDetail .button--trailer {
+    padding: 5px;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 426px) {
+  .filmDetail-container {
+    height: 225px;
+  }
+  .filmDetail-name {
+    font-size: 18px;
+  }
+  .filmDetail-image {
+    max-width: 150px;
+  }
+  .filmDetail-image img {
+    width: 100%;
+  }
+  .filmDetail-button {
+    width: 150px;
+  }
+  .filmDetail-play {
+    font-size: 10px;
+  }
+  .filmDetail .button--trailer {
+    font-size: 10px;
   }
 }
 .modal-trailer {
@@ -1014,6 +1093,18 @@ label {
   object-position: center;
 }
 
+@media screen and (max-width: 768px) {
+  .filmCast-list {
+    grid-template-columns: repeat(auto-fill, 150px);
+  }
+  .filmCast-item {
+    width: 150px;
+    box-shadow: 3px 2px 8px rgba(239, 234, 234, 0.22);
+  }
+  .filmCast-image img {
+    height: 180px !important;
+  }
+}
 .upcoming {
   cursor: pointer;
 }

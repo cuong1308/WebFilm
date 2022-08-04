@@ -40,3 +40,19 @@
         }
     }
 }
+@media screen and (max-width: 768px) {
+    .filmCast {
+        &-list {
+            grid-template-columns: repeat(auto-fill, 150px);
+        }
+        &-item {
+            width: 150px;
+            box-shadow: 3px 2px 8px rgb(239 234 234 / 22%);
+        }
+        &-image {
+            img {
+                height: 180px !important;
+            }
+        }
+    }
+}
