@@ -97,7 +97,7 @@ const detailApp = () => {
       </div>
       
         </div>
-        <div class="filmDetail-infor">
+        <div class="filmDetail-infor" id="scroll-style">
             <h2 class="filmDetail-name">
               ${data.title}
             </h2>

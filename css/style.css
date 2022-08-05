@@ -531,6 +531,12 @@ label {
   object-fit: contain;
   border-radius: 10px;
 }
+.filmDetail #scroll-style::-webkit-scrollbar {
+  width: 5px;
+}
+.filmDetail #scroll-style::-webkit-scrollbar-thumb {
+  background-color: #212529;
+}
 .filmDetail-button {
   position: absolute;
   /* width: 500px; */
@@ -574,7 +580,7 @@ label {
   font-weight: 300;
 }
 .filmDetail-infor {
-  overflow: scroll;
+  overflow-y: scroll;
   gap: 10px;
   display: flex;
   flex-direction: column;
