@@ -122,6 +122,7 @@ const initApp = () => {
     var accountName = document.querySelector(".account-name");
     console.log(account);
     if (token) {
+          
       console.log("token",token.currentSession)
       auth.style.display = "none";
       authWork.style.display = "block";
