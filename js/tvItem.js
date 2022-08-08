@@ -9,8 +9,10 @@ const img500 = (poster_path) =>
   `https://image.tmdb.org/t/p/w500/${poster_path}`;
 const img = (poster_path) =>
   `https://image.tmdb.org/t/p/original/${poster_path}`;
-const linkFilm = (id, season, episodes) =>
-  `https://2embed.org/embed/series?tmdb=${id}&sea=${season}&epi=${episodes}`;
+// const linkFilm = (id, season, episodes) =>
+//   `https://2embed.org/embed/series?tmdb=${id}&sea=${season}&epi=${episodes}`;
+  const linkFilm = (id, season, episodes) =>
+  `xem-phim.html?category=tv&id=${id}&season=${season}&epi=${episodes}`;
 const motchill = "./assets/img_erro.png";
 
 async function getSeasons() {

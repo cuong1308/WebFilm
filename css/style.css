@@ -754,6 +754,9 @@ label {
   display: flex;
   align-items: center;
   flex-direction: column;
+  bottom: 0;
+  position: fixed;
+  right: 0;
 }
 .auth .btn-auth {
   display: flex;
@@ -785,6 +788,10 @@ label {
 .auth .animation-spiderman img {
   width: 100px;
 }
+.auth .login-form,
+.auth .register-form {
+  color: black;
+}
 .auth .login-form form,
 .auth .register-form form {
   padding: 20px 10px;
@@ -793,6 +800,7 @@ label {
 .auth .register-form .login-title {
   font-size: 30px;
   font-weight: bold;
+  color: black !important;
 }
 .auth .login-form .login-content,
 .auth .register-form .login-content {
@@ -829,8 +837,7 @@ label {
   cursor: pointer;
 }
 
-#btnLogin,
-#btnRegister {
+#btnLogin, #btnSigup #btnRegister {
   margin-top: 10px;
   width: 100%;
   background: #ff9658 !important;
@@ -1587,6 +1594,11 @@ select:focus > option:checked {
   50% {
     transform: translate(0, 0px);
   }
+}
+.watch-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

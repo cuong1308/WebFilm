@@ -1,8 +1,14 @@
 const initApp = () => {
-  const apiFilm = "./data/film.json";
+  const date = new Date() ;
+
+  const api_key = "d8f8edbbdc27ab9a16942772f29aa16c";
+  const apiFilm = `
+  https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=vi&page=1`;
+  // const apiNow = `https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=vi&page=1`;
+  const apiNow  =`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=vi&primary_release_date.gte=2022-07-01&primary_release_date.lte=2022-09-01`
   const img = (poster_path) => `https://image.tmdb.org/t/p/w500/${poster_path}`;
   var filmItem = document.querySelector(".film-list");
-
+  console.log(apiNow)
   const getFilm = (callback) => {
     fetch(apiFilm)
       .then((response) => {
@@ -14,6 +20,7 @@ const initApp = () => {
   const displayFilm = () => {
     getFilm((data) => {
       console.log(data);
+      data = data.results;
       for (var i = 0; i < data.length; i++) {
         console.log(data[i]);
         var div = document.createElement("div");
@@ -53,45 +60,69 @@ const initApp = () => {
   //     slickSlide();
   //   });
   // };
-  function displayPosterShow() {
+  async function displayPosterShow () {
     const filmHotList = document.querySelector(".filmBanner-list");
-    getFilm((data) => {
-      for (var i = 3; i < 10; i++) {
-        var li = document.createElement("li");
-        li.setAttribute("class", "filmBanner-item");
-        filmHotList.appendChild(li);
-        li.innerHTML = `
-        <a href="film.html?id=${data[i].id}">
-            <div class="filmBanner-image">
-            <img src=${img(data[i].backdrop_path)}></img>
-            <h5 class="filmBanner-name">${data[i].original_title}</h5>
-           </div>
-        </a>
-        `;
-        // li.innerHTML = `
-        // <form action="/film/index.html" method="get" id ="form-film" name="id">
-        //       <div  value=${data[i].id} class="filmBanner-image" name="id" onClick="document.forms['form-film'].submit();">
-        //         <img src=${img(data[i].backdrop_path)} " /></img>
-        //          <h5 class="filmBanner-name">${data[i].original_title}</h5>
-        //      </div>
+    const respon = await fetch(apiNow) ; 
+    const data = await respon.json() ; 
+    const result = data.results ;
+    result.map((item,index)=>{
+      var li = document.createElement("li");
+      li.setAttribute("class", "filmBanner-item");
+      filmHotList.appendChild(li);
+      li.innerHTML = `
+      <a href="film.html?id=${item.id}">
+          <div class="filmBanner-image">
+          <img src=${img(item.backdrop_path)}></img>
+          <h5 class="filmBanner-name">${item.title}</h5>
+         </div>
+      </a>
+      `;
+      submitFilm();
+    })
+    slickSlideBanner();
+   }
+  // function displayPosterShow() {
+  //   const filmHotList = document.querySelector(".filmBanner-list");
+  //   getFilm((data) => {
+  //     for (var i = 3; i < 10; i++) {
+  //       var li = document.createElement("li");
+  //       li.setAttribute("class", "filmBanner-item");
+  //       filmHotList.appendChild(li);
+  //       li.innerHTML = `
+  //       <a href="film.html?id=${data[i].id}">
+  //           <div class="filmBanner-image">
+  //           <img src=${img(data[i].backdrop_path)}></img>
+  //           <h5 class="filmBanner-name">${data[i].original_title}</h5>
+  //          </div>
+  //       </a>
+  //       `;
+  //       // li.innerHTML = `
+  //       // <form action="/film/index.html" method="get" id ="form-film" name="id">
+  //       //       <div  value=${data[i].id} class="filmBanner-image" name="id" onClick="document.forms['form-film'].submit();">
+  //       //         <img src=${img(data[i].backdrop_path)} " /></img>
+  //       //          <h5 class="filmBanner-name">${data[i].original_title}</h5>
+  //       //      </div>
 
-        // </form>
-        //   `;
-        submitFilm();
-      }
+  //       // </form>
+  //       //   `;
+  //       submitFilm();
+  //     }
 
-      slickSlideBanner();
-    });
-  }
+  //     slickSlideBanner();
+  //   });
+  // }
 
   const displayAccount = () => {
+    const token = JSON.parse(localStorage.getItem('supabase.auth.token')) ; 
+    
     var auth = document.querySelector(".header-auth");
     var authWork = document.querySelector(".header-auth-work");
     var account = document.querySelector(".header-account");
     var login = JSON.parse(localStorage.getItem("login"));
     var accountName = document.querySelector(".account-name");
     console.log(account);
-    if (login) {
+    if (token) {
+      console.log("token",token.currentSession)
       auth.style.display = "none";
       authWork.style.display = "block";
 
@@ -100,7 +131,7 @@ const initApp = () => {
       name.setAttribute("class", "header-name");
       dropdown.setAttribute("class", "header-dropdown");
       accountName.innerHTML = `
-    ${login.fullname ? login.fullname : "Vô danh"}
+    ${token.currentSession.user.user_metadata.fullname ?token.currentSession.user.user_metadata.fullname : "Vô danh"}
     `;
 
       const logout = () => {

@@ -14,7 +14,7 @@ const key_country = url_country ? url_country : "en";
 const func = new URL(window.location.href).searchParams.get("search")
   ? "search"
   : "discover";
-  const page = url_page ? url_page : "1";
+const page = url_page ? url_page : "1";
 const idGenres = key_genres
   ? key_genres.slice(key_genres.length - 2, key_genres.length)
   : null;
@@ -24,10 +24,7 @@ const iso = key_country
 const apiTvGener = `https://api.themoviedb.org/3/genre/${key_category}/list?api_key=${key_api}&language=en`;
 const urlFilms = `https://api.themoviedb.org/3/${func}/${key_category}?api_key=${key_api}&with_genres=${idGenres}&language=vi&sort_by=${key_sort}&page=${page}&primary_release_year=${key_release}&with_original_language=${iso}&query=${key_search}&include_adult=false`;
 
-
-
 const img = (poster_path) => `https://image.tmdb.org/t/p/w300${poster_path}`;
-
 
 const getFilm = (callback) => {
   fetch(urlFilms)

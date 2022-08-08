@@ -22,6 +22,9 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+        bottom: 0;
+        position: fixed;
+        right: 0;
     }
 
     .btn-auth {
@@ -35,6 +38,8 @@
     .btnSigup {
         // border-bottom: 1px solid black;
         padding: 10px 0;
+        
+        
     }
 
     .btnLogin {
@@ -71,6 +76,7 @@
 
     .login-form,
     .register-form {
+        color: black;
         form {
             padding: 20px 10px;
 
@@ -79,6 +85,7 @@
         .login-title {
             font-size: 30px;
             font-weight: bold;
+            color :black !important ;
         }
 
         .login-content {
@@ -119,7 +126,7 @@
 }
 
 // btn 
-#btnLogin,
+#btnLogin,#btnSigup
 #btnRegister {
     margin-top: 10px;
     width: 100%;

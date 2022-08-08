@@ -83,7 +83,7 @@ const detailApp = () => {
             Trailer
           </div>
            <div class="filmDetail-play button">
-              <a href="https://2embed.org/embed/movie?tmdb=${data.id}">Xem phim</a>
+              <a href="xem-phim.html?category=movie&id=${data.id}">Xem phim</a>
       
             </div>
       

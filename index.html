@@ -75,7 +75,7 @@
                                               <div> Tài khoản</div>
                                               <div> Cài đặt</div>
                                               <div> Trợ giúp</div>
-                                              <div class="header-logout">
+                                              <div class="header-logout" onclick="signOut()">
                                                 Đăng xuất
                                                 
                                                </div>
@@ -229,7 +229,7 @@
                  
                   <div class="footer-content"> 
                     <div class="footer-logo">
-                    <img srcset="./assets/motchill.png 2x" alt="">
+                    <img srcset="./src/assets/motchill.png 2x" alt="">
                     <div class="author">
                       Nhóm thực hiện:
                          <div> Thái - Tân - Cường - Giang</div>
@@ -377,6 +377,7 @@
     type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
   ></script>
+  <script src="/js/FilmTrend.js" type="module"></script>
   <script src="./js/FilmTrend.js" type="module"></script>
   <script src="./js/loading.js" type="module"></script>
   <script src="./js/dropdown.js" type="module"></script>
@@ -394,3 +395,32 @@
 
 <script src="./js/homepage.js" type="module"></script>
 <script src="./js/filmUpcoming.js"></script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script>
+   const token = JSON.parse(localStorage.getItem('supabase.auth.token')) ; 
+        if(!token) {
+            window.location.href ="login/index.html" ;
+        }
+        else {
+
+        }
+    // variable
+    console.clear() ;
+    const supabaseUrl = 'https://eewlfvfpotbjkllqvkka.supabase.co'
+    const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVld2xmdmZwb3RiamtsbHF2a2thIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTk3OTY3MjMsImV4cCI6MTk3NTM3MjcyM30.sLO8m0_QuY1rvD9gEXFwdMHM1vV-0utUI4m9IdBkW4c"
+ 
+    const { createClient } = supabase
+    const _supabase = createClient(`${supabaseUrl}`,`${supabaseKey}`)
+    // signup  -- [POST] 
+
+    const signOut = async() => {
+      const { error } = await _supabase.auth.signOut() ; 
+      window.location.href= "index.html"
+    }
+    
+</script>
