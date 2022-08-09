@@ -38,14 +38,14 @@
                                 Đăng ký
                             </h3>
                             <div class="form-group">
-                                <label>Tên tài khoản: </label>
+                                <!-- <label>Tên tài khoản: </label>
                                 <input id="username" type="text"
                                     class="form-account form-control"
-                                    placeholder="Nhập tên tài khoản">
-                                <div class="error error-username"
+                                    placeholder="Nhập tên tài khoản"> -->
+                                <!-- <div class="error error-username"
                                     style="display: none">
                                     * Thông tin bắt buộc
-                                </div>
+                                </div> -->
                             </div>
                             <div class="form-group">
                                 <label>Địa chỉ email: </label>
@@ -118,58 +118,73 @@
     // variable
     const supabaseUrl = 'https://eewlfvfpotbjkllqvkka.supabase.co'
     const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVld2xmdmZwb3RiamtsbHF2a2thIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTk3OTY3MjMsImV4cCI6MTk3NTM3MjcyM30.sLO8m0_QuY1rvD9gEXFwdMHM1vV-0utUI4m9IdBkW4c"
- 
     const { createClient } = supabase
     const _supabase = createClient(`${supabaseUrl}`,`${supabaseKey}`)
+    const checkEmail = async (email) =>{
+        const { user, error } = await _supabase.auth.api.getUser(
+          {
+            email : email,
+          }
+        
+    )   
+    console.log(user)
+    }
     // signup  -- [POST] 
-    console.log(email.value)
     const sigup = async() => {
+       
     var username = document.querySelector("#username");
     var email = document.querySelector("#email");
     var fullname = document.querySelector("#fullname");
     var phone = document.querySelector("#phone");
     var password = document.querySelector("#password");
     var confirmPassword = document.querySelector("#confirm-password");
-
+    // checkEmail(email.value)
+    const errorInput = "" ; 
+    try {
         const { user, session, error } = await _supabase.auth.signUp({
        
-        email: email.value,
-        password: password.value,
+       email: email.value,
+       password: password.value,
+       
+
+       },
+       {
+       data: { 
+           fullname: fullname.value , 
+           phone: phone.value , 
+       }
+       }
+   )
+   console.log(user)
+   if (!error) {
+       Toastify({
+       text: "Vui lòng xác nhận gmail để tiếp tục đăng ký !",
+       className: "info",
+       style: {
+       background: "linear-gradient(to right, #00b09b, #96c93d)",
+       duration: 10000
+   }}).showToast();
+   
+   }
+   else {
+       Toastify({
+       close:true ,
+       text: `${error.status == 429?"Hệ thống đang xử lý":`${error.message}`}`,
+       className: "info",
+       style: {
+       background: "linear-gradient(to right, #00b09b, #96c93d)",
+       duration: 3000
+   }}).showToast();
+   }
+
         
-
-        },
-        {
-        data: { 
-            username: username.value, 
-            fullname: fullname.value , 
-            phone: phone.value , 
-        }
-        }
-    )
-    console.log(error)
-    if (!error) {
-        Toastify({
-        text: "Vui lòng xác nhận gmail để tiếp tục đăng ký !",
-        className: "info",
-        style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
-        duration: 10000
-    }}).showToast();
-    
+    } catch (error) {
+        console.log(error)
     }
-    else {
-        Toastify({
-        close:true ,
-        text: `${error.status == 429?"Hệ thống đang xử lý":`${error.message}`}`,
-        className: "info",
-        style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
-        duration: 3000
-    }}).showToast();
-    }
-    console.log(session)
+        
+      
     }
 
-    console.log(supabase)
-    
+
+
 </script>

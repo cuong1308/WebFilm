@@ -1,7 +1,71 @@
 .watch {
+    margin-top: 25px;
+
     &-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
     }
+
+    &-title {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    &-infor {
+        position: relative;
+        max-width: 510px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &-watch,
+    &-overview,
+    &-vote_average,
+    &-date,
+    &-runtime {
+        font-size: 15px;
+        color: rgba(132, 132, 132, 1);
+
+        span {
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+        }
+    }
+
+    &-interac {
+        font-size: 20px;
+        display: flex;
+        gap: 25px;
+        position: absolute;
+        bottom: 0;
+    }
+    &-genres {
+        width: 130px;
+        text-align: center;
+        padding: 10px;
+        background: rgba(147, 73, 73, 0.8);
+        border-radius: 27px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .bookmark,
+    .like,
+    .share {
+        cursor: pointer;
+        font-weight: 400;
+
+        i {
+            margin-right: 10px;
+        }
+    }
+    &-main {
+       &-container {
+        display: grid;
+        grid-template-columns: 8fr 4fr;
+       }
+    }
+
 }

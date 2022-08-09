@@ -17,7 +17,6 @@ btnDropdown.addEventListener("click", function () {
   }
 
 });
-console.log(dropdownContent)
 window.onclick = function (event) {
   if (!event.target.matches(".dropbtn")) {
     dropdownContent.classList.remove('show');

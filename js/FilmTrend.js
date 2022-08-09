@@ -12,10 +12,10 @@ const getFilm = (callback) => {
 const showFilmTrend = () => {
   
   getFilm((data) => {
-    console.log(data)
+
     let trendData = data.results;
     for (var i = 0; i < 8; i++) {
-      console.log(trendData[i].poster_path);
+
       const filmTrendList = document.querySelector(".filmTrend-list");
       var li = document.createElement("li");
       li.setAttribute("class", "filmTrend-item");

@@ -1,14 +1,17 @@
 const watchInit = (e) => {
   const api_key = "d8f8edbbdc27ab9a16942772f29aa16c";
+  const baseURL = " https://api.themoviedb.org/3";
   const id = new URL(window.location.href).searchParams.get("id");
   const category = new URL(window.location.href).searchParams.get("category");
   const season = new URL(window.location.href).searchParams.get("season");
   const epi = new URL(window.location.href).searchParams.get("epi");
   const watchFrame = document.querySelector(".watch-iframe");
   const tvDetail = `
-  https://api.themoviedb.org/3/tv/${id}/season/${season}?api_key=${api_key}&language=vi`;
+ ${baseURL}/tv/${id}/season/${season}?api_key=${api_key}&language=vi`;
   const movieDetail = `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=vi`;
   const watchTile = document.querySelector(".watch-infor");
+  //   const genresWatch =  `
+  //  ${baseURL}/genre/${category}/list?api_key=<<api_key>>&language=en-US`
   // const formatRuntime = (time) => {
   //   const h = Math.round(time / 60) ;
   //   if (h>0) {
@@ -33,8 +36,23 @@ const watchInit = (e) => {
     }
     
     </div>
+    <div class="watch-genres ${category == "movie" ? "" : "hide"}" >
+     
+      ${category == "movie" ? `  ${data.genres[0].name} ` : null}
+    </div>
+    <div class="watch-date">
+    <span>Ngày phát hành: </span>
+    ${
+      category == "movie"
+        ? ` ${data.release_date}`
+        : `
+        ${data.episodes[epi - 1].air_date}
+    `
+    }
+    
+    </div>
     <div class="watch-runtime">
-    Thời lượng: 
+    <span>Thời lượng: </span>
     ${
       category == "movie"
         ? ` ${data.runtime}`
@@ -70,20 +88,24 @@ const watchInit = (e) => {
     </div>
     <div class="watch-interac">
         <div class="bookmark">
-          Bookmark
+        <i class="fa fa-bookmark" aria-hidden="true"></i>
+          Lưu
         </div>
-        <div class="like"> Yêu thích </div>
+        <div class="like"> <i class="fa fa-heart" aria-hidden="true"></i>Yêu thích </div>
+        <div class="share">
+        <i class="fa fa-share" aria-hidden="true"></i>
+        Chia sẻ
+        </div>
     </div>
 
     `;
-
   };
   getTitle();
   watchFrame.innerHTML = `
     ${
       category == "movie"
         ? `
-    <iframe id="ve-iframe" src="https://2embed.org/embed/${category}?tmdb=${id}" width="100%" height="600px" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    <iframe id="ve-iframe" src="https://2embed.org/embed/${category}?tmdb=${id}" width="600px" height="350px" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
     `
         : `<iframe src="https://2embed.org/embed/${

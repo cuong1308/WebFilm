@@ -1,7 +1,6 @@
 const detailApp = () => {
   const details = document.querySelector(".filmDetail-container");
   const suggest = document.querySelector(".filmSuggest-container");
-  console.log(new URL(window.location.href).searchParams.get("id"));
   var id = new URL(window.location.href).searchParams.get("id");
   var genres = "";
   const key_api = "d8f8edbbdc27ab9a16942772f29aa16c";
@@ -46,7 +45,6 @@ const detailApp = () => {
       .then(callback);
   };
   const getSuggest = (callback) => {
-    console.log("genner", apiGenrerFilm(genres));
     fetch(apiGenrerFilm(genres))
       .then((response) => {
         return response.json();
@@ -72,7 +70,6 @@ const detailApp = () => {
       }
       genres = data.genres[0] ? data.genres[0].id : "";
 
-      console.log(data);
       details.innerHTML = `
         <div class="filmDetail-image">
           <img src="https://image.tmdb.org/t/p/w300/${
@@ -199,7 +196,6 @@ const detailApp = () => {
   };
   const trailerFilm = () => {
     getTrailer((data) => {
-      console.log(data);
       const modalTrailer = document.querySelector(".modal-content");
       const div = document.createElement("div");
       div.setAttribute("class", "filmDetail-showTrailer");
@@ -224,13 +220,13 @@ const detailApp = () => {
   function suggesttionFilm() {
     const suggestList = document.querySelector(".filmSuggest-list");
     getSuggest((data) => {
-      console.log(genres);
 
-      console.log(data);
+
+
       data = data.results;
 
       for (var i = 0; i < data.length; i++) {
-        console.log(data[i]);
+
         var li = document.createElement("li");
         li.setAttribute("class", "filmSuggest-item");
         li.setAttribute("id", `${data[i] ? data[i].id : ""}`);
@@ -251,13 +247,12 @@ const detailApp = () => {
   const displayCast = () => {
     const suggestList = document.querySelector(".filmCast-list");
     getCastFilm((data) => {
-      console.log(data);
 
-      console.log(data);
+
       data = data.cast;
 
       for (var i = 0; i < 4; i++) {
-        console.log(data[i]);
+;
         var li = document.createElement("li");
         li.setAttribute("class", "filmCast-item");
         li.setAttribute("id", `${data[i] ? data[i].id : ""}`);

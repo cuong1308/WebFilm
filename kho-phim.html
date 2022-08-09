@@ -381,7 +381,6 @@ $(document).ready(function() {
         
         queryParams.has("country")? queryParams.delete("country"):""
         history.replaceState(null, null, "?"+queryParams.toString());
-        console.log(queryParams)
 
         var value = $(this).val().toLowerCase();
         window.location.search = `/kho-phim.html?search=${value}`

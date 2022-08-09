@@ -97,6 +97,8 @@
     const _supabase = createClient(`${supabaseUrl}`,`${supabaseKey}`)
     // signup  -- [POST] 
     const singIn = async() => {
+       
+    
     var password = document.querySelector("#password");
     var email = document.querySelector("#email");
     const { user, session, error } = await _supabase.auth.signIn({

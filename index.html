@@ -417,7 +417,9 @@
     const { createClient } = supabase
     const _supabase = createClient(`${supabaseUrl}`,`${supabaseKey}`)
     // signup  -- [POST] 
-
+    _supabase.auth.onAuthStateChange((event, session) => {
+        if (event == 'SIGNED_IN') console.log('Đã đăng nhập')
+    })
     const signOut = async() => {
       const { error } = await _supabase.auth.signOut() ; 
       window.location.href= "index.html"

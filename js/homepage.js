@@ -8,7 +8,7 @@ const initApp = () => {
   const apiNow  =`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=vi&primary_release_date.gte=2022-07-01&primary_release_date.lte=2022-09-01`
   const img = (poster_path) => `https://image.tmdb.org/t/p/w500/${poster_path}`;
   var filmItem = document.querySelector(".film-list");
-  console.log(apiNow)
+
   const getFilm = (callback) => {
     fetch(apiFilm)
       .then((response) => {
@@ -19,15 +19,14 @@ const initApp = () => {
 
   const displayFilm = () => {
     getFilm((data) => {
-      console.log(data);
+
       data = data.results;
       for (var i = 0; i < data.length; i++) {
-        console.log(data[i]);
+
         var div = document.createElement("div");
         div.setAttribute("class", "film-item");
         div.setAttribute("id", `${data[i].id}`);
 
-        console.log(`film?id=${data[i].id}`);
         div.innerHTML = `
       <a href="film.html?id=${data[i].id}">
         <img src=${img(data[i].poster_path)}></img>
@@ -120,10 +119,10 @@ const initApp = () => {
     var account = document.querySelector(".header-account");
     var login = JSON.parse(localStorage.getItem("login"));
     var accountName = document.querySelector(".account-name");
-    console.log(account);
+
     if (token) {
           
-      console.log("token",token.currentSession)
+
       auth.style.display = "none";
       authWork.style.display = "block";
 

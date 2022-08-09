@@ -51,15 +51,11 @@ const navbar = () => {
     const respon = await fetch(apiTvGener(category));
     const data = await respon.json();
     data.genres.map((genres, index) => {
-      console.log(
-        genres.name.slice(0, 12) == "Chương Trình"
-          ? "CT " + genres.name.slice(13)
-          : genres.name
-      );
+
       let navGenres = document.querySelector(
         `.header-nav-genres--${category}_list`
       );
-      console.log(genres);
+
       let item = document.createElement("li");
       item.setAttribute("class", `header-nav-genres--${category}_item`);
       item.innerHTML = `
@@ -83,7 +79,7 @@ const navbar = () => {
     const navCountry = document.querySelector(".header-nav-country");
 
     isoCountry.map((country, index) => {
-      console.log(country.name);
+
       const countryItem = document.createElement("li");
       countryItem.setAttribute("class", "header-nav-country--item");
       countryItem.innerHTML = `
