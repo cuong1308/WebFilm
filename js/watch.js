@@ -5,11 +5,16 @@ const watchInit = (e) => {
   const category = new URL(window.location.href).searchParams.get("category");
   const season = new URL(window.location.href).searchParams.get("season");
   const epi = new URL(window.location.href).searchParams.get("epi");
+  const img300 = (poster_path) =>
+    `https://image.tmdb.org/t/p/w300/${poster_path}`;
   const watchFrame = document.querySelector(".watch-iframe");
   const tvDetail = `
  ${baseURL}/tv/${id}/season/${season}?api_key=${api_key}&language=vi`;
   const movieDetail = `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=vi`;
   const watchTile = document.querySelector(".watch-infor");
+  const apiGenrerFilm = (genres) =>
+    `${baseURL}/discover/${category}?api_key=${api_key}&with_genres=${genres}&language=vi`;
+
   //   const genresWatch =  `
   //  ${baseURL}/genre/${category}/list?api_key=<<api_key>>&language=en-US`
   // const formatRuntime = (time) => {
@@ -19,10 +24,31 @@ const watchInit = (e) => {
   //     return h +"h" + m
   //   }
   // }
+  const getFilmGenres = async (genres) => {
+    const respon = await fetch(apiGenrerFilm(genres));
+    const data = await respon.json();
+    const results = data.results ; 
+    console.log(results);
+   const genresList = document.querySelector(".watchs-genres-list")
+   results.sort((a, b) => new Date(a.release_date) - new Date(b.release_date)).reverse()
+   .map((item, index)=> {
+    const itemGenres = document.createElement("li")
+    itemGenres.setAttribute("class","watchs-genres-item" ) 
+  
+    itemGenres.innerHTML = `
+      <div class="watch-main-genres-image"> 
+          <img src=${img300(item.backdrop_path)} alt="" />
+      </div>
+    `
+    genresList.appendChild(itemGenres) ; 
+   })
+    
+  };
   const getTitle = async () => {
     const respon = await fetch(category == "movie" ? movieDetail : tvDetail);
     const data = await respon.json();
     console.log(data);
+    category === "movie" ? getFilmGenres(data.genres[0]) : "";
     watchTile.innerHTML = `
     
     <div class="watch-title">
