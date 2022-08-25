@@ -124,6 +124,7 @@ label {
 }
 .header-nav {
   background: #2d2d2d;
+  padding: 10px 0;
 }
 .header-top {
   display: flex;
@@ -305,37 +306,110 @@ label {
     gap: 10px 25px;
     padding: 20px 10px;
   }
-  .header-acount {
-    display: block;
-    font-size: 30px;
-    position: absolute;
+  .header-account-name img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .header-bookmark {
+    width: 88px;
+    display: none;
+  }
+  .header-register, .header-login {
+    width: 78px;
+    text-align: center;
+    opacity: 0.3;
+    margin-bottom: 10px;
   }
   .header-right {
     padding: 0;
-    display: none;
-    order: 2;
+    display: block;
+    order: 1;
+    grid-column: 3/4;
   }
   .header-logo {
     grid-column: 1/4;
-    order: 1;
+    order: 2;
   }
   .header-logo img {
     max-width: 223px;
+  }
+  .header-top-container {
+    padding: 0 10px 20px 10px;
   }
   .header .form__group {
     order: 3;
     grid-column: 1/4;
   }
   .header .search-input:placeholder-shown ~ .form__label {
-    top: 90px;
+    top: 140px;
   }
   .header .form__label {
-    top: 70px;
+    top: 120px;
+  }
+  .header-nav {
+    padding: 2px 0;
+  }
+  .header-nav-item--date:hover .header-nav-date {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    right: 4%;
+    gap: 20px;
+  }
+  .header-nav-item--date:hover .header-nav-date a {
+    width: 100%;
+  }
+  .header-nav-genres {
+    top: 43px;
+    left: 73px;
+  }
+  .header-nav-genres--movie_item, .header-nav-genres--tv_item {
+    font-size: 13px;
+  }
+  .header-nav-genres--movie_item a, .header-nav-genres--tv_item a {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .header-nav ul {
+    padding-left: 10px;
+  }
+  .header-nav-country {
+    padding: 1;
   }
   .header-nav-list {
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+  }
+  .header-nav-title, .header-nav-homepage {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .header-nav-list {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 470px) {
+  .header-nav-country {
+    width: 100%;
+    left: 0;
+    text-align: center;
+  }
+  .header-nav-date {
+    width: 100%;
+    right: 0;
+  }
+  .header-nav-genres {
+    width: 100%;
+    left: 0;
+  }
+  .header-nav-genres--movie_list, .header-nav-genres--tv_list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .header-nav-genres--movie_list span, .header-nav-genres--tv_list span {
+    grid-column: 1/4;
   }
 }
 .filmBanner-list {
@@ -393,6 +467,15 @@ label {
   width: 100%;
 }
 
+@media screen and (max-width: 390px) {
+  .filmBanner-list {
+    margin-top: 0px;
+  }
+
+  .filmBanner-name {
+    font-size: 15px;
+  }
+}
 .film-main-container {
   display: grid;
   grid-template-columns: minmax(20px, auto) 280px;
@@ -1116,14 +1199,37 @@ label {
 
 @media screen and (max-width: 768px) {
   .filmCast-list {
-    grid-template-columns: repeat(auto-fill, 150px);
+    grid-template-columns: repeat(auto-fill, 125px);
   }
   .filmCast-item {
-    width: 150px;
+    width: 125px;
     box-shadow: 3px 2px 8px rgba(239, 234, 234, 0.22);
   }
   .filmCast-image img {
-    height: 180px !important;
+    height: 150px !important;
+    width: 125px !important;
+  }
+  .filmCast-originalName, .filmCast-character {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .filmCast-list {
+    grid-template-columns: repeat(auto-fill, 85px);
+  }
+  .filmCast-item {
+    width: 85px;
+    box-shadow: 3px 2px 8px rgba(239, 234, 234, 0.22);
+  }
+  .filmCast-image img {
+    height: 100px !important;
+    width: 85px !important;
+  }
+  .filmCast-originalName {
+    font-size: 10px;
+  }
+  .filmCast-character {
+    font-size: 10px;
   }
 }
 .upcoming {

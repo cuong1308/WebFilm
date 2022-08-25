@@ -1,11 +1,11 @@
 const initApp = () => {
-  const date = new Date() ;
+  const date = new Date();
 
   const api_key = "d8f8edbbdc27ab9a16942772f29aa16c";
   const apiFilm = `
   https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=vi&page=1`;
   // const apiNow = `https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=vi&page=1`;
-  const apiNow  =`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=vi&primary_release_date.gte=2022-07-01&primary_release_date.lte=2022-09-01`
+  const apiNow = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=vi&primary_release_date.gte=2022-07-01&primary_release_date.lte=2022-09-01`;
   const img = (poster_path) => `https://image.tmdb.org/t/p/w500/${poster_path}`;
   var filmItem = document.querySelector(".film-list");
 
@@ -19,10 +19,8 @@ const initApp = () => {
 
   const displayFilm = () => {
     getFilm((data) => {
-
       data = data.results;
       for (var i = 0; i < data.length; i++) {
-
         var div = document.createElement("div");
         div.setAttribute("class", "film-item");
         div.setAttribute("id", `${data[i].id}`);
@@ -59,27 +57,29 @@ const initApp = () => {
   //     slickSlide();
   //   });
   // };
-  async function displayPosterShow () {
+  async function displayPosterShow() {
     const filmHotList = document.querySelector(".filmBanner-list");
-    const respon = await fetch(apiNow) ; 
-    const data = await respon.json() ; 
-    const result = data.results ;
-    result.map((item,index)=>{
+    const respon = await fetch(apiNow);
+    const data = await respon.json();
+    const result = data.results;
+    for (var i = 0; i < 10; i++) {
       var li = document.createElement("li");
+
       li.setAttribute("class", "filmBanner-item");
       filmHotList.appendChild(li);
       li.innerHTML = `
-      <a href="film.html?id=${item.id}">
+      <a href="film.html?id=${result[i].id}">
           <div class="filmBanner-image">
-          <img src=${img(item.backdrop_path)}></img>
-          <h5 class="filmBanner-name">${item.title}</h5>
+          <img src=${img(result[i].backdrop_path)}></img>
+          <h5 class="filmBanner-name">${result[i].title}</h5>
          </div>
       </a>
       `;
       submitFilm();
-    })
+    }
+    result.map((item, index) => {});
     slickSlideBanner();
-   }
+  }
   // function displayPosterShow() {
   //   const filmHotList = document.querySelector(".filmBanner-list");
   //   getFilm((data) => {
@@ -112,8 +112,8 @@ const initApp = () => {
   // }
 
   const displayAccount = () => {
-    const token = JSON.parse(localStorage.getItem('supabase.auth.token')) ; 
-    
+    const token = JSON.parse(localStorage.getItem("supabase.auth.token"));
+
     var auth = document.querySelector(".header-auth");
     var authWork = document.querySelector(".header-auth-work");
     var account = document.querySelector(".header-account");
@@ -121,8 +121,6 @@ const initApp = () => {
     var accountName = document.querySelector(".account-name");
 
     if (token) {
-          
-
       auth.style.display = "none";
       authWork.style.display = "block";
 
@@ -131,7 +129,11 @@ const initApp = () => {
       name.setAttribute("class", "header-name");
       dropdown.setAttribute("class", "header-dropdown");
       accountName.innerHTML = `
-    ${token.currentSession.user.user_metadata.fullname ?token.currentSession.user.user_metadata.fullname : "Vô danh"}
+    ${
+      token.currentSession.user.user_metadata.fullname
+        ? token.currentSession.user.user_metadata.fullname
+        : "Vô danh"
+    }
     `;
 
       const logout = () => {

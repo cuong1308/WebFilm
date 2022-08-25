@@ -123,3 +123,11 @@
     }
 
 }
+@media screen and (max-width: 390px) {
+    .filmBanner-list {
+        margin-top: 0px;
+    }
+    .filmBanner-name {
+        font-size: 15px;
+    }
+}
