@@ -24,7 +24,7 @@ const showFilmTrend = () => {
       
       <div class="filmTrend-image"> 
       <a href="film.html?id=${trendData[i].id}">
-        <img src="https://image.tmdb.org/t/p/w300${
+        <img loading="auto" src="https://image.tmdb.org/t/p/w300${
           trendData[i].poster_path
         }"></img> 
       </a>  

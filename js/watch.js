@@ -37,7 +37,7 @@ const watchInit = (e) => {
   
     itemGenres.innerHTML = `
       <div class="watch-main-genres-image"> 
-          <img src=${img300(item.backdrop_path)} alt="" />
+          <img src=${img300(item.backdrop_path)} alt="" loading="auto"/>
       </div>
     `
     genresList.appendChild(itemGenres) ; 

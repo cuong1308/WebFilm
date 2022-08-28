@@ -27,7 +27,7 @@ function displayUpcoming() {
       li.innerHTML = `
         <a href="film.html?id=${data[i].id}">
           <div class="upcoming-image">
-            <img src=${img(data[i].backdrop_path)} ></img>
+            <img loading="auto" src=${img(data[i].backdrop_path)} ></img>
           </div>
           <div class="upcoming-item-name">
             ${data[i].title}

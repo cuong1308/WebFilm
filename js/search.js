@@ -89,7 +89,7 @@ const viewFilm = (data) => {
             : `film.html?id=${data[i].id}`
         }">
             <div class="filmStore-image">
-              <img src=${img(data[i].poster_path)}></img>
+              <img src=${img(data[i].poster_path)} loading="lazy"></img>
             </div>
             <div class="filmStore-info">        
                 <h2 class="filmStore-name">${

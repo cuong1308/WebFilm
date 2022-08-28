@@ -29,10 +29,10 @@ async function getSeasons() {
   console.log(seasonsNew);
   tvHeader.innerHTML = `
         <div > 
-            <img src="${img(data.backdrop_path)}" class="tvSeason-bg"/>
+            <img src="${img(data.backdrop_path)}" class="tvSeason-bg" loading="auto"/>
             <div class="tvSeason-child" >
-                 <div class="tvSeason-poster">
-                        <img src=${img300(
+                 <div class="tvSeason-poster" >
+                        <img loading="auto"  src=${img300(
                           seasonsNew.poster_path
                             ? seasonsNew.poster_path
                             : data.poster_path
@@ -81,7 +81,7 @@ async function getSeasons() {
           <div class="tvSeason-episode--image">
               <img src="${
                 item.still_path ? img500(item.still_path) : motchill
-              }"/>
+              }" loading="auto"/>
           </div>
           <div class="tvSeason-episode--infor">
               <div class="tvSeason-episode--title">
@@ -119,7 +119,7 @@ const getTVSeason = (data, seasonNumber) => {
             } onclick="routeSeason(${item.season_number})"> 
                 <img src=${
                   item.poster_path ? img300(item.poster_path) : motchill
-                } alt="avt" />
+                } alt="avt" loading="auto"/>
             </div>
             <div class="tvSeason-other--infor">
                   <div class="tvSeason-other--name">

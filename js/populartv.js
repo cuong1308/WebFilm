@@ -30,7 +30,7 @@ function displayPopulartv() {
       li.innerHTML = `
         <a href="chi-tiet-tivi-shows.html?id=${data[i].id}">
           <div class="tv-image">
-            <img src=${img(data[i].backdrop_path)} ></img>
+            <img src=${img(data[i].backdrop_path)} loading="auto" ></img>
           </div>
           <div class="tv-item-name">
             ${data[i].name}

@@ -74,7 +74,7 @@ const detailApp = () => {
         <div class="filmDetail-image">
           <img src="https://image.tmdb.org/t/p/w300/${
             data.poster_path ? data.poster_path : data.backdrop_path
-          }"></img>
+          }"  loading="auto"></img>
           <div class="filmDetail-button">
           <div class="button button--trailer">
             Trailer
@@ -160,7 +160,7 @@ const detailApp = () => {
     var buttonColection = document.querySelector(".filmColection-button");
     var posterColection = document.querySelector(".filmColection-poster");
     imgColection.innerHTML = `
-  <img src=${img(data.backdrop_path)}></img>
+  <img src=${img(data.backdrop_path)} loading="auto"></img>
  
   `;
     nameColection.innerHTML = `
@@ -172,7 +172,7 @@ const detailApp = () => {
       </a>
   `;
     posterColection.innerHTML = `
-    <img src=${img300(data.poster_path)}></img>
+    <img src=${img300(data.poster_path)} loading="auto"></img>
   `;
   };
   const modal = () => {
@@ -228,7 +228,7 @@ const detailApp = () => {
         li.setAttribute("id", `${data[i] ? data[i].id : ""}`);
         li.innerHTML = `
       <a href="film.html?id=${data[i].id}">
-        <img src=${img300(data[i].poster_path)}></img>
+        <img src=${img300(data[i].poster_path)} loading="auto"></img>
         <div class="info"> 
             <h2 class="filmSuggest-name">${data[i].title}</h2>
         </div>
@@ -259,7 +259,7 @@ const detailApp = () => {
             ? ` 
             <a href="dien-vien.html?id=${data[i].id}" >
                <div class="filmCast-image" style="margin: auto;">
-                  <img src=${img300(
+                  <img loading="auto" src=${img300(
                     data[i].profile_path
                   )} alt="cast" style="width:100%;
                               width: 100%;

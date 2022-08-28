@@ -27,7 +27,7 @@ const initApp = () => {
 
         div.innerHTML = `
       <a href="film.html?id=${data[i].id}">
-        <img src=${img(data[i].poster_path)}></img>
+        <img src=${img(data[i].poster_path)} loading="auto"></img>
             <div class="info">        
               <h2 class="filmUpdate-name">${data[i].title}</h2>           
            </div>
@@ -69,8 +69,8 @@ const initApp = () => {
       filmHotList.appendChild(li);
       li.innerHTML = `
       <a href="film.html?id=${result[i].id}">
-          <div class="filmBanner-image">
-          <img src=${img(result[i].backdrop_path)}></img>
+          <div class="filmBanner-image" loading="auto">
+          <img src=${img(result[i].backdrop_path)} > </img>
           <h5 class="filmBanner-name">${result[i].title}</h5>
          </div>
       </a>
