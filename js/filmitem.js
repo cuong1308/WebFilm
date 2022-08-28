@@ -151,7 +151,7 @@ const detailApp = () => {
       displayCast();
       data.belongs_to_collection
         ? colectionFilm(data.belongs_to_collection)
-        : "";
+        : (document.querySelector(".filmColection").style.display = "none");
     });
   };
   const colectionFilm = (data) => {
@@ -183,7 +183,7 @@ const detailApp = () => {
       modal.style.display = "block";
     });
     btnClose.addEventListener("click", function (e) {
-      modal.style.display = "none";
+      modal.style.display = "block";
 
       stopVideo();
     });
@@ -220,13 +220,9 @@ const detailApp = () => {
   function suggesttionFilm() {
     const suggestList = document.querySelector(".filmSuggest-list");
     getSuggest((data) => {
-
-
-
       data = data.results;
 
       for (var i = 0; i < data.length; i++) {
-
         var li = document.createElement("li");
         li.setAttribute("class", "filmSuggest-item");
         li.setAttribute("id", `${data[i] ? data[i].id : ""}`);
@@ -234,7 +230,7 @@ const detailApp = () => {
       <a href="film.html?id=${data[i].id}">
         <img src=${img300(data[i].poster_path)}></img>
         <div class="info"> 
-            <h2 class="filmUpdate-name">${data[i].title}</h2>
+            <h2 class="filmSuggest-name">${data[i].title}</h2>
         </div>
       </a>
         `;
@@ -247,12 +243,13 @@ const detailApp = () => {
   const displayCast = () => {
     const suggestList = document.querySelector(".filmCast-list");
     getCastFilm((data) => {
-
-
+      console.log("cast", data);
       data = data.cast;
+      data.cast
+        ? (data = data.cast)
+        : (document.querySelector(".filmCast").style.display = "none");
 
       for (var i = 0; i < 4; i++) {
-;
         var li = document.createElement("li");
         li.setAttribute("class", "filmCast-item");
         li.setAttribute("id", `${data[i] ? data[i].id : ""}`);
@@ -261,7 +258,7 @@ const detailApp = () => {
           data[i]
             ? ` 
             <a href="dien-vien.html?id=${data[i].id}" >
-               <div class="filmCast-image" style="max-width:100%;margin: auto;">
+               <div class="filmCast-image" style="margin: auto;">
                   <img src=${img300(
                     data[i].profile_path
                   )} alt="cast" style="width:100%;

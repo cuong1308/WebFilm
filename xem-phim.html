@@ -12,145 +12,147 @@
      crossorigin="anonymous"></script>
   </head>
 <body>
-    <header>
-        <section class="header">
-           
-                <div class="header-container">
-                    <div class="header-top">
-                        <div class="container">
-                            <div class="header-top-container">
-                              <div class="header-logo">
-                                <img srcset="./assets/motchill.png 2x" alt="">
-                              </div>
-                              <div class="form__group field">
-                                <input type="input" class="search-input" placeholder="Tìm kiếm" name="search" id='name' required />
-                                <label for="name" class="form__label">Nhập tên phim cần tìm</label>
-                              </div>
-                              <!-- <input type="text" placeholder="Search" class="search-input"> -->
-                              <div class="header-acount">
-                                <i class="fas fa-bars"></i>
-                              </div>    
-                                  <div class="header-right">
-                                     
-                                      <div class="header-auth">
-                                        <div class="header-login">
-                                           <a href="login/index.html" class="login" class="btnLogin">
-                                             Đăng nhập
-                                           </a>
-                                        </div>        
-                                        <div class="header-register">
-                                            <a href="sigup/index.html" class="register" class="btnRegister">
-                                              Đăng ký 
-                                            </a>
+  <header>
+    <section class="header">
+       
+            <div class="header-container">
+                <div class="header-top">
+                    <div class="container">
+                        <div class="header-top-container ">
+                          <div class="header-logo">
+                           <a href="/"> <img srcset="./assets/motchill.png 2x" alt=""></a>
+                          </div>
+                          <div class="form__group field">
+                            <input type="input" class="search-input" placeholder="Tìm kiếm" name="search" id='name' required />
+                            <label for="name" class="form__label">Nhập tên phim cần tìm</label>
+                          </div>
+                          <!-- <input type="text" placeholder="Search" class="search-input"> -->
+                        
+                          <div class="header-acount">
+                            <i class="fas fa-bars"></i>
+                          
+                          </div>    
+                              <div class="header-right">
+                                 
+                                  <div class="header-auth">
+                                    <div class="header-login">
+                                       <a href="login/index.html" class="login" class="btnLogin">
+                                         Đăng nhập
+                                       </a>
+                                    </div>        
+                                    <div class="header-register">
+                                        <a href="sigup/index.html" class="register" class="btnRegister">
+                                          Đăng ký 
+                                        </a>
+                                  </div>
+                                  
+                                  
+                                </div>
+                                <div class="header-auth-work" style="display:none !important">
+                                  <div class="header-bookmark">
+                                    <i class="fa-solid fa-bookmark"></i>
+                                    Bookmark
+                                  </div>
+                                  <div class="header-account">
+                                    <div class="header-account-name">
+                                      <img srcset='../assets/avt.png 2x'style="width:50px ; height:50px"></img>
                                       </div>
-                                      
-                                      
-                                    </div>
-                                    <div class="header-auth-work" style="display:none !important">
-                                      <div class="header-bookmark">
-                                        <i class="fa-solid fa-bookmark"></i>
-                                        Bookmark
-                                      </div>
-                                      <div class="header-account">
-                                        <div class="header-account-name">
-                                          <img srcset='../assets/avt.png 2x'style="width:50px ; height:50px"></img>
-                                          </div>
-                                      </div>
-                                      
-                                      <div class="dropdown">
-                                       
-                                          <i class="fa-solid fa-angle-down dropbtn"></i>
-                              
-                                        <div id="myDropdown" class="dropdown-content">
-                                          <div class="account-name">
+                                  </div>
+                                  
+                                  <div class="dropdown">
+                                   
+                                      <i class="fa-solid fa-angle-down dropbtn"></i>
+                          
+                                    <div id="myDropdown" class="dropdown-content">
+                                      <div class="account-name">
 
-                                          </div>
-                                          <div> Tài khoản</div>
-                                          <div> Cài đặt</div>
-                                          <div> Trợ giúp</div>
-                                          <div class="header-logout">
-                                            Đăng xuất
-                                            
-                                           </div>
-                                           
-                                        </div>
                                       </div>
-                                     
+                                      <div> Tài khoản</div>
+                                      <div> Cài đặt</div>
+                                      <div> Trợ giúp</div>
+                                      <div class="header-logout" onclick="signOut()">
+                                        Đăng xuất
+                                        
+                                       </div>
+                                       
                                     </div>
                                   </div>
+                                 
+                                </div>
                               </div>
-                            </div>
+                          </div>
                         </div>
                     </div>
-                    <script src="./js/navbar.js"></script>
-                    <div class="header-nav">
-                        <div class="container">
-                            <div class="header-nav-container">
-                                <ul class="header-nav-list">
-                                    <li class="header-nav-item">
-                                      <a href="/">
-                                        <span class="header-nav-homepage" > TRANG CHỦ</span>
-                                      </a>
-                                    </li>
-                                    <li class="header-nav-item--genres">
-                                        <div class="header-nav-title">
-                                            THỂ LOẠI
-                                        </div> 
-                                        <ul class="header-nav-genres">
-                                            <li class="header-nav-genres--phimle">
-                                                <ul class="header-nav-genres--movie_list">
-                                                  <span> Phim lẻ</span>
-                                                </ul>
-                                            </li>
-                                            <li class="header-nav-genres--phimbo">
-                                              <ul class="header-nav-genres--tv_list">
-                                               <span>Phim bộ</span>
+                </div>
+                <script src="./js/navbar.js"></script>
+                <div class="header-nav">
+                    <div class="container">
+                        <div class="header-nav-container">
+                            <ul class="header-nav-list">
+                                <li class="header-nav-item">
+                                  <a href="/">
+                                    <span class="header-nav-homepage" > TRANG CHỦ</span>
+                                  </a>
+                                </li>
+                                <li class="header-nav-item--genres">
+                                    <div class="header-nav-title">
+                                        THỂ LOẠI
+                                    </div> 
+                                    <ul class="header-nav-genres">
+                                        <li class="header-nav-genres--phimle">
+                                            <ul class="header-nav-genres--movie_list">
+                                              <span> Phim lẻ</span>
                                             </ul>
-                                            </li>
+                                        </li>
+                                        <li class="header-nav-genres--phimbo">
+                                          <ul class="header-nav-genres--tv_list">
+                                           <span>Phim bộ</span>
                                         </ul>
-                                    </li>
-                                    <li class="header-nav-item--country">
-                                      <div class="header-nav-title">
-                                            QUỐC GIA
-                                      </div> 
-                                      <ul class="header-nav-country">
-                                          
-                                      </ul>
-                                  </li>
-                                   <li class="header-nav-item--movie">
-                                    <div class="header-nav-title">
-                                      <a href="kho-phim.html?category=tv">
-                                        <span class="header-nav-tv" > PHIM BỘ</span>
-                                      </a>
-                                    </div> 
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="header-nav-item--country">
+                                  <div class="header-nav-title">
+                                        QUỐC GIA
+                                  </div> 
+                                  <ul class="header-nav-country">
+                                      
+                                  </ul>
+                              </li>
+                               <li class="header-nav-item--movie">
+                                <div class="header-nav-title">
+                                  <a href="kho-phim.html?category=tv">
+                                    <span class="header-nav-tv" > PHIM BỘ</span>
+                                  </a>
+                                </div> 
+                                
+                              </li>
+                              <li class="header-nav-item--tv">
+                                <div class="header-nav-title">
+                                  <a href="kho-phim.html?category=movie">
+                                    <span class="header-nav-movie" > PHIM LẺ</span>
+                                  </a>
+                                </div> 
+                                <ul class="header-nav-tv-show">
                                     
-                                  </li>
-                                  <li class="header-nav-item--tv">
-                                    <div class="header-nav-title">
-                                      <a href="kho-phim.html?category=movie">
-                                        <span class="header-nav-movie" > PHIM LẺ</span>
-                                      </a>
-                                    </div> 
-                                    <ul class="header-nav-tv-show">
-                                        
-                                    </ul>
-                                  </li>
-                                  <li class="header-nav-item--date">
-                                    <div class="header-nav-title">
-                                         NĂM SẢN XUẤT
-                                    </div> 
-                                    <ul class="header-nav-date">
-                                        
-                                    </ul>
-                                  </li>
                                 </ul>
-                            </div>
+                              </li>
+                              <li class="header-nav-item--date">
+                                <div class="header-nav-title">
+                                     NĂM SẢN XUẤT
+                                </div> 
+                                <ul class="header-nav-date">
+                                    
+                                </ul>
+                              </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </header>
+        </div>
+    </section>
+</header>
     <main>
         <section class="watch">
             <div class="container">
@@ -191,9 +193,7 @@
                       </div>
                     </div>
                   </section>
-                  <section>
-                    <!-- <iframe src = "https://autofaucet.org/wmi/klrt0120" width = "400" height = "400" style = "border: 0"> </iframe> -->
-                  </section>
+              
                   <!-- <section class="watch-main-genres">
                       <div class="container">
                         <div class="watch-main-genres-container">

@@ -19,15 +19,20 @@
             <div class="header-container">
                 <div class="header-top">
                     <div class="container">
-                        <div class="header-top-container">
+                        <div class="header-top-container ">
                           <div class="header-logo">
-                            <img srcset="./assets/motchill.png 2x" alt="">
+                           <a href="/"> <img srcset="./assets/motchill.png 2x" alt=""></a>
                           </div>
                           <div class="form__group field">
                             <input type="input" class="search-input" placeholder="Tìm kiếm" name="search" id='name' required />
                             <label for="name" class="form__label">Nhập tên phim cần tìm</label>
                           </div>
                           <!-- <input type="text" placeholder="Search" class="search-input"> -->
+                        
+                          <div class="header-acount">
+                            <i class="fas fa-bars"></i>
+                          
+                          </div>    
                               <div class="header-right">
                                  
                                   <div class="header-auth">
@@ -66,7 +71,7 @@
                                       <div> Tài khoản</div>
                                       <div> Cài đặt</div>
                                       <div> Trợ giúp</div>
-                                      <div class="header-logout">
+                                      <div class="header-logout" onclick="signOut()">
                                         Đăng xuất
                                         
                                        </div>

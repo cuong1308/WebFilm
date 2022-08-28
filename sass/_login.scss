@@ -18,13 +18,14 @@
 
     .main {
         background: white;
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
         align-items: center;
         flex-direction: column;
-        bottom: 0;
+        // bottom: 0;
         position: fixed;
         right: 0;
+        z-index: 3;
     }
 
     .btn-auth {
@@ -50,12 +51,14 @@
         max-width: 468px;
         position: absolute;
         left: 0;
+        bottom: 0;
     }
 
     .logo {
         position: absolute;
         transform: translate(-54px, 38px);
         right: 0;
+        z-index: 2;
     }
 
     .register-form {
@@ -66,7 +69,7 @@
         position: absolute;
         top: 0;
         right: 15px;
-
+        z-index: 15;
         img {
 
             width: 100px;
@@ -134,5 +137,7 @@
     color: white;
     font-weight: bold;
 }
-
+.login-main-image {
+    z-index: 15;
+}
 // register
