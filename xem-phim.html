@@ -188,7 +188,8 @@
                            </ul>
                             <div class="comment-form"> 
                               <textarea type="text" class="comment-box" placeholder="Nhập bình luận"></textarea>
-                              <button class="comment-post button" onclick="insertComment();window.scroll(300,200);">Bình luận</button>
+                              <!-- <button class="comment-post button" onclick="insertComment();window.scroll(300,200);">Bình luận</button> -->
+                              <button class="comment-post button" >Bình luận</button>
                             </div> 
                           </div>
                       </div>
@@ -497,13 +498,18 @@
        
          
     }   
-  
-      
-    getlistComments()
+    getlistComments();
+    document.querySelector(".comment-post").addEventListener("click", () => {
+      insertComment() ;
+     setTimeout(() => {
+      window.scroll(300,200);
+     },1000)
+   })
+   
    }
 
 
-
+  
     
 
 
